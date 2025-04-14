@@ -36,7 +36,7 @@ git clone https://github.com/nvakhoa/MPAD.git
 cd MPAD
 ```
 
-2. Install PowerPaint (see third_party/PowerPaint/README.md)
+2. Install PowerPaint (see `mpad_generation/PowerPaint/README.md`)
 
 
 ## 🛠️ Usage
