@@ -39,8 +39,41 @@ cd MPAD
 2. Install PowerPaint (see third_party/PowerPaint/README.md)
 
 
-
 ## 🛠️ Usage
+
+### 🏗️ Pre-trained Weights Setup
+
+To run MPAD, you'll need to download the following pre-trained weights and place them in `mpad_generation/utils/metadata.py`:
+
+1. Stable Diffusion Models
+
+Download these foundational models from Hugging Face at [here](https://huggingface.co/stable-diffusion-v1-5):
+```python
+# Stable Diffusion Inpainting
+stable_inpaint_path = 'mpad_generation/PowerPaint/models/stable-diffusion-inpainting'
+# Download from: https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-inpainting
+
+# Stable Diffusion v1.5
+stable_diffusion_path = 'mpad_generation/PowerPaint/models/stable-diffusion-v1-5'
+# Download from: https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
+```
+2. PowerPaint Weights
+
+Download the specialized PowerPaint components at [here](https://huggingface.co/JunhaoZhuang/PowerPaint-v1/tree/main):
+```python
+# UNet model
+unet_path = "mpad_generation/PowerPaint/models/unet/unet.safetensors"
+# Text Encoder
+text_encoder_path = "mpad_generation/PowerPaint/models/text_encoder/text_encoder.safetensors"
+# Download both from: https://huggingface.co/JunhaoZhuang/PowerPaint-v1/tree/main
+```
+3. Pre-processed Features
+Download the extracted features for novel class synthesis at [here](https://drive.google.com/file/d/1DCiLXICXqVqrFd675DXGpC-jib2O2Pa7/view?usp=sharing):
+```python
+feature_dir = "mpad_generation/NovelClassSynthesis"
+# Download from: https://drive.google.com/file/d/1DCiLXICXqVqrFd675DXGpC-jib2O2Pa7/view?usp=sharing
+```
+
 ### Data Preparation
 
 Organize your dataset like FSOD set-up:
@@ -101,7 +134,7 @@ Training on NVIDIA GeForce RTX 2080 Ti GPU GPUs (11GB)
 
 | Component         | Status     | Release Date |
 |-------------------|------------|--------------|
-| Augmentation Code | ✅Released | April 2025     |
+| Generation Code   | ✅Released | April 2025     |
 | FSOD Training Code| 🔜Coming   | Expected: June 2025    |
 | Pre-trained Models| 🔜Coming   | Expected: July 2025   |
 
