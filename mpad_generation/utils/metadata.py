@@ -3093,19 +3093,5 @@ stable_diffusion_path ='mpad_generation/PowerPaint/models/stable-diffusion-v1-5'
 unet_path        = "mpad_generation/PowerPaint/models/unet/unet.safetensors"
 text_encoder_path= "mpad_generation/PowerPaint/models/text_encoder/text_encoder.safetensors"
 
-# download extracted features of pre-processing step
-feature_dir = "path-to-extracted-features"
-
-
-
-stable_inpaint_path ='../../truongtq/CKPT_PP/stable-diffusion-inpainting'
-stable_diffusion_path ='../../truongtq/CKPT_PP/stable-diffusion-v1-5'
-unet_path        = "mpad_generation/PowerPaint/models/unet/unet.safetensors"
-text_encoder_path= "mpad_generation/PowerPaint/models/text_encoder/text_encoder.safetensors"
-
-dataset_path="datasets/"
+# download extracted features of pre-processing step from 
 feature_dir = "mpad_generation/NovelClassSynthesis"
-
-# origin_dir = '../..'
-# dataset_path=f"{origin_dir}/khoanva/DeFRCN/datasets/"
-# feature_dir = f"{origin_dir}/truongtq/ImageCustom/Text2Image/OutputImages/NovelClassSynthesis"
