@@ -4,7 +4,7 @@
 [![OpenReview](https://img.shields.io/badge/OpenReview-Paper-9cf)](https://openreview.net/forum?id=qG0WCAhZE0)
 <!-- [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) -->
 
-Official implementation of [**MPAD**: Multi-Perspective Augmentation for Few-Shot Object Detection](https://openreview.net/forum?id=qG0WCAhZE0). *Accepted at International Conference on Learning Representations (ICLR) 2025*.
+Official implementation of [**MPAD**: Multi-Perspective Data Augmentation for Few-Shot Object Detection](https://openreview.net/forum?id=qG0WCAhZE0). *Accepted at International Conference on Learning Representations (ICLR) 2025*.
 
 ![MPAD Framework Overview](overview.png)  
 *Figure: MPAD's multi-perspective augmentation pipeline.*
@@ -142,7 +142,7 @@ Training on NVIDIA GeForce RTX 2080 Ti GPU GPUs (11GB)
 If you use this work in your research or wish to refer to the baseline results published here, please use the following BibTeX entries:
 ```
 @inproceedings{mpad2025,
-  title={MPAD: Multi-Perspective Augmentation for Few-Shot Object Detection},
+  title={MPAD: Multi-Perspective Data Augmentation for Few-shot Object Detection},
   author={Vu, Anh-Khoa Nguyen and Truong, Quoc-Truong and Nguyen, Vinh-Tiep and Ngo, Thanh Duc and Do, Thanh-Toan and Nguyen, Tam V},
   booktitle={International Conference on Learning Representations (ICLR)},
   year={2025},
