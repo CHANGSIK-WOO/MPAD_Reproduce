@@ -3086,13 +3086,12 @@ convert_object = {"diningtable": "dining table",
 # https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-inpainting
 # and
 # https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
-
-stable_inpaint_path ='../../truongtq/CKPT_PP/stable-diffusion-inpainting'
-stable_diffusion_path ='../../truongtq/CKPT_PP/stable-diffusion-v1-5'
+stable_inpaint_path ='mpad_generation/PowerPaint/models/stable-diffusion-inpainting'
+stable_diffusion_path ='mpad_generation/PowerPaint/models/stable-diffusion-v1-5'
 
 # download pre-trained weights of PowerPaint at https://huggingface.co/JunhaoZhuang/PowerPaint-v1/tree/main
 unet_path        = "mpad_generation/PowerPaint/models/unet/unet.safetensors"
 text_encoder_path= "mpad_generation/PowerPaint/models/text_encoder/text_encoder.safetensors"
-dataset_path='datasets'
+
 # download extracted features of pre-processing step from https://drive.google.com/file/d/1DCiLXICXqVqrFd675DXGpC-jib2O2Pa7/view?usp=sharing
 feature_dir = "mpad_generation/NovelClassSynthesis"
