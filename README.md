@@ -1,10 +1,10 @@
-# MPAD: Multi-Perspective Augmentation for Few-Shot Object Detection
+# MPAD: Multi-Perspective Data Augmentation for Few-Shot Object Detection
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![OpenReview](https://img.shields.io/badge/OpenReview-Paper-9cf)](https://openreview.net/forum?id=qG0WCAhZE0)
 <!-- [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) -->
 
-Official implementation of [**MPAD**: Multi-Perspective Data Augmentation for Few-Shot Object Detection](https://openreview.net/forum?id=qG0WCAhZE0). *Accepted at International Conference on Learning Representations (ICLR) 2025*.
+Official implementation of [**MPAD**: Multi-Perspective Data Augmentation for Few-Shot Object Detection](https://arxiv.org/abs/2502.18195). *Accepted at International Conference on Learning Representations (ICLR) 2025*.
 
 ![MPAD Framework Overview](overview.png)  
 *Figure: MPAD's multi-perspective augmentation pipeline.*
