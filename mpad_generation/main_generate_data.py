@@ -364,14 +364,15 @@ if __name__ == "__main__":
 
     args = default_argument_parser().parse_args()
     print('args: ', args)
-    
+
     FolderForGenVersion = args.gendata_folder
     max_num_novel_ins = args.num_ins
 
     VOC_DATASET =[
-        (0, 'voc_2007_trainval', "VOC2007", "trainval"), 
-        (1, 'voc_2012_trainval', "VOC2012", "trainval"),    
-    ]   
+        (0, 'voc_2007_trainval', "VOC2007", "trainval"),
+        # (0, 'voc_2007_trainval', "VOC2007", "trainval"),
+        # (1, 'voc_2012_trainval', "VOC2012", "trainval"),
+    ]
     COCO_DATASET = ("coco14_trainval_base", "coco/trainval2014","cocosplit/datasplit/trainvalno5k.json")
     
     dicts = {}
@@ -435,7 +436,7 @@ if __name__ == "__main__":
 
     else:        
         novel_classes = PASCAL_VOC_NOVEL_CATEGORIES[sid]
-        base_classes = PASCAL_VOC_BASE_CATEGORIES[sid]
+        base_classes = PASCAL_VOC_BASE_CATEGORIES[sid]  
         # dicts['meta_VOC_info'] = {1: meta_VOC_info_1, 
         #                 2: meta_VOC_info_2,
         #                 3: meta_VOC_info_3}[sid]

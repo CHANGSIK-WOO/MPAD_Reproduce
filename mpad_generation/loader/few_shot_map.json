@@ -1,0 +1,1602 @@
+{
+  "2009_003147": {
+    "shot_idx": 1,
+    "class_idx": 0
+  },
+  "2009_003309": {
+    "shot_idx": 2,
+    "class_idx": 0
+  },
+  "2008_008247": {
+    "shot_idx": 3,
+    "class_idx": 0
+  },
+  "2009_005075": {
+    "shot_idx": 4,
+    "class_idx": 0
+  },
+  "2008_002358": {
+    "shot_idx": 5,
+    "class_idx": 0
+  },
+  "2008_008307": {
+    "shot_idx": 1,
+    "class_idx": 1
+  },
+  "2010_003701": {
+    "shot_idx": 2,
+    "class_idx": 1
+  },
+  "2011_001945": {
+    "shot_idx": 3,
+    "class_idx": 1
+  },
+  "005057": {
+    "shot_idx": 4,
+    "class_idx": 1
+  },
+  "2011_000412": {
+    "shot_idx": 5,
+    "class_idx": 1
+  },
+  "2008_000512": {
+    "shot_idx": 1,
+    "class_idx": 2
+  },
+  "2008_007486": {
+    "shot_idx": 2,
+    "class_idx": 2
+  },
+  "008670": {
+    "shot_idx": 3,
+    "class_idx": 2
+  },
+  "2009_004765": {
+    "shot_idx": 4,
+    "class_idx": 2
+  },
+  "2008_003694": {
+    "shot_idx": 5,
+    "class_idx": 2
+  },
+  "2009_003732": {
+    "shot_idx": 1,
+    "class_idx": 3
+  },
+  "2008_006046": {
+    "shot_idx": 2,
+    "class_idx": 3
+  },
+  "009131": {
+    "shot_idx": 3,
+    "class_idx": 3
+  },
+  "2009_003019": {
+    "shot_idx": 4,
+    "class_idx": 3
+  },
+  "000130": {
+    "shot_idx": 5,
+    "class_idx": 3
+  },
+  "2011_003152": {
+    "shot_idx": 1,
+    "class_idx": 4
+  },
+  "004943": {
+    "shot_idx": 2,
+    "class_idx": 4
+  },
+  "2008_002292": {
+    "shot_idx": 3,
+    "class_idx": 4
+  },
+  "2008_006427": {
+    "shot_idx": 4,
+    "class_idx": 4
+  },
+  "004280": {
+    "shot_idx": 5,
+    "class_idx": 4
+  },
+  "009832": {
+    "shot_idx": 1,
+    "class_idx": 5
+  },
+  "2008_001842": {
+    "shot_idx": 2,
+    "class_idx": 5
+  },
+  "2009_000519": {
+    "shot_idx": 3,
+    "class_idx": 5
+  },
+  "005068": {
+    "shot_idx": 4,
+    "class_idx": 5
+  },
+  "002027": {
+    "shot_idx": 5,
+    "class_idx": 5
+  },
+  "009078": {
+    "shot_idx": 1,
+    "class_idx": 6
+  },
+  "2008_003970": {
+    "shot_idx": 2,
+    "class_idx": 6
+  },
+  "007601": {
+    "shot_idx": 3,
+    "class_idx": 6
+  },
+  "2008_003764": {
+    "shot_idx": 4,
+    "class_idx": 6
+  },
+  "2011_000900": {
+    "shot_idx": 5,
+    "class_idx": 6
+  },
+  "2008_005699": {
+    "shot_idx": 1,
+    "class_idx": 7
+  },
+  "2008_007130": {
+    "shot_idx": 2,
+    "class_idx": 7
+  },
+  "2010_001660": {
+    "shot_idx": 3,
+    "class_idx": 7
+  },
+  "2008_007888": {
+    "shot_idx": 4,
+    "class_idx": 7
+  },
+  "2010_005712": {
+    "shot_idx": 5,
+    "class_idx": 7
+  },
+  "2008_002112": {
+    "shot_idx": 1,
+    "class_idx": 8
+  },
+  "002334": {
+    "shot_idx": 2,
+    "class_idx": 8
+  },
+  "000089": {
+    "shot_idx": 3,
+    "class_idx": 8
+  },
+  "2010_004095": {
+    "shot_idx": 4,
+    "class_idx": 8
+  },
+  "2010_004670": {
+    "shot_idx": 5,
+    "class_idx": 8
+  },
+  "2010_001694": {
+    "shot_idx": 1,
+    "class_idx": 9
+  },
+  "2009_002472": {
+    "shot_idx": 2,
+    "class_idx": 9
+  },
+  "2009_000771": {
+    "shot_idx": 3,
+    "class_idx": 9
+  },
+  "2011_001318": {
+    "shot_idx": 4,
+    "class_idx": 9
+  },
+  "2008_008482": {
+    "shot_idx": 5,
+    "class_idx": 9
+  },
+  "004296": {
+    "shot_idx": 1,
+    "class_idx": 10
+  },
+  "2010_002539": {
+    "shot_idx": 2,
+    "class_idx": 10
+  },
+  "007826": {
+    "shot_idx": 3,
+    "class_idx": 10
+  },
+  "2008_007287": {
+    "shot_idx": 4,
+    "class_idx": 10
+  },
+  "006220": {
+    "shot_idx": 5,
+    "class_idx": 10
+  },
+  "2010_002924": {
+    "shot_idx": 1,
+    "class_idx": 11
+  },
+  "2010_005644": {
+    "shot_idx": 2,
+    "class_idx": 11
+  },
+  "2010_001399": {
+    "shot_idx": 3,
+    "class_idx": 11
+  },
+  "2010_001850": {
+    "shot_idx": 4,
+    "class_idx": 11
+  },
+  "2008_002430": {
+    "shot_idx": 5,
+    "class_idx": 11
+  },
+  "2008_005934": {
+    "shot_idx": 1,
+    "class_idx": 12
+  },
+  "2008_006429": {
+    "shot_idx": 2,
+    "class_idx": 12
+  },
+  "2008_001544": {
+    "shot_idx": 3,
+    "class_idx": 12
+  },
+  "2010_004107": {
+    "shot_idx": 4,
+    "class_idx": 12
+  },
+  "004935": {
+    "shot_idx": 5,
+    "class_idx": 12
+  },
+  "2009_003234": {
+    "shot_idx": 1,
+    "class_idx": 13
+  },
+  "2011_000618": {
+    "shot_idx": 2,
+    "class_idx": 13
+  },
+  "2010_000927": {
+    "shot_idx": 3,
+    "class_idx": 13
+  },
+  "006476": {
+    "shot_idx": 4,
+    "class_idx": 13
+  },
+  "000822": {
+    "shot_idx": 5,
+    "class_idx": 13
+  },
+  "2010_004922": {
+    "shot_idx": 1,
+    "class_idx": 14
+  },
+  "2008_007028": {
+    "shot_idx": 2,
+    "class_idx": 14
+  },
+  "004931": {
+    "shot_idx": 3,
+    "class_idx": 14
+  },
+  "005738": {
+    "shot_idx": 4,
+    "class_idx": 14
+  },
+  "2009_002552": {
+    "shot_idx": 5,
+    "class_idx": 14
+  },
+  "2008_003434": {
+    "shot_idx": 1,
+    "class_idx": 15
+  },
+  "2008_003665": {
+    "shot_idx": 2,
+    "class_idx": 15
+  },
+  "2008_008770": {
+    "shot_idx": 3,
+    "class_idx": 15
+  },
+  "2008_007882": {
+    "shot_idx": 4,
+    "class_idx": 15
+  },
+  "2010_001699": {
+    "shot_idx": 5,
+    "class_idx": 15
+  },
+  "2010_006026": {
+    "shot_idx": 1,
+    "class_idx": 16
+  },
+  "2009_003076": {
+    "shot_idx": 2,
+    "class_idx": 16
+  },
+  "2010_000390": {
+    "shot_idx": 3,
+    "class_idx": 16
+  },
+  "2010_002736": {
+    "shot_idx": 4,
+    "class_idx": 16
+  },
+  "005395": {
+    "shot_idx": 5,
+    "class_idx": 16
+  },
+  "2008_003562": {
+    "shot_idx": 1,
+    "class_idx": 17
+  },
+  "2010_005847": {
+    "shot_idx": 2,
+    "class_idx": 17
+  },
+  "2011_002881": {
+    "shot_idx": 3,
+    "class_idx": 17
+  },
+  "005203": {
+    "shot_idx": 4,
+    "class_idx": 17
+  },
+  "2009_004674": {
+    "shot_idx": 5,
+    "class_idx": 17
+  },
+  "2008_000470": {
+    "shot_idx": 1,
+    "class_idx": 18
+  },
+  "006499": {
+    "shot_idx": 2,
+    "class_idx": 18
+  },
+  "2008_005389": {
+    "shot_idx": 3,
+    "class_idx": 18
+  },
+  "2009_001300": {
+    "shot_idx": 4,
+    "class_idx": 18
+  },
+  "2011_001827": {
+    "shot_idx": 5,
+    "class_idx": 18
+  },
+  "009484": {
+    "shot_idx": 1,
+    "class_idx": 19
+  },
+  "2008_004097": {
+    "shot_idx": 2,
+    "class_idx": 19
+  },
+  "005454": {
+    "shot_idx": 3,
+    "class_idx": 19
+  },
+  "2010_002427": {
+    "shot_idx": 4,
+    "class_idx": 19
+  },
+  "2008_006887": {
+    "shot_idx": 5,
+    "class_idx": 19
+  },
+  "000000473075": {
+    "shot_idx": 1,
+    "class_idx": 30
+  },
+  "000000041649": {
+    "shot_idx": 2,
+    "class_idx": 30
+  },
+  "000000295377": {
+    "shot_idx": 3,
+    "class_idx": 30
+  },
+  "000000069008": {
+    "shot_idx": 4,
+    "class_idx": 30
+  },
+  "000000197605": {
+    "shot_idx": 5,
+    "class_idx": 30
+  },
+  "000000243283": {
+    "shot_idx": 1,
+    "class_idx": 27
+  },
+  "000000069009": {
+    "shot_idx": 2,
+    "class_idx": 27
+  },
+  "000000242290": {
+    "shot_idx": 3,
+    "class_idx": 27
+  },
+  "000000223573": {
+    "shot_idx": 4,
+    "class_idx": 27
+  },
+  "000000158326": {
+    "shot_idx": 5,
+    "class_idx": 27
+  },
+  "000000579081": {
+    "shot_idx": 1,
+    "class_idx": 25
+  },
+  "000000273932": {
+    "shot_idx": 2,
+    "class_idx": 25
+  },
+  "000000558246": {
+    "shot_idx": 3,
+    "class_idx": 25
+  },
+  "000000199555": {
+    "shot_idx": 4,
+    "class_idx": 25
+  },
+  "000000066505": {
+    "shot_idx": 5,
+    "class_idx": 25
+  },
+  "000000403190": {
+    "shot_idx": 1,
+    "class_idx": 26
+  },
+  "000000280911": {
+    "shot_idx": 2,
+    "class_idx": 26
+  },
+  "000000130970": {
+    "shot_idx": 3,
+    "class_idx": 26
+  },
+  "000000485769": {
+    "shot_idx": 4,
+    "class_idx": 26
+  },
+  "000000221685": {
+    "shot_idx": 5,
+    "class_idx": 26
+  },
+  "000000010256": {
+    "shot_idx": 1,
+    "class_idx": 22
+  },
+  "000000459218": {
+    "shot_idx": 2,
+    "class_idx": 22
+  },
+  "000000276853": {
+    "shot_idx": 3,
+    "class_idx": 22
+  },
+  "000000274593": {
+    "shot_idx": 4,
+    "class_idx": 22
+  },
+  "000000363654": {
+    "shot_idx": 5,
+    "class_idx": 22
+  },
+  "000000378723": {
+    "shot_idx": 1,
+    "class_idx": 29
+  },
+  "000000448145": {
+    "shot_idx": 2,
+    "class_idx": 29
+  },
+  "000000362247": {
+    "shot_idx": 3,
+    "class_idx": 29
+  },
+  "000000259489": {
+    "shot_idx": 4,
+    "class_idx": 29
+  },
+  "000000412868": {
+    "shot_idx": 5,
+    "class_idx": 29
+  },
+  "000000236239": {
+    "shot_idx": 1,
+    "class_idx": 32
+  },
+  "000000340771": {
+    "shot_idx": 2,
+    "class_idx": 32
+  },
+  "000000274266": {
+    "shot_idx": 3,
+    "class_idx": 32
+  },
+  "000000013202": {
+    "shot_idx": 4,
+    "class_idx": 32
+  },
+  "000000561382": {
+    "shot_idx": 5,
+    "class_idx": 32
+  },
+  "000000476120": {
+    "shot_idx": 1,
+    "class_idx": 35
+  },
+  "000000338971": {
+    "shot_idx": 2,
+    "class_idx": 35
+  },
+  "000000466665": {
+    "shot_idx": 3,
+    "class_idx": 35
+  },
+  "000000378604": {
+    "shot_idx": 4,
+    "class_idx": 35
+  },
+  "000000322325": {
+    "shot_idx": 5,
+    "class_idx": 35
+  },
+  "000000054229": {
+    "shot_idx": 1,
+    "class_idx": 36
+  },
+  "000000410805": {
+    "shot_idx": 2,
+    "class_idx": 36
+  },
+  "000000246245": {
+    "shot_idx": 3,
+    "class_idx": 36
+  },
+  "000000041988": {
+    "shot_idx": 4,
+    "class_idx": 36
+  },
+  "000000483446": {
+    "shot_idx": 5,
+    "class_idx": 36
+  },
+  "000000121997": {
+    "shot_idx": 1,
+    "class_idx": 24
+  },
+  "000000507830": {
+    "shot_idx": 2,
+    "class_idx": 24
+  },
+  "000000187025": {
+    "shot_idx": 3,
+    "class_idx": 24
+  },
+  "000000141842": {
+    "shot_idx": 4,
+    "class_idx": 24
+  },
+  "000000381811": {
+    "shot_idx": 5,
+    "class_idx": 24
+  },
+  "000000460035": {
+    "shot_idx": 1,
+    "class_idx": 39
+  },
+  "000000242210": {
+    "shot_idx": 2,
+    "class_idx": 39
+  },
+  "000000195317": {
+    "shot_idx": 3,
+    "class_idx": 39
+  },
+  "000000433420": {
+    "shot_idx": 4,
+    "class_idx": 39
+  },
+  "000000525660": {
+    "shot_idx": 5,
+    "class_idx": 39
+  },
+  "000000304095": {
+    "shot_idx": 1,
+    "class_idx": 38
+  },
+  "000000305464": {
+    "shot_idx": 2,
+    "class_idx": 38
+  },
+  "000000125955": {
+    "shot_idx": 3,
+    "class_idx": 38
+  },
+  "000000355622": {
+    "shot_idx": 4,
+    "class_idx": 38
+  },
+  "000000493375": {
+    "shot_idx": 5,
+    "class_idx": 38
+  },
+  "000000559645": {
+    "shot_idx": 1,
+    "class_idx": 23
+  },
+  "000000525050": {
+    "shot_idx": 2,
+    "class_idx": 23
+  },
+  "000000518303": {
+    "shot_idx": 3,
+    "class_idx": 23
+  },
+  "000000094842": {
+    "shot_idx": 4,
+    "class_idx": 23
+  },
+  "000000017751": {
+    "shot_idx": 5,
+    "class_idx": 23
+  },
+  "000000200221": {
+    "shot_idx": 1,
+    "class_idx": 34
+  },
+  "000000032403": {
+    "shot_idx": 2,
+    "class_idx": 34
+  },
+  "000000286482": {
+    "shot_idx": 3,
+    "class_idx": 34
+  },
+  "000000204525": {
+    "shot_idx": 4,
+    "class_idx": 34
+  },
+  "000000490178": {
+    "shot_idx": 5,
+    "class_idx": 34
+  },
+  "000000336793": {
+    "shot_idx": 1,
+    "class_idx": 33
+  },
+  "000000258869": {
+    "shot_idx": 2,
+    "class_idx": 33
+  },
+  "000000016009": {
+    "shot_idx": 3,
+    "class_idx": 33
+  },
+  "000000150100": {
+    "shot_idx": 4,
+    "class_idx": 33
+  },
+  "000000534516": {
+    "shot_idx": 5,
+    "class_idx": 33
+  },
+  "000000246478": {
+    "shot_idx": 1,
+    "class_idx": 37
+  },
+  "000000491579": {
+    "shot_idx": 2,
+    "class_idx": 37
+  },
+  "000000307379": {
+    "shot_idx": 3,
+    "class_idx": 37
+  },
+  "000000318677": {
+    "shot_idx": 4,
+    "class_idx": 37
+  },
+  "000000353398": {
+    "shot_idx": 5,
+    "class_idx": 37
+  },
+  "000000261071": {
+    "shot_idx": 1,
+    "class_idx": 21
+  },
+  "000000180515": {
+    "shot_idx": 2,
+    "class_idx": 21
+  },
+  "000000058089": {
+    "shot_idx": 3,
+    "class_idx": 21
+  },
+  "000000369576": {
+    "shot_idx": 4,
+    "class_idx": 21
+  },
+  "000000183771": {
+    "shot_idx": 5,
+    "class_idx": 21
+  },
+  "000000103791": {
+    "shot_idx": 1,
+    "class_idx": 20
+  },
+  "000000563711": {
+    "shot_idx": 2,
+    "class_idx": 20
+  },
+  "000000493251": {
+    "shot_idx": 3,
+    "class_idx": 20
+  },
+  "000000445893": {
+    "shot_idx": 4,
+    "class_idx": 20
+  },
+  "000000282431": {
+    "shot_idx": 5,
+    "class_idx": 20
+  },
+  "000000505421": {
+    "shot_idx": 1,
+    "class_idx": 31
+  },
+  "000000275977": {
+    "shot_idx": 2,
+    "class_idx": 31
+  },
+  "000000416750": {
+    "shot_idx": 3,
+    "class_idx": 31
+  },
+  "000000287364": {
+    "shot_idx": 4,
+    "class_idx": 31
+  },
+  "000000006074": {
+    "shot_idx": 5,
+    "class_idx": 31
+  },
+  "000000471534": {
+    "shot_idx": 1,
+    "class_idx": 28
+  },
+  "000000210042": {
+    "shot_idx": 2,
+    "class_idx": 28
+  },
+  "000000528129": {
+    "shot_idx": 3,
+    "class_idx": 28
+  },
+  "000000563679": {
+    "shot_idx": 4,
+    "class_idx": 28
+  },
+  "000000438810": {
+    "shot_idx": 5,
+    "class_idx": 28
+  },
+  "000000319155": {
+    "shot_idx": 1,
+    "class_idx": 51
+  },
+  "000000322847": {
+    "shot_idx": 2,
+    "class_idx": 51
+  },
+  "000000018336": {
+    "shot_idx": 3,
+    "class_idx": 51
+  },
+  "000000357108": {
+    "shot_idx": 4,
+    "class_idx": 51
+  },
+  "000000307734": {
+    "shot_idx": 5,
+    "class_idx": 51
+  },
+  "000000205461": {
+    "shot_idx": 1,
+    "class_idx": 50
+  },
+  "000000151671": {
+    "shot_idx": 2,
+    "class_idx": 50
+  },
+  "000000084610": {
+    "shot_idx": 3,
+    "class_idx": 50
+  },
+  "000000371683": {
+    "shot_idx": 4,
+    "class_idx": 50
+  },
+  "000000117094": {
+    "shot_idx": 5,
+    "class_idx": 50
+  },
+  "000000081079": {
+    "shot_idx": 1,
+    "class_idx": 45
+  },
+  "000000441850": {
+    "shot_idx": 2,
+    "class_idx": 45
+  },
+  "000000354791": {
+    "shot_idx": 3,
+    "class_idx": 45
+  },
+  "000000198202": {
+    "shot_idx": 4,
+    "class_idx": 45
+  },
+  "000000555538": {
+    "shot_idx": 5,
+    "class_idx": 45
+  },
+  "000000410143": {
+    "shot_idx": 1,
+    "class_idx": 46
+  },
+  "000000010644": {
+    "shot_idx": 2,
+    "class_idx": 46
+  },
+  "000000399790": {
+    "shot_idx": 3,
+    "class_idx": 46
+  },
+  "000000410981": {
+    "shot_idx": 4,
+    "class_idx": 46
+  },
+  "000000463649": {
+    "shot_idx": 5,
+    "class_idx": 46
+  },
+  "000000508489": {
+    "shot_idx": 1,
+    "class_idx": 54
+  },
+  "000000322911": {
+    "shot_idx": 2,
+    "class_idx": 54
+  },
+  "000000083161": {
+    "shot_idx": 3,
+    "class_idx": 54
+  },
+  "000000104756": {
+    "shot_idx": 4,
+    "class_idx": 54
+  },
+  "000000147256": {
+    "shot_idx": 5,
+    "class_idx": 54
+  },
+  "000000177306": {
+    "shot_idx": 1,
+    "class_idx": 59
+  },
+  "000000215847": {
+    "shot_idx": 2,
+    "class_idx": 59
+  },
+  "000000169660": {
+    "shot_idx": 3,
+    "class_idx": 59
+  },
+  "000000298464": {
+    "shot_idx": 4,
+    "class_idx": 59
+  },
+  "000000173211": {
+    "shot_idx": 5,
+    "class_idx": 59
+  },
+  "000000091543": {
+    "shot_idx": 1,
+    "class_idx": 55
+  },
+  "000000406263": {
+    "shot_idx": 2,
+    "class_idx": 55
+  },
+  "000000079792": {
+    "shot_idx": 3,
+    "class_idx": 55
+  },
+  "000000262325": {
+    "shot_idx": 4,
+    "class_idx": 55
+  },
+  "000000341628": {
+    "shot_idx": 5,
+    "class_idx": 55
+  },
+  "000000574066": {
+    "shot_idx": 1,
+    "class_idx": 58
+  },
+  "000000312536": {
+    "shot_idx": 2,
+    "class_idx": 58
+  },
+  "000000341246": {
+    "shot_idx": 3,
+    "class_idx": 58
+  },
+  "000000410979": {
+    "shot_idx": 4,
+    "class_idx": 58
+  },
+  "000000055434": {
+    "shot_idx": 5,
+    "class_idx": 58
+  },
+  "000000441777": {
+    "shot_idx": 1,
+    "class_idx": 40
+  },
+  "000000256569": {
+    "shot_idx": 2,
+    "class_idx": 40
+  },
+  "000000511121": {
+    "shot_idx": 3,
+    "class_idx": 40
+  },
+  "000000058157": {
+    "shot_idx": 4,
+    "class_idx": 40
+  },
+  "000000250868": {
+    "shot_idx": 5,
+    "class_idx": 40
+  },
+  "000000471013": {
+    "shot_idx": 1,
+    "class_idx": 56
+  },
+  "000000276064": {
+    "shot_idx": 2,
+    "class_idx": 56
+  },
+  "000000039009": {
+    "shot_idx": 3,
+    "class_idx": 56
+  },
+  "000000534274": {
+    "shot_idx": 4,
+    "class_idx": 56
+  },
+  "000000043697": {
+    "shot_idx": 5,
+    "class_idx": 56
+  },
+  "000000112358": {
+    "shot_idx": 1,
+    "class_idx": 44
+  },
+  "000000361334": {
+    "shot_idx": 2,
+    "class_idx": 44
+  },
+  "000000201488": {
+    "shot_idx": 3,
+    "class_idx": 44
+  },
+  "000000162558": {
+    "shot_idx": 4,
+    "class_idx": 44
+  },
+  "000000248024": {
+    "shot_idx": 5,
+    "class_idx": 44
+  },
+  "000000326477": {
+    "shot_idx": 1,
+    "class_idx": 53
+  },
+  "000000395221": {
+    "shot_idx": 2,
+    "class_idx": 53
+  },
+  "000000576695": {
+    "shot_idx": 3,
+    "class_idx": 53
+  },
+  "000000490578": {
+    "shot_idx": 4,
+    "class_idx": 53
+  },
+  "000000325548": {
+    "shot_idx": 5,
+    "class_idx": 53
+  },
+  "000000260668": {
+    "shot_idx": 1,
+    "class_idx": 57
+  },
+  "000000426086": {
+    "shot_idx": 2,
+    "class_idx": 57
+  },
+  "000000458228": {
+    "shot_idx": 3,
+    "class_idx": 57
+  },
+  "000000156604": {
+    "shot_idx": 4,
+    "class_idx": 57
+  },
+  "000000427603": {
+    "shot_idx": 5,
+    "class_idx": 57
+  },
+  "000000160000": {
+    "shot_idx": 1,
+    "class_idx": 52
+  },
+  "000000434496": {
+    "shot_idx": 2,
+    "class_idx": 52
+  },
+  "000000135539": {
+    "shot_idx": 3,
+    "class_idx": 52
+  },
+  "000000117170": {
+    "shot_idx": 4,
+    "class_idx": 52
+  },
+  "000000327921": {
+    "shot_idx": 5,
+    "class_idx": 52
+  },
+  "000000392166": {
+    "shot_idx": 1,
+    "class_idx": 47
+  },
+  "000000295773": {
+    "shot_idx": 2,
+    "class_idx": 47
+  },
+  "000000426855": {
+    "shot_idx": 3,
+    "class_idx": 47
+  },
+  "000000336766": {
+    "shot_idx": 4,
+    "class_idx": 47
+  },
+  "000000499951": {
+    "shot_idx": 5,
+    "class_idx": 47
+  },
+  "000000118606": {
+    "shot_idx": 1,
+    "class_idx": 41
+  },
+  "000000193385": {
+    "shot_idx": 2,
+    "class_idx": 41
+  },
+  "000000344399": {
+    "shot_idx": 3,
+    "class_idx": 41
+  },
+  "000000447103": {
+    "shot_idx": 4,
+    "class_idx": 41
+  },
+  "000000116181": {
+    "shot_idx": 5,
+    "class_idx": 41
+  },
+  "000000415131": {
+    "shot_idx": 1,
+    "class_idx": 42
+  },
+  "000000125374": {
+    "shot_idx": 2,
+    "class_idx": 42
+  },
+  "000000525085": {
+    "shot_idx": 3,
+    "class_idx": 42
+  },
+  "000000228659": {
+    "shot_idx": 4,
+    "class_idx": 42
+  },
+  "000000400264": {
+    "shot_idx": 5,
+    "class_idx": 42
+  },
+  "000000100865": {
+    "shot_idx": 1,
+    "class_idx": 43
+  },
+  "000000166047": {
+    "shot_idx": 2,
+    "class_idx": 43
+  },
+  "000000405210": {
+    "shot_idx": 3,
+    "class_idx": 43
+  },
+  "000000138368": {
+    "shot_idx": 4,
+    "class_idx": 43
+  },
+  "000000443564": {
+    "shot_idx": 5,
+    "class_idx": 43
+  },
+  "000000400829": {
+    "shot_idx": 1,
+    "class_idx": 48
+  },
+  "000000387210": {
+    "shot_idx": 2,
+    "class_idx": 48
+  },
+  "000000195418": {
+    "shot_idx": 3,
+    "class_idx": 48
+  },
+  "000000296135": {
+    "shot_idx": 4,
+    "class_idx": 48
+  },
+  "000000225126": {
+    "shot_idx": 5,
+    "class_idx": 48
+  },
+  "000000070020": {
+    "shot_idx": 1,
+    "class_idx": 49
+  },
+  "000000228297": {
+    "shot_idx": 2,
+    "class_idx": 49
+  },
+  "000000189491": {
+    "shot_idx": 3,
+    "class_idx": 49
+  },
+  "000000267210": {
+    "shot_idx": 4,
+    "class_idx": 49
+  },
+  "000000494860": {
+    "shot_idx": 5,
+    "class_idx": 49
+  },
+  "000000014575": {
+    "shot_idx": 1,
+    "class_idx": 60
+  },
+  "000000382356": {
+    "shot_idx": 2,
+    "class_idx": 60
+  },
+  "000000566046": {
+    "shot_idx": 3,
+    "class_idx": 60
+  },
+  "000000299773": {
+    "shot_idx": 4,
+    "class_idx": 60
+  },
+  "000000100798": {
+    "shot_idx": 5,
+    "class_idx": 60
+  },
+  "000000534252": {
+    "shot_idx": 1,
+    "class_idx": 67
+  },
+  "000000298304": {
+    "shot_idx": 2,
+    "class_idx": 67
+  },
+  "000000580781": {
+    "shot_idx": 3,
+    "class_idx": 67
+  },
+  "000000310897": {
+    "shot_idx": 4,
+    "class_idx": 67
+  },
+  "000000443797": {
+    "shot_idx": 5,
+    "class_idx": 67
+  },
+  "000000297444": {
+    "shot_idx": 1,
+    "class_idx": 79
+  },
+  "000000268682": {
+    "shot_idx": 2,
+    "class_idx": 79
+  },
+  "000000230220": {
+    "shot_idx": 3,
+    "class_idx": 79
+  },
+  "000000354936": {
+    "shot_idx": 4,
+    "class_idx": 79
+  },
+  "000000453366": {
+    "shot_idx": 5,
+    "class_idx": 79
+  },
+  "000000085322": {
+    "shot_idx": 1,
+    "class_idx": 66
+  },
+  "000000065011": {
+    "shot_idx": 2,
+    "class_idx": 66
+  },
+  "000000031983": {
+    "shot_idx": 3,
+    "class_idx": 66
+  },
+  "000000000661": {
+    "shot_idx": 4,
+    "class_idx": 66
+  },
+  "000000058511": {
+    "shot_idx": 5,
+    "class_idx": 66
+  },
+  "000000430287": {
+    "shot_idx": 1,
+    "class_idx": 68
+  },
+  "000000027873": {
+    "shot_idx": 2,
+    "class_idx": 68
+  },
+  "000000041246": {
+    "shot_idx": 3,
+    "class_idx": 68
+  },
+  "000000540103": {
+    "shot_idx": 4,
+    "class_idx": 68
+  },
+  "000000071972": {
+    "shot_idx": 5,
+    "class_idx": 68
+  },
+  "000000121857": {
+    "shot_idx": 1,
+    "class_idx": 75
+  },
+  "000000002559": {
+    "shot_idx": 2,
+    "class_idx": 75
+  },
+  "000000012422": {
+    "shot_idx": 3,
+    "class_idx": 75
+  },
+  "000000562735": {
+    "shot_idx": 4,
+    "class_idx": 75
+  },
+  "000000459723": {
+    "shot_idx": 5,
+    "class_idx": 75
+  },
+  "000000412992": {
+    "shot_idx": 1,
+    "class_idx": 76
+  },
+  "000000319283": {
+    "shot_idx": 2,
+    "class_idx": 76
+  },
+  "000000039758": {
+    "shot_idx": 3,
+    "class_idx": 76
+  },
+  "000000418611": {
+    "shot_idx": 4,
+    "class_idx": 76
+  },
+  "000000576517": {
+    "shot_idx": 5,
+    "class_idx": 76
+  },
+  "000000565198": {
+    "shot_idx": 1,
+    "class_idx": 72
+  },
+  "000000117759": {
+    "shot_idx": 2,
+    "class_idx": 72
+  },
+  "000000484884": {
+    "shot_idx": 3,
+    "class_idx": 72
+  },
+  "000000554749": {
+    "shot_idx": 4,
+    "class_idx": 72
+  },
+  "000000049190": {
+    "shot_idx": 5,
+    "class_idx": 72
+  },
+  "000000126956": {
+    "shot_idx": 1,
+    "class_idx": 65
+  },
+  "000000260111": {
+    "shot_idx": 2,
+    "class_idx": 65
+  },
+  "000000406242": {
+    "shot_idx": 3,
+    "class_idx": 65
+  },
+  "000000283028": {
+    "shot_idx": 4,
+    "class_idx": 65
+  },
+  "000000299463": {
+    "shot_idx": 5,
+    "class_idx": 65
+  },
+  "000000495438": {
+    "shot_idx": 1,
+    "class_idx": 77
+  },
+  "000000356068": {
+    "shot_idx": 2,
+    "class_idx": 77
+  },
+  "000000415871": {
+    "shot_idx": 3,
+    "class_idx": 77
+  },
+  "000000164553": {
+    "shot_idx": 4,
+    "class_idx": 77
+  },
+  "000000082813": {
+    "shot_idx": 5,
+    "class_idx": 77
+  },
+  "000000388381": {
+    "shot_idx": 1,
+    "class_idx": 62
+  },
+  "000000526467": {
+    "shot_idx": 2,
+    "class_idx": 62
+  },
+  "000000054723": {
+    "shot_idx": 3,
+    "class_idx": 62
+  },
+  "000000473137": {
+    "shot_idx": 4,
+    "class_idx": 62
+  },
+  "000000369167": {
+    "shot_idx": 5,
+    "class_idx": 62
+  },
+  "000000375437": {
+    "shot_idx": 1,
+    "class_idx": 63
+  },
+  "000000304815": {
+    "shot_idx": 2,
+    "class_idx": 63
+  },
+  "000000540926": {
+    "shot_idx": 3,
+    "class_idx": 63
+  },
+  "000000411727": {
+    "shot_idx": 4,
+    "class_idx": 63
+  },
+  "000000291245": {
+    "shot_idx": 5,
+    "class_idx": 63
+  },
+  "000000514930": {
+    "shot_idx": 1,
+    "class_idx": 64
+  },
+  "000000188948": {
+    "shot_idx": 2,
+    "class_idx": 64
+  },
+  "000000097579": {
+    "shot_idx": 3,
+    "class_idx": 64
+  },
+  "000000382309": {
+    "shot_idx": 4,
+    "class_idx": 64
+  },
+  "000000177762": {
+    "shot_idx": 5,
+    "class_idx": 64
+  },
+  "000000298405": {
+    "shot_idx": 1,
+    "class_idx": 70
+  },
+  "000000092092": {
+    "shot_idx": 2,
+    "class_idx": 70
+  },
+  "000000576939": {
+    "shot_idx": 3,
+    "class_idx": 70
+  },
+  "000000517936": {
+    "shot_idx": 4,
+    "class_idx": 70
+  },
+  "000000303485": {
+    "shot_idx": 5,
+    "class_idx": 70
+  },
+  "000000337416": {
+    "shot_idx": 1,
+    "class_idx": 78
+  },
+  "000000288229": {
+    "shot_idx": 2,
+    "class_idx": 78
+  },
+  "000000202944": {
+    "shot_idx": 3,
+    "class_idx": 78
+  },
+  "000000530729": {
+    "shot_idx": 4,
+    "class_idx": 78
+  },
+  "000000200291": {
+    "shot_idx": 5,
+    "class_idx": 78
+  },
+  "000000386540": {
+    "shot_idx": 1,
+    "class_idx": 71
+  },
+  "000000559221": {
+    "shot_idx": 2,
+    "class_idx": 71
+  },
+  "000000507946": {
+    "shot_idx": 3,
+    "class_idx": 71
+  },
+  "000000360178": {
+    "shot_idx": 4,
+    "class_idx": 71
+  },
+  "000000267284": {
+    "shot_idx": 5,
+    "class_idx": 71
+  },
+  "000000455365": {
+    "shot_idx": 1,
+    "class_idx": 61
+  },
+  "000000292910": {
+    "shot_idx": 2,
+    "class_idx": 61
+  },
+  "000000363630": {
+    "shot_idx": 3,
+    "class_idx": 61
+  },
+  "000000281017": {
+    "shot_idx": 4,
+    "class_idx": 61
+  },
+  "000000373193": {
+    "shot_idx": 5,
+    "class_idx": 61
+  },
+  "000000338281": {
+    "shot_idx": 1,
+    "class_idx": 73
+  },
+  "000000361815": {
+    "shot_idx": 2,
+    "class_idx": 73
+  },
+  "000000214309": {
+    "shot_idx": 3,
+    "class_idx": 73
+  },
+  "000000391678": {
+    "shot_idx": 4,
+    "class_idx": 73
+  },
+  "000000366867": {
+    "shot_idx": 5,
+    "class_idx": 73
+  },
+  "000000415015": {
+    "shot_idx": 1,
+    "class_idx": 69
+  },
+  "000000447738": {
+    "shot_idx": 2,
+    "class_idx": 69
+  },
+  "000000380299": {
+    "shot_idx": 3,
+    "class_idx": 69
+  },
+  "000000565715": {
+    "shot_idx": 4,
+    "class_idx": 69
+  },
+  "000000349560": {
+    "shot_idx": 5,
+    "class_idx": 69
+  },
+  "000000404292": {
+    "shot_idx": 1,
+    "class_idx": 74
+  },
+  "000000236512": {
+    "shot_idx": 2,
+    "class_idx": 74
+  },
+  "000000457050": {
+    "shot_idx": 3,
+    "class_idx": 74
+  },
+  "000000043742": {
+    "shot_idx": 4,
+    "class_idx": 74
+  },
+  "000000381332": {
+    "shot_idx": 5,
+    "class_idx": 74
+  }
+}
