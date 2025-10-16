@@ -8,7 +8,7 @@ from PowerPaint.pipeline.pipeline_PowerPaint import StableDiffusionInpaintPipeli
 from PowerPaint.pipeline.pipeline_PowerPaint_ControlNet import StableDiffusionControlNetInpaintPipeline as controlnetPipeline
 from PIL import Image, ImageFilter
 from diffusers.pipelines.controlnet.pipeline_controlnet import ControlNetModel
-from safetensors.torch import load_model
+from safetensors.torch import load_model, load_file
 
 
 def getControlNet(stable_diffusion_name:str, controlnet_name: str, device:str):
@@ -56,22 +56,17 @@ def getPowerPaint(stable_inpaint_name:str, stable_diffusion_name:str,
     #load_model(pipe.unet, unet_name)
     #load_model(pipe.text_encoder, text_encoder_name)
     # 아래처럼 수정
-    from safetensors.torch import load_file
+    # UNet 로딩 - strict=False
+    print(f"Loading UNet from {unet_name}")
+    unet_state_dict = load_file(unet_name)
+    pipe.unet.load_state_dict(unet_state_dict, strict=False)
+    print("✓ UNet loaded")
 
-    # UNet 로딩
-    load_model(pipe.unet, unet_name)
-
-    # Text Encoder 로딩 - strict=False 추가
-    try:
-        state_dict = load_file(text_encoder_name)
-        missing_keys, unexpected_keys = pipe.text_encoder.load_state_dict(state_dict, strict=False)
-        if missing_keys:
-            print(f"Missing keys in text_encoder: {missing_keys}")
-        if unexpected_keys:
-            print(f"Unexpected keys in text_encoder: {unexpected_keys}")
-    except Exception as e:
-        print(f"Warning: Could not load all text_encoder weights: {e}")
-    return pipe
+    # Text Encoder 로딩 - strict=False
+    print(f"Loading Text Encoder from {text_encoder_name}")
+    text_encoder_state_dict = load_file(text_encoder_name)
+    pipe.text_encoder.load_state_dict(text_encoder_state_dict, strict=False)
+    print("✓ Text Encoder loaded")
 
 
 def getPowerPaint_ControlNet(stable_inpaint_name:str, stable_diffusion_name:str, device='cpu'):
