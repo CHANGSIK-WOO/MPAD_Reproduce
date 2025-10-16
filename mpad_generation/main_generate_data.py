@@ -54,7 +54,7 @@ from utils.metadata import (
     stable_inpaint_path,
     stable_diffusion_path,
     feature_dir,
-    dataset_path,
+    #dataset_path,
     text_encoder_path,
     unet_path,
 )
