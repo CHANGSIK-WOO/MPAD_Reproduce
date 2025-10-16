@@ -54,9 +54,23 @@ def getPowerPaint(stable_inpaint_name:str, stable_diffusion_name:str,
         initialize_tokens=['a', 'a', 'a'],
         num_vectors_per_token=10)
     #load_model(pipe.unet, unet_name)
-    print(type(pipe))
-    print(pipe.unet.config.sample_size, pipe.unet.config.in_channels, pipe.unet.config.out_channels)
-    load_model(pipe.text_encoder, text_encoder_name)
+    #load_model(pipe.text_encoder, text_encoder_name)
+    # 아래처럼 수정
+    from safetensors.torch import load_file
+
+    # UNet 로딩
+    load_model(pipe.unet, unet_name)
+
+    # Text Encoder 로딩 - strict=False 추가
+    try:
+        state_dict = load_file(text_encoder_name)
+        missing_keys, unexpected_keys = pipe.text_encoder.load_state_dict(state_dict, strict=False)
+        if missing_keys:
+            print(f"Missing keys in text_encoder: {missing_keys}")
+        if unexpected_keys:
+            print(f"Unexpected keys in text_encoder: {unexpected_keys}")
+    except Exception as e:
+        print(f"Warning: Could not load all text_encoder weights: {e}")
     return pipe
 
 
