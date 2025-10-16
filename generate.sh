@@ -3,6 +3,7 @@ GENERATIVE_DATA_PATH=datasets/coco/
 sid=1
 NUM_INS=10
 python mpad_generation/main_generate_data.py --gendata-folder ${GENERATIVE_DATA_PATH} \
+    --bg-rand \
     --bg-clutter \
     --bg-sim \
     --fg-rand \

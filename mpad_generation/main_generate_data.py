@@ -400,12 +400,7 @@ if __name__ == "__main__":
     ]
     #COCO_DATASET = ("coco14_trainval_base", "coco/trainval2014", "cocosplit/datasplit/trainvalno5k.json")
     # (id_dataset, name, dirname, split)
-    COCO_DATASET = [
-        (1, 'FS_OWODB', "coco", "t1"),
-        (2, 'FS_OWODB', "coco", "t2"),
-        (3, 'FS_OWODB', "coco", "t3"),
-        (4, 'FS_OWODB', "coco", "t4"),
-    ]
+
 
     dicts = {}
 
@@ -447,6 +442,20 @@ if __name__ == "__main__":
         # dicts['meta_VOC_info'] = {1: meta_VOC_info_1,
         #                 2: meta_VOC_info_2,
         #                 3: meta_VOC_info_3}[sid]
+        if sid == 1:
+            COCO_DATASET = [(1, 'FS_OWODB', "coco", "t1")]
+        elif sid == 2:
+            COCO_DATASET = [(1, 'FS_OWODB', "coco", "t1"),
+                            (2, 'FS_OWODB', "coco", "t2")]
+        elif sid == 3:
+            COCO_DATASET = [(1, 'FS_OWODB', "coco", "t1"),
+                            (2, 'FS_OWODB', "coco", "t2"),
+                            (3, 'FS_OWODB', "coco", "t3")]
+        elif sid == 4:
+            COCO_DATASET = [(1, 'FS_OWODB', "coco", "t1"),
+                            (2, 'FS_OWODB', "coco", "t2"),
+                            (3, 'FS_OWODB', "coco", "t3"),
+                            (4, 'FS_OWODB', "coco", "t4")]
 
         for id_dataset, name, dirname, split in COCO_DATASET:
             tic = time()
