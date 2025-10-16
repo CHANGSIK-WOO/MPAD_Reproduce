@@ -53,7 +53,9 @@ def getPowerPaint(stable_inpaint_name:str, stable_diffusion_name:str,
         placeholder_tokens=['P_ctxt', 'P_shape', 'P_obj'],
         initialize_tokens=['a', 'a', 'a'],
         num_vectors_per_token=10)
-    load_model(pipe.unet, unet_name)
+    #load_model(pipe.unet, unet_name)
+    print(type(pipe))
+    print(pipe.unet.config.sample_size, pipe.unet.config.in_channels, pipe.unet.config.out_channels)
     load_model(pipe.text_encoder, text_encoder_name)
     return pipe
 

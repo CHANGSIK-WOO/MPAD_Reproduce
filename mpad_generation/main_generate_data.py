@@ -48,6 +48,7 @@ from utils.metadata import (
     coco2voc,
     voc2coco,
     COCO_NOVEL_CATEGORIES,
+    COCO_BASE_CATEGORIES,
     COCO_CATEGORIES,
     voc_fine_grained_classes,
     coco_fine_grained_classes,
@@ -116,10 +117,10 @@ def run_inference_background(rank, world_size, dicts):
     mix_up_alpha = dicts['mix-up-alpha']
     momemtum = dicts['momemtum']
 
-    id2name, name2id = {}, {}
-    if is_coco:
-        id2name = {i['id']: i['name'] for i in COCO_CATEGORIES}
-        name2id = {i['name']: i['id'] for i in COCO_CATEGORIES}
+    # id2name, name2id = {}, {}
+    # if is_coco:
+    #     id2name = {i['id']: i['name'] for i in COCO_CATEGORIES}
+    #     name2id = {i['name']: i['id'] for i in COCO_CATEGORIES}
 
     list_novel_classes = []
     global_dataset = []
@@ -173,8 +174,8 @@ def run_inference_background(rank, world_size, dicts):
 
             if fg_sim and random.uniform(0, 1) < dicts['foreground_similarity']['p']:
                 temp_base_class = base_cls
-                if is_coco:
-                    temp_base_class = id2name[base_cls]
+                # if is_coco:
+                #     temp_base_class = id2name[base_cls]
 
                 novel_prompt, _ = prompt_func(novel_cls,
                                               dicts['foreground_fine_grained']['p'],
@@ -220,44 +221,66 @@ def run_inference_background(rank, world_size, dicts):
             output_image.save(Output_Images + image_name)
 
             if is_coco:
-                # handle coco annotation saving here
-                for iter_annotation, old_obj in enumerate(dict_input_data[i]['annotations']):
-                    obj = deepcopy(old_obj)
-                    o_bbox = process_obj[2]  # Get bounding box
+                init_xml_path = dict_input_data[i]['anno_file']
 
+                tree = ET.parse(init_xml_path)
+                root = tree.getroot()
+                for child in root:
+                    if child.tag == 'filename':
+                        child.text = image_name
+                for iter_annotation, obj in enumerate(root.findall("object")):
+                    o_bbox = process_obj[2]
                     if iter_process == iter_annotation:
-                        final_bbox = convert_bbox_xyxy_to_xywh(o_bbox)
+                        obj.find("name").text = process_obj[1]
+                        bndbox = obj.find("bndbox")
+                        bndbox.find('xmin').text = str(o_bbox[0])
+                        bndbox.find('ymin').text = str(o_bbox[1])
+                        bndbox.find('xmax').text = str(o_bbox[2])
+                        bndbox.find('ymax').text = str(o_bbox[3])
+                        ET.SubElement(obj, 'Text_prompt', pA=pA, pB=pB, pname=obj.find("name").text)
+                        ET.SubElement(obj, 'all_name', all_class=process_obj[0] + "_" + process_obj[1])
 
-                        category_ids = [name2id[voc2coco.get(process_obj[0], process_obj[0])], \
-                                        name2id[
-                                            voc2coco.get(process_obj[1], process_obj[1])]]  # Set name of new classes
-                        if check_negative_bbox(final_bbox):
-                            continue
-
-                        saved_annotations.append({
-                            "id": int('98' + str(obj['id']) + str(New_Index)),
-                            "image_id": New_Index_Img,
-                            "iscrowd": False,
-                            "bbox": final_bbox,
-                            "category_id": category_ids[-1],
-                            "all_category_id": ' '.join(map(str, category_ids)),
-                            "pA": pA,
-                            "pB": pB,
-                            "pname": id2name[obj['category_id']],
-                        })
-                    elif not check_iou(o_bbox, obj['bbox']):
-                        obj.update({
-                            "image_id": New_Index_Img,
-                            "id": int(str(obj['id']) + str(New_Index)),
-                            "bbox": convert_bbox_xyxy_to_xywh(obj['bbox'])
-                        })
-                        saved_annotations.append(obj)
-                saved_images.append({
-                    'id': New_Index_Img,
-                    'file_name': image_name,
-                    'width': output_image.size[0],
-                    'height': output_image.size[1],
-                })
+                ET.ElementTree(root).write(Output_Annotations + image_name.replace(".jpg", ".xml"),
+                                           encoding='utf-8', xml_declaration=False)
+                Log_Edited_Image[New_Index] = pA + "_" + pB + image_path_list[i]
+                # # handle coco annotation saving here
+                # for iter_annotation, old_obj in enumerate(dict_input_data[i]['annotations']):
+                #     obj = deepcopy(old_obj)
+                #     o_bbox = process_obj[2]  # Get bounding box
+                #
+                #     if iter_process == iter_annotation:
+                #         final_bbox = convert_bbox_xyxy_to_xywh(o_bbox)
+                #
+                #         category_ids = [name2id[voc2coco.get(process_obj[0], process_obj[0])], \
+                #                         name2id[
+                #                             voc2coco.get(process_obj[1], process_obj[1])]]  # Set name of new classes
+                #         if check_negative_bbox(final_bbox):
+                #             continue
+                #
+                #         saved_annotations.append({
+                #             "id": int('98' + str(obj['id']) + str(New_Index)),
+                #             "image_id": New_Index_Img,
+                #             "iscrowd": False,
+                #             "bbox": final_bbox,
+                #             "category_id": category_ids[-1],
+                #             "all_category_id": ' '.join(map(str, category_ids)),
+                #             "pA": pA,
+                #             "pB": pB,
+                #             "pname": id2name[obj['category_id']],
+                #         })
+                #     elif not check_iou(o_bbox, obj['bbox']):
+                #         obj.update({
+                #             "image_id": New_Index_Img,
+                #             "id": int(str(obj['id']) + str(New_Index)),
+                #             "bbox": convert_bbox_xyxy_to_xywh(obj['bbox'])
+                #         })
+                #         saved_annotations.append(obj)
+                # saved_images.append({
+                #     'id': New_Index_Img,
+                #     'file_name': image_name,
+                #     'width': output_image.size[0],
+                #     'height': output_image.size[1],
+                # })
             else:
                 init_xml_path = dict_input_data[i]['anno_file']
 
@@ -282,36 +305,37 @@ def run_inference_background(rank, world_size, dicts):
                                            encoding='utf-8', xml_declaration=False)
                 Log_Edited_Image[New_Index] = pA + "_" + pB + image_path_list[i]
 
-    if is_coco:
-        # save data for coco dataset
 
-        synthesis_dataset = {
-            'images': saved_images,
-            'annotations': saved_annotations,
-        }
-        # check stats:
-        stas = []
-        id2class = {i['id']: i['name'] for i in COCO_NOVEL_CATEGORIES}
-        for obj in saved_annotations:
-            class_id = int(obj['category_id'].split(' ')[-1]) if isinstance(obj['category_id'], str) else obj[
-                'category_id']
-            if class_id in id2name.keys():
-                stas.append(id2name[class_id])
-
-        print('Global classes', Counter(stas))
-        print('Sum counter(stas)', sum(Counter(stas).values()))
-
-        # saved_annotations
-        # for i in saved_images:
-        #     for val in i.values():
-        #         if type(val).__module__ == np.__name__:
-        #             val = val.tolist()
-
-        # for i in saved_annotations:
-        #     for val in i.values():
-        #         if type(val).__module__ == np.__name__:
-        #             val = val.tolist()
-        torch.save(synthesis_dataset, os.path.join(Output_Annotations, f'data_{rank}.pt'))
+    # if is_coco:
+    #     # save data for coco dataset
+    #
+    #     synthesis_dataset = {
+    #         'images': saved_images,
+    #         'annotations': saved_annotations,
+    #     }
+    #     # check stats:
+    #     stas = []
+    #     id2class = {i['id']: i['name'] for i in COCO_NOVEL_CATEGORIES}
+    #     for obj in saved_annotations:
+    #         class_id = int(obj['category_id'].split(' ')[-1]) if isinstance(obj['category_id'], str) else obj[
+    #             'category_id']
+    #         if class_id in id2name.keys():
+    #             stas.append(id2name[class_id])
+    #
+    #     print('Global classes', Counter(stas))
+    #     print('Sum counter(stas)', sum(Counter(stas).values()))
+    #
+    #     # saved_annotations
+    #     # for i in saved_images:
+    #     #     for val in i.values():
+    #     #         if type(val).__module__ == np.__name__:
+    #     #             val = val.tolist()
+    #
+    #     # for i in saved_annotations:
+    #     #     for val in i.values():
+    #     #         if type(val).__module__ == np.__name__:
+    #     #             val = val.tolist()
+    #     torch.save(synthesis_dataset, os.path.join(Output_Annotations, f'data_{rank}.pt'))
 
 
 def default_argument_parser():
@@ -374,7 +398,14 @@ if __name__ == "__main__":
         (0, 'voc_2007_trainval', "VOC2007", "trainval"),
         (1, 'voc_2012_trainval', "VOC2012", "trainval"),
     ]
-    COCO_DATASET = ("coco14_trainval_base", "coco/trainval2014", "cocosplit/datasplit/trainvalno5k.json")
+    #COCO_DATASET = ("coco14_trainval_base", "coco/trainval2014", "cocosplit/datasplit/trainvalno5k.json")
+    # (id_dataset, name, dirname, split)
+    COCO_DATASET = [
+        (1, 'FS_OWODB', "coco", "t1"),
+        (2, 'FS_OWODB', "coco", "t2"),
+        (3, 'FS_OWODB', "coco", "t3"),
+        (4, 'FS_OWODB', "coco", "t4"),
+    ]
 
     dicts = {}
 
@@ -411,28 +442,59 @@ if __name__ == "__main__":
 
     if is_coco:
 
-        novel_classes = [
-            k["name"] for k in COCO_NOVEL_CATEGORIES if k["isthing"] == 1
-        ]
+        novel_classes = COCO_NOVEL_CATEGORIES[sid]
+        base_classes = COCO_BASE_CATEGORIES[sid]
+        # dicts['meta_VOC_info'] = {1: meta_VOC_info_1,
+        #                 2: meta_VOC_info_2,
+        #                 3: meta_VOC_info_3}[sid]
 
-        base_classes = [
-            k for k in COCO_CATEGORIES if k["isthing"] == 1 and k["name"] not in novel_classes
-        ]
-        name, dirname, json = COCO_DATASET
-        dataset, choose_id = load_coco_json(os.path.join(dataset_path, json), \
-                                            os.path.join(dataset_path, dirname), COCO_NOVEL_CATEGORIES,
-                                            max_instance=None)
+        for id_dataset, name, dirname, split in COCO_DATASET:
+            tic = time()
+            data, removed_id, choose_id = load_filtered_voc_instances(name, os.path.join(dataset_path, dirname), split,
+                                                                      base_classes,
+                                                                      max_instance=None)  # choose base Images
 
-        name = 'coco'
-        Name_Base = "Base_{}_{}_tensor.pt"  # 5000
-        Name_Base = "Base_all_{}_{}_tensor.pt"
+            ### get base feature and entropy
 
-        feature = torch.load(os.path.join(feature_dir, Name_Base.format('feature', name.lower())))
-        entropy = torch.load(os.path.join(feature_dir, Name_Base.format('entropy', name.lower())))
+            # Name_Base = "Base_all_{}_{}_tensor_vit.pt"
+            # # Name_Base = "Base_all_{}_{}_tensor_resnet.pt" # resnet101
+            # # Name_Base = "Base_all_{}_{}_tensor_resnet50.pt"
+            # entropy = torch.load(os.path.join(feature_dir, Name_Base.format('entropy', dirname.lower())))[choose_id]
+            #
+            # Name_Base = "Base_all_{}_{}_tensor.pt"
+            # print(os.path.join(feature_dir, Name_Base.format('feature', dirname.lower())))
+            # feature = torch.load(os.path.join(feature_dir, Name_Base.format('feature', dirname.lower())))
+            #
+            # feature = get_features(feature, in_features=in_features)[choose_id]
+            # base_feature.append(feature)
+            # base_entropy.append(entropy)
+            #
+            # dataset.extend(data)
+            # print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id),
+            #                                                                     time() - tic))
 
-        feature = get_features(feature, in_features=in_features)
-        base_feature.append(feature)
-        base_entropy.append(entropy)
+        # novel_classes = [
+        #     k["name"] for k in COCO_NOVEL_CATEGORIES if k["isthing"] == 1
+        # ]
+        #
+        # base_classes = [
+        #     k for k in COCO_CATEGORIES if k["isthing"] == 1 and k["name"] not in novel_classes
+        # ]
+        # name, dirname, json = COCO_DATASET
+        # dataset, choose_id = load_coco_json(os.path.join(dataset_path, json), \
+        #                                     os.path.join(dataset_path, dirname), COCO_NOVEL_CATEGORIES,
+        #                                     max_instance=None)
+        #
+        # name = 'coco'
+        # Name_Base = "Base_{}_{}_tensor.pt"  # 5000
+        # Name_Base = "Base_all_{}_{}_tensor.pt"
+        #
+        # feature = torch.load(os.path.join(feature_dir, Name_Base.format('feature', name.lower())))
+        # entropy = torch.load(os.path.join(feature_dir, Name_Base.format('entropy', name.lower())))
+        #
+        # feature = get_features(feature, in_features=in_features)
+        # base_feature.append(feature)
+        # base_entropy.append(entropy)
 
     else:
         novel_classes = PASCAL_VOC_NOVEL_CATEGORIES[sid]
@@ -479,10 +541,10 @@ if __name__ == "__main__":
     print("Total selected dataset for first class: ", len(dicts['dataset'][0]))
 
     # Folder to save new data images
-    Output_Images = os.path.join(FolderForGenVersion, "JPEGImages/")
+    Output_Images = os.path.join(FolderForGenVersion, "JPEGImages_gen/")
 
     # Folder to save new data annotations
-    Output_Annotations = os.path.join(FolderForGenVersion, "Annotations/")
+    Output_Annotations = os.path.join(FolderForGenVersion, "Annotations_gen/")
 
     # Save information of generation process
     Log_Image_Path = os.path.join(FolderForGenVersion, "LogImagePath.txt")
@@ -495,32 +557,32 @@ if __name__ == "__main__":
     dicts['Log_Image_Path'] = Log_Image_Path
     dicts['novel_classes'] = novel_classes
 
-    if dicts['background_clutter']['use']:
-        base_entropy = torch.cat(base_entropy, dim=0)
-        print('base_entropy.shape of background_similarity: ', base_entropy.shape)
-
-        indx = torch.argsort(base_entropy, descending=True).tolist()
-        dataset_clutter = [dataset[i] for i in indx][:int(max_num_novel_ins * len(novel_classes) * 2)]
-
-        for id_cls in range(num_novel_classes):
-            dicts['dataset'][id_cls].extend(
-                random.sample(dataset_clutter, int(max_num_novel_ins * general_p_bg))
-            )
-
-    if dicts['background_similarity']['use']:
-        base_feature = torch.cat(base_feature, dim=0).cuda()
-        print('base_feature.shape of background_similarity: ', base_feature.shape)
-
-        for id_cls, novel_cls in enumerate(novel_classes):
-            syn_novel_feature = torch.load(os.path.join(feature_dir, coco2voc.get(novel_cls, novel_cls) + "_tensor.pt"))
-            syn_novel_feature = get_features(syn_novel_feature, in_features=in_features).cuda()
-            Mean_Novel_Features = torch.mean(syn_novel_feature, dim=0, keepdims=True)
-            cos = torch.nn.CosineSimilarity(dim=1)
-
-            score_similarity = cos(Mean_Novel_Features, base_feature)
-            indx = torch.argsort(score_similarity, descending=True).tolist()
-
-            dataset_similar = [dataset[i] for i in indx][:int(max_num_novel_ins * general_p_bg)]
-
-            dicts['dataset'][id_cls].extend(dataset_similar)
+    # if dicts['background_clutter']['use']:
+    #     base_entropy = torch.cat(base_entropy, dim=0)
+    #     print('base_entropy.shape of background_similarity: ', base_entropy.shape)
+    #
+    #     indx = torch.argsort(base_entropy, descending=True).tolist()
+    #     dataset_clutter = [dataset[i] for i in indx][:int(max_num_novel_ins * len(novel_classes) * 2)]
+    #
+    #     for id_cls in range(num_novel_classes):
+    #         dicts['dataset'][id_cls].extend(
+    #             random.sample(dataset_clutter, int(max_num_novel_ins * general_p_bg))
+    #         )
+    #
+    # if dicts['background_similarity']['use']:
+    #     base_feature = torch.cat(base_feature, dim=0).cuda()
+    #     print('base_feature.shape of background_similarity: ', base_feature.shape)
+    #
+    #     for id_cls, novel_cls in enumerate(novel_classes):
+    #         syn_novel_feature = torch.load(os.path.join(feature_dir, coco2voc.get(novel_cls, novel_cls) + "_tensor.pt"))
+    #         syn_novel_feature = get_features(syn_novel_feature, in_features=in_features).cuda()
+    #         Mean_Novel_Features = torch.mean(syn_novel_feature, dim=0, keepdims=True)
+    #         cos = torch.nn.CosineSimilarity(dim=1)
+    #
+    #         score_similarity = cos(Mean_Novel_Features, base_feature)
+    #         indx = torch.argsort(score_similarity, descending=True).tolist()
+    #
+    #         dataset_similar = [dataset[i] for i in indx][:int(max_num_novel_ins * general_p_bg)]
+    #
+    #         dicts['dataset'][id_cls].extend(dataset_similar)
     main(dicts)

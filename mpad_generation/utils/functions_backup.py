@@ -280,18 +280,13 @@ def load_filtered_voc_instances(
         for cls, fileids_ in fileids.items():
             dicts_ = []
             for fileid in fileids_:
-               #year = "2012" if "_" in fileid else "2007"
-               # anno_file = os.path.join(
-               #     dirname, "VOC{}".format(year), "Annotations", fileid + ".xml"
-               # )
-               # jpeg_file = os.path.join(
-               #     dirname, "VOC{}".format(year), "JPEGImages", fileid + ".jpg"
-               # )
+                year = "2012" if "_" in fileid else "2007"
+
                 anno_file = os.path.join(
-                    dirname, "COCO", "Annotations", fileid + ".xml"
+                    dirname, "VOC{}".format(year), "Annotations", fileid + ".xml"
                 )
                 jpeg_file = os.path.join(
-                    dirname, "COCO", "JPEGImages", fileid + ".jpg"
+                    dirname, "VOC{}".format(year), "JPEGImages", fileid + ".jpg"
                 )
 
                 tree = ET.parse(anno_file)

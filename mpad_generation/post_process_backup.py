@@ -25,13 +25,6 @@ def merge_file(scr_path, dir_path):
         shutil.copy(os.path.join(scr_path, file), os.path.join(dir_path, file))
     return files
 
-def _to_int(s):
-    # '45.7' 같은 문자열도 안전하게 int로
-    try:
-        return int(s)
-    except ValueError:
-        return int(float(s))
-
 def get_simple_input_information(xml_path, image_path):
     tree = ET.parse(xml_path)
     root = tree.getroot()
@@ -41,8 +34,8 @@ def get_simple_input_information(xml_path, image_path):
     for obj in root.findall("object"):
         cls_name = obj.find("name").text
         bndbox = obj.find("bndbox")
-        xmin, ymin = _to_int(bndbox.find('xmin').text), _to_int(bndbox.find('ymin').text)
-        xmax, ymax = _to_int(bndbox.find('xmax').text), _to_int(bndbox.find('ymax').text)
+        xmin, ymin = int(bndbox.find('xmin').text), int(bndbox.find('ymin').text)
+        xmax, ymax = int(bndbox.find('xmax').text), int(bndbox.find('ymax').text)
         classes.append(cls_name)
         bboxes.append([xmin, ymin, xmax, ymax])
 
