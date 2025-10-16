@@ -68,6 +68,9 @@ def getPowerPaint(stable_inpaint_name:str, stable_diffusion_name:str,
     pipe.text_encoder.load_state_dict(text_encoder_state_dict, strict=False)
     print("✓ Text Encoder loaded")
 
+    # ✅ 이 줄 추가!
+    return pipe
+
 
 def getPowerPaint_ControlNet(stable_inpaint_name:str, stable_diffusion_name:str, device='cpu'):
     pipe = Pipeline.from_pretrained(

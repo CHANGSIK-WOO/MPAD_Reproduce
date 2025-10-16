@@ -468,10 +468,10 @@ if __name__ == "__main__":
             # feature = get_features(feature, in_features=in_features)[choose_id]
             # base_feature.append(feature)
             # base_entropy.append(entropy)
-            #
-            # dataset.extend(data)
-            # print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id),
-            #                                                                     time() - tic))
+
+            dataset.extend(data)
+            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id),
+                                                                                time() - tic))
 
         # novel_classes = [
         #     k["name"] for k in COCO_NOVEL_CATEGORIES if k["isthing"] == 1

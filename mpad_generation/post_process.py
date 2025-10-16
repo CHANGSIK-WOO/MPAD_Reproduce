@@ -15,6 +15,7 @@ from utils.metadata import (
     PASCAL_VOC_NOVEL_CATEGORIES, 
     PASCAL_VOC_BASE_CATEGORIES,
     COCO_NOVEL_CATEGORIES,
+    COCO_BASE_CATEGORIES,
     COCO_CATEGORIES,
 )
 from utils.functions import *
@@ -450,7 +451,7 @@ def main(argv):
     num_max_ins = int(argv[3])
 
     sid = int(argv[2])
-    novel_classes = PASCAL_VOC_NOVEL_CATEGORIES[sid]
+    novel_classes = COCO_NOVEL_CATEGORIES[sid]
     create_meta_infor(dataset_path, novel_classes, num_max_ins)
 
     # if 'coco' in dataset_path.lower():
