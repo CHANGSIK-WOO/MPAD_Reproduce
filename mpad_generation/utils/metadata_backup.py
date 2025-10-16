@@ -1,156 +1,150 @@
 meta_VOC_info1 = {
-    'aeroplane': {
-        "colors": ["white", "silver", "blue", "combination"],
-        "body": ["streamlined", "cylindrical"], "wings": ["large", "medium"],
-        "tail": ["vertical", "horizontal", "with stabilizers"],
-        "engines": ["under the wings", "rear"],
-        "landing gear": ["retractable", "fixed"],
-        "cockpit windows": ["angular"],
-        "markings": ["logos", "stripes", "national insignia"],
-        "Fine-grained classes": ["Jet airliner", "Private jet", "Cargo plane", "Military fighter jet",
-                                 "Propeller plane", "Glider", "Seaplane"]},
+    'aeroplane': { 
+        "colors": ["white", "silver", "blue", "combination"], 
+        "body": ["streamlined", "cylindrical"], "wings": ["large", "medium"], "tail": ["vertical", "horizontal", "with stabilizers"], 
+        "engines": ["under the wings", "rear"], 
+        "landing gear": ["retractable", "fixed"], 
+        "cockpit windows": ["angular"], 
+        "markings": ["logos", "stripes", "national insignia"], 
+        "Fine-grained classes": ["Jet airliner", "Private jet", "Cargo plane", "Military fighter jet", "Propeller plane", "Glider", "Seaplane"] },
 
-    'bicycle': {
-        "colors": ["red", "black", "blue", "white", "combination"],
-        "frame": ["thin", "sturdy", "thick"],
-        "wheels": ["medium", "rubber tires", "metal spokes"],
-        "handlebars": ["flat", "curved"], "seat": ["padded", "firm"], "pedals": ["metal", "plastic"],
-        "chain": ["visible", "covered"], "features": ["gears", "fenders", "baskets"],
-        "Fine-grained classes": ["Mountain bike", "Road bike", "Hybrid bike", "BMX", "Electric bike"]},
+    'bicycle': { 
+        "colors": ["red", "black", "blue", "white", "combination"], 
+        "frame": ["thin", "sturdy", "thick"], 
+        "wheels": ["medium", "rubber tires", "metal spokes"], 
+        "handlebars": ["flat", "curved"], "seat": ["padded", "firm"], "pedals": ["metal", "plastic"], "chain": ["visible", "covered"], "features": ["gears", "fenders", "baskets"], 
+        "Fine-grained classes": ["Mountain bike", "Road bike", "Hybrid bike", "BMX", "Electric bike"] },
 
-    'boat': {
-        "colors": ["white", "blue", "black", "combination"],
-        "hull": ["long", "narrow", "wide", "flat"],
-        "power": ["motorized", "sail-powered"],
-        "deck features": ["cabins", "masts", "navigation equipment"], "controls": ["rudder", "propeller"],
-        "Fine-grained classes": ["Sailboat", "Motorboat", "Fishing boat", "Yacht", "Canoe", "Speedboat"]},
+    'boat': { 
+        "colors": ["white", "blue", "black", "combination"], 
+        "hull": ["long", "narrow", "wide", "flat"], 
+        "power": ["motorized", "sail-powered"], 
+        "deck features": ["cabins", "masts", "navigation equipment"], "controls": ["rudder", "propeller"], 
+        "Fine-grained classes": ["Sailboat", "Motorboat", "Fishing boat", "Yacht", "Canoe", "Speedboat"] },
 
-    'bottle': {
-        "colors": ["transparent", "green", "brown", "blue"],
-        "body": ["cylindrical", "square"],
-        "neck": ["long", "short"],
-        "materials": ["glass", "plastic"],
-        "caps": ["screw-top", "corked", "flip-top"],
-        "features": ["labels", "branding"],
-        "Fine-grained classes": ["Water bottle", "Wine bottle", "Soda bottle", "Milk bottle", "Juice bottle"]},
+    'bottle': { 
+        "colors": ["transparent", "green", "brown", "blue"], 
+        "body": ["cylindrical", "square"], 
+        "neck": ["long", "short"], 
+        "materials": ["glass", "plastic"], 
+        "caps": ["screw-top", "corked", "flip-top"], 
+        "features": ["labels", "branding"], 
+        "Fine-grained classes": ["Water bottle", "Wine bottle", "Soda bottle", "Milk bottle", "Juice bottle"] },
 
-    'car': {
-        "colors": ["black", "white", "red", "blue", "combination"],
-        "body": ["compact", "sleek", "large", "boxy"],
-        "wheels": ["rubber tires", "metal rims"],
-        "features": ["windows", "mirrors", "headlights", "tail lights", "air conditioning", "sound system",
-                     "navigation"],
-        "Fine-grained classes": ["Sedan", "SUV", "Hatchback", "Convertible", "Truck", "Electric car"]},
+    'car': { 
+        "colors": ["black", "white", "red", "blue", "combination"], 
+        "body": ["compact", "sleek", "large", "boxy"], 
+        "wheels": ["rubber tires", "metal rims"], 
+        "features": ["windows", "mirrors", "headlights", "tail lights", "air conditioning", "sound system", "navigation"], 
+        "Fine-grained classes": ["Sedan", "SUV", "Hatchback", "Convertible", "Truck", "Electric car"] },
 
-    'cat': {
-        "colors": ["black", "white", "orange", "grey", "combination"],
-        "fur": ["short", "medium", "long"],
-        "ears": ["pointed", "rounded"],
+    'cat': { 
+        "colors": ["black", "white", "orange", "grey", "combination"], 
+        "fur": ["short", "medium", "long"], 
+        "ears": ["pointed", "rounded"], 
         "tail": ["long", "flexible"], "size": ["small", "medium"],
-        "body": ["sleek", "muscular", "stocky"],
-        "eyes": ["almond-shaped", "round", "green", "yellow", "blue"],
-        "expression": ["curious", "alert", "calm"],
-        "Fine-grained classes": ["Siamese", "Persian", "Maine Coon", "Bengal", "Sphynx"]},
+        "body": ["sleek", "muscular", "stocky"], 
+        "eyes": ["almond-shaped", "round", "green", "yellow", "blue"], 
+        "expression": ["curious", "alert", "calm"], 
+        "Fine-grained classes": ["Siamese", "Persian", "Maine Coon", "Bengal", "Sphynx"] },
 
-    'chair': {
-        "colors": ["black", "white", "brown", "combination"],
-        "frame": ["wood", "metal", "plastic"],
-        "seat": ["padded", "hard"], "back": ["high", "medium", "low"],
-        "armrests": ["present", "absent"],
-        "legs": ["short", "long", "straight", "curved"],
-        "design": ["modern", "traditional", "minimalist"],
-        "features": ["upholstery", "cushions", "decorative details"],
-        "Fine-grained classes": ["Armchair", "Recliner", "Office chair", "Dining chair", "Folding chair"]},
+    'chair': { 
+        "colors": ["black", "white", "brown", "combination"], 
+        "frame": ["wood", "metal", "plastic"], 
+        "seat": ["padded", "hard"], "back": ["high", "medium", "low"], 
+        "armrests": ["present", "absent"], 
+        "legs": ["short", "long", "straight", "curved"], 
+        "design": ["modern", "traditional", "minimalist"], 
+        "features": ["upholstery", "cushions", "decorative details"], 
+        "Fine-grained classes": ["Armchair", "Recliner", "Office chair", "Dining chair", "Folding chair"] },
 
-    'diningtable': {
-        "colors": ["brown", "black", "white", "combination"],
-        "top": ["wood", "glass", "metal"],
-        "legs": ["short", "medium", "tall"],
-        "shape": ["rectangular", "square", "round"], "features": ["extendable leaves", "decorative legs"],
-        "design": ["traditional", "modern", "minimalist"],
-        "surface": ["polished", "matte"],
-        "Fine-grained classes": ["Round table", "Square table", "Extendable table", "Glass top table"]},
+    'diningtable': { 
+        "colors": ["brown", "black", "white", "combination"], 
+        "top": ["wood", "glass", "metal"], 
+        "legs": ["short", "medium", "tall"], 
+        "shape": ["rectangular", "square", "round"], "features": ["extendable leaves", "decorative legs"], 
+        "design": ["traditional", "modern", "minimalist"], 
+        "surface": ["polished", "matte"], 
+        "Fine-grained classes": ["Round table", "Square table", "Extendable table", "Glass top table"] },
 
-    'dog': {
-        "colors": ["black", "brown", "white", "mix"],
-        "fur": ["short", "medium", "long"],
-        "ears": ["floppy", "semi-floppy", "erect"],
-        "tail": ["bushy", "curled", "straight"],
-        "size": ["small", "medium", "large"],
-        "body": ["muscular", "lean", "stout"],
-        "face": ["short snout", "long snout"],
-        "eyes": ["round", "almond-shaped", "oval"],
-        "expression": ["alert", "gentle", "playful"],
-        "distinctive marking": ["spots", "patches", "brindle patterns"],
-        "Fine-grained classes": ["Labrador Retriever", "Bulldog", "Poodle", "German Shepherd", "Golden Retriever"]},
+    'dog': { 
+        "colors": ["black", "brown", "white", "mix"], 
+        "fur": ["short", "medium", "long"], 
+        "ears": ["floppy", "semi-floppy", "erect"], 
+        "tail": ["bushy", "curled", "straight"], 
+        "size": ["small", "medium", "large"], 
+        "body": ["muscular", "lean", "stout"], 
+        "face": ["short snout", "long snout"], 
+        "eyes": ["round", "almond-shaped", "oval"], 
+        "expression": ["alert", "gentle", "playful"], 
+        "distinctive marking": ["spots", "patches", "brindle patterns"], 
+        "Fine-grained classes": ["Labrador Retriever", "Bulldog", "Poodle", "German Shepherd", "Golden Retriever"] },
 
     'horse': {
-        "colors": ["brown", "black", "white", "combination"],
-        "coat": ["short", "sleek"],
-        "mane and tail": ["long", "wavy"],
-        "body": ["large", "muscular"],
-        "legs": ["long"],
-        "ears": ["medium", "pointed"],
-        "face": ["long", "prominent snout"],
-        "eyes": ["large", "expressive"],
-        "posture": ["strong", "graceful"],
-        "Fine-grained classes": ["Thoroughbred", "Arabian", "Quarter Horse", "Mustang", "Clydesdale"]},
+        "colors": ["brown", "black", "white", "combination"], 
+        "coat": ["short", "sleek"], 
+        "mane and tail": ["long", "wavy"], 
+        "body": ["large", "muscular"], 
+        "legs": ["long"], 
+        "ears": ["medium", "pointed"], 
+        "face": ["long", "prominent snout"], 
+        "eyes": ["large", "expressive"], 
+        "posture": ["strong", "graceful"], 
+        "Fine-grained classes": ["Thoroughbred", "Arabian", "Quarter Horse", "Mustang", "Clydesdale"] },
 
-    'person': {
-        "colors": ["varied skin tones"],
-        "height": ["small", "medium", "tall"],
-        "body size": ["slender", "muscular", "stocky"],
-        "hair": ["short", "medium", "long", "varied textures"],
-        "eyes": ["round", "almond-shaped", "hooded", "brown", "blue", "green", "hazel"],
-        "facial features": ["nose", "mouth", "jawlines"],
-        "clothing": ["diverse"],
-        "expression": ["varied"],
-        "Fine-grained classes": ["Men", "Women", "Children", "Athletes", "Professionals"]},
+    'person': { 
+        "colors": ["varied skin tones"], 
+        "height": ["small", "medium", "tall"], 
+        "body size": ["slender", "muscular", "stocky"], 
+        "hair": ["short", "medium", "long", "varied textures"], 
+        "eyes": ["round", "almond-shaped", "hooded", "brown", "blue", "green", "hazel"], 
+        "facial features": ["nose", "mouth", "jawlines"], 
+        "clothing": ["diverse"], 
+        "expression": ["varied"], 
+        "Fine-grained classes": ["Men", "Women", "Children", "Athletes", "Professionals"] },
 
-    'pottedplant': {
+    'pottedplant': { 
         "colors": ["green leaves", "brown stems", "colorful flowers"],
-        "leaves": ["broad", "thin", "spiky", "succulent"],
-        "pot": ["plastic", "ceramic", "clay"],
-        "height": ["small", "medium"],
-        "features": ["decorative stones", "moss"],
-        "Fine-grained classes": ["Succulent", "Fern", "Flowering plant", "Cactus", "Palm"]},
+        "leaves": ["broad", "thin", "spiky", "succulent"], 
+        "pot": ["plastic", "ceramic", "clay"], 
+        "height": ["small", "medium"], 
+        "features": ["decorative stones", "moss"], 
+        "Fine-grained classes": ["Succulent", "Fern", "Flowering plant", "Cactus", "Palm"] },
 
     'sheep': {
-        "colors": ["white", "black", "brown", "combination"],
-        "wool": ["thick", "curly", "fluffy"], "ears": ["medium", "floppy"],
-        "tail": ["short"],
-        "body": ["stocky", "robust"],
-        "hooves": ["adapted for varied terrain"],
-        "face": ["long snout", "short snout"],
-        "eyes": ["round", "oval", "calm", "gentle"],
-        "Fine-grained classes": ["Merino", "Suffolk", "Dorset", "Katahdin", "Hampshire"]},
+        "colors": ["white", "black", "brown", "combination"], 
+        "wool": ["thick", "curly", "fluffy"], "ears": ["medium", "floppy"], 
+        "tail": ["short"], 
+        "body": ["stocky", "robust"], 
+        "hooves": ["adapted for varied terrain"], 
+        "face": ["long snout", "short snout"], 
+        "eyes": ["round", "oval", "calm", "gentle"], 
+        "Fine-grained classes": ["Merino", "Suffolk", "Dorset", "Katahdin", "Hampshire"] },
 
-    "train":
-        {"colors": ["black", "brown", "white", "mix"],
-         "exterior": ["sleek", "boxy", "smooth", "ribbed"],
-         "train cars": ["connected series"],
-         "windows": ["large", "rectangular", "rounded"],
-         "wheels": ["sturdy", "metallic"],
-         "front": ["streamlined", "rounded", "angular"],
-         "features": ["pantographs", "electrical components", "diesel exhausts"],
-         "interior": ["seating", "luggage compartments", "dining areas", "sleeping areas"],
-         "Fine-grained classes": ["Freight Train", "Passenger Train", "High-Speed Train", "Subway Train", "Monorail",
-                                  "Diesel Locomotive", "Electric Locomotive", "Bullet Train"]},
+    "train": 
+        { "colors": ["black", "brown", "white", "mix"],
+        "exterior": ["sleek", "boxy", "smooth", "ribbed"], 
+        "train cars": ["connected series"], 
+        "windows": ["large", "rectangular", "rounded"], 
+        "wheels": ["sturdy", "metallic"], 
+        "front": ["streamlined", "rounded", "angular"], 
+        "features": ["pantographs", "electrical components", "diesel exhausts"], 
+        "interior": ["seating", "luggage compartments", "dining areas", "sleeping areas"], 
+        "Fine-grained classes": ["Freight Train", "Passenger Train", "High-Speed Train", "Subway Train", "Monorail", "Diesel Locomotive", "Electric Locomotive", "Bullet Train"] },
 
-    "tvmonitor": {
-        "colors": ["black", "brown", "white", "mix"],
-        "screen": ["flat", "rectangular"],
-        "bezels": ["slim", "thicker"],
-        "size": ["small", "medium", "large"],
-        "finish": ["glossy", "matte"],
-        "back panel": ["vents", "ports"],
-        "stand": ["minimalistic", "wide", "adjustable"],
-        "mounting options": ["wall mounting"],
-        "display technology": ["LED", "LCD", "OLED"],
-        "surface": ["glare-resistant", "anti-reflective"],
-        "features": ["built-in speakers", "adjustable controls"],
-        "Fine-grained classes": ["CRT TV", "LED Monitor", "LCD TV", "Plasma Screen", "OLED Display", "Smart TV",
-                                 "Gaming Monitor"], },
+    "tvmonitor": { 
+        "colors": ["black", "brown", "white", "mix"], 
+        "screen": ["flat", "rectangular"], 
+        "bezels": ["slim", "thicker"], 
+        "size": ["small", "medium", "large"], 
+        "finish": ["glossy", "matte"], 
+        "back panel": ["vents", "ports"], 
+        "stand": ["minimalistic", "wide", "adjustable"], 
+        "mounting options": ["wall mounting"], 
+        "display technology": ["LED", "LCD", "OLED"], 
+        "surface": ["glare-resistant", "anti-reflective"], 
+        "features": ["built-in speakers", "adjustable controls"], 
+        "Fine-grained classes": ["CRT TV", "LED Monitor", "LCD TV", "Plasma Screen", "OLED Display", "Smart TV", "Gaming Monitor"],},
     "bird": {
         "colors": ["black", "brown", "white", "mix"],
         "feathers": ["smooth", "fluffy", "sleek"],
@@ -222,8 +216,8 @@ meta_VOC_info1 = {
         "size": ["compact", "large", "sectional"],
         "features": ["recliners", "storage compartments", "convertible functions"],
         "Fine-grained classes": ["Loveseat", "Sectional", "Sleeper", "Chesterfield", "Recliner", "Modular"]
-    },
-
+    }, 
+    
 }
 meta_VOC_info = None
 
@@ -304,8 +298,7 @@ meta_VOC_info_1 = {
         "features": ["extendable", "folding", "fixed"],
         "surface": ["smooth", "textured"],
         "colors": ["varied finishes"],
-        "Fine-grained classes": ["Rectangular Table", "Round Table", "Folding Table", "Extendable Table",
-                                 "Glass-top Table"]
+        "Fine-grained classes": ["Rectangular Table", "Round Table", "Folding Table", "Extendable Table", "Glass-top Table"]
     },
     "dog": {
         "colors": ["black", "brown", "white", "mix"],
@@ -318,9 +311,7 @@ meta_VOC_info_1 = {
         "eyes": ["round", "almond-shaped", "oval"],
         "expression": ["alert", "gentle", "playful"],
         "distinctive marking": ["spots", "patches", "brindle patterns"],
-        "Fine-grained classes": ["Golden Retriever", "Siberian Husky", "Border Collie", "Shiba Inu", "Chihuahua",
-                                 "Dachshund", "Bulldog", "Pomeranian", "German Shepherd",
-                                 "Cavalier King Charles Spaniel"]
+        "Fine-grained classes": ["Golden Retriever", "Siberian Husky", "Border Collie", "Shiba Inu", "Chihuahua", "Dachshund", "Bulldog", "Pomeranian", "German Shepherd", "Cavalier King Charles Spaniel"]
     },
     "horse": {
         "colors": ["brown", "black", "white", "gray", "chestnut"],
@@ -413,16 +404,15 @@ meta_VOC_info_1 = {
             "train": {
                 "distinguished": ["multiple passenger compartments", "large wheels", "city routes"],
                 "similar": ["large size", "long structure", "ability to transport many passengers"]
-            },
+                },
             "car": {
                 "distinguished": ["high seating capacity", "longer frame", "dedicated lanes"],
                 "similar": ["wheels", "engine-powered", "road-bound transportation"]
-            },
+                },
             "aeroplane": {
-                "distinguished": ["ground-bound movement", "four to six wheels",
-                                  "doors for passengers to board directly"],
+                "distinguished": ["ground-bound movement", "four to six wheels", "doors for passengers to board directly"],
                 "similar": ["transport passengers", "large size", "engine-powered"]
-            }
+                }
         },
     },
     "cow": {
@@ -450,6 +440,7 @@ meta_VOC_info_1 = {
                 "similar": ["four legs", "tail", "ability to walk on land"]
             }
         },
+        
 
     },
     "motorbike": {
@@ -475,6 +466,7 @@ meta_VOC_info_1 = {
             }
         },
 
+
     },
     "sofa": {
         "colors": ["black", "brown", "beige", "gray", "patterned"],
@@ -485,20 +477,20 @@ meta_VOC_info_1 = {
         "Fine-grained classes": ["Sectional Sofa", "Loveseat", "Recliner Sofa", "Sleeper Sofa", "Chaise Lounge"],
         "similar classes": {
             "chair": {
-                "distinguished": ["larger seating space", "soft cushions", "support for lying down"],
-                "similar": ["seating surface", "back support", "legs"]
+            "distinguished": ["larger seating space", "soft cushions", "support for lying down"],
+            "similar": ["seating surface", "back support", "legs"]
             },
             "diningtable": {
-                "distinguished": ["soft seating surface", "armrests", "back support"],
-                "similar": ["legs", "flat surface", "furniture for household use"]
+            "distinguished": ["soft seating surface", "armrests", "back support"],
+            "similar": ["legs", "flat surface", "furniture for household use"]
             },
             "pottedplant": {
-                "distinguished": ["seating surface", "back support", "made of fabric or leather"],
-                "similar": ["both can be placed indoors", "used to enhance room aesthetics", "stationary in position"]
+            "distinguished": ["seating surface", "back support", "made of fabric or leather"],
+            "similar": ["both can be placed indoors", "used to enhance room aesthetics", "stationary in position"]
             }
         },
+        }
     }
-}
 
 meta_VOC_info_2 = {
     "aeroplane": {
@@ -511,8 +503,7 @@ meta_VOC_info_2 = {
         "windows": ["aligned along fuselage", "passenger windows"],
         "landing gear": ["large wheels", "retractable"],
         "distinctive marking": ["airline logo", "manufacturer decals"],
-        "Fine-grained classes": ["Boeing 737", "Airbus A320", "Boeing 747", "Airbus A380", "Lockheed C-130",
-                                 "Concorde"],
+        "Fine-grained classes": ["Boeing 737", "Airbus A320", "Boeing 747", "Airbus A380", "Lockheed C-130", "Concorde"],
         "similar classes": {
             "bird": {
                 "distinguished": ["metal body", "engines", "cockpit"],
@@ -526,7 +517,7 @@ meta_VOC_info_2 = {
                 "distinguished": ["wings", "propulsion system", "aerodynamic shape"],
                 "similar": ["elongated structure", "windows", "large body size"]
             }
-        }
+            }
     },
     "bicycle": {
         "colors": ["black", "blue", "red", "green", "varied"],
@@ -569,7 +560,7 @@ meta_VOC_info_2 = {
                 "distinguished": ["narrow top", "transparent surface"],
                 "similar": ["upright orientation", "base support"]
             }
-        }
+            }
     },
     "car": {
         "colors": ["black", "white", "silver", "red", "varied"],
@@ -606,8 +597,7 @@ meta_VOC_info_2 = {
         "features": ["extendable", "folding", "fixed"],
         "surface": ["smooth", "textured"],
         "colors": ["varied finishes"],
-        "Fine-grained classes": ["Rectangular Table", "Round Table", "Folding Table", "Extendable Table",
-                                 "Glass-top Table"]
+        "Fine-grained classes": ["Rectangular Table", "Round Table", "Folding Table", "Extendable Table", "Glass-top Table"]
     },
     "dog": {
         "colors": ["black", "brown", "white", "mix"],
@@ -620,9 +610,7 @@ meta_VOC_info_2 = {
         "eyes": ["round", "almond-shaped", "oval"],
         "expression": ["alert", "gentle", "playful"],
         "distinctive marking": ["spots", "patches", "brindle patterns"],
-        "Fine-grained classes": ["Golden Retriever", "Siberian Husky", "Border Collie", "Shiba Inu", "Chihuahua",
-                                 "Dachshund", "Bulldog", "Pomeranian", "German Shepherd",
-                                 "Cavalier King Charles Spaniel"]
+        "Fine-grained classes": ["Golden Retriever", "Siberian Husky", "Border Collie", "Shiba Inu", "Chihuahua", "Dachshund", "Bulldog", "Pomeranian", "German Shepherd", "Cavalier King Charles Spaniel"]
     },
     "horse": {
         "colors": ["brown", "black", "white", "gray", "chestnut"],
@@ -647,7 +635,7 @@ meta_VOC_info_2 = {
                 "distinguished": ["mane", "muscular structure", "tail type"],
                 "similar": ["quadruped shape", "legs", "head structure"]
             }
-        }
+            }
     },
     "person": {
         "skin color": ["varied"],
@@ -729,16 +717,15 @@ meta_VOC_info_2 = {
             "train": {
                 "distinguished": ["multiple passenger compartments", "large wheels", "city routes"],
                 "similar": ["large size", "long structure", "ability to transport many passengers"]
-            },
+                },
             "car": {
                 "distinguished": ["high seating capacity", "longer frame", "dedicated lanes"],
                 "similar": ["wheels", "engine-powered", "road-bound transportation"]
-            },
+                },
             "aeroplane": {
-                "distinguished": ["ground-bound movement", "four to six wheels",
-                                  "doors for passengers to board directly"],
+                "distinguished": ["ground-bound movement", "four to six wheels", "doors for passengers to board directly"],
                 "similar": ["transport passengers", "large size", "engine-powered"]
-            }
+                }
         },
     },
     "cow": {
@@ -765,7 +752,8 @@ meta_VOC_info_2 = {
                 "distinguished": ["larger body", "horns", "tail type"],
                 "similar": ["quadruped shape", "head structure", "fur"]
             }
-        },
+            },
+        
 
     },
     "motorbike": {
@@ -791,6 +779,7 @@ meta_VOC_info_2 = {
             }
         },
 
+
     },
     "sofa": {
         "colors": ["black", "brown", "beige", "gray", "patterned"],
@@ -812,9 +801,9 @@ meta_VOC_info_2 = {
                 "distinguished": ["cushioned seating", "fabric texture"],
                 "similar": ["rounded, soft appearance"]
             }
+            }
         }
     }
-}
 
 meta_VOC_info_3 = {
     "aeroplane": {
@@ -861,7 +850,7 @@ meta_VOC_info_3 = {
                 "distinguished": ["rails", "multiple compartments", "wheels"],
                 "similar": ["elongated structure", "window pattern", "transport design"]
             }
-        }
+            }
     },
     "bottle": {
         "colors": ["clear", "green", "brown"],
@@ -903,7 +892,7 @@ meta_VOC_info_3 = {
                 "distinguished": ["larger size", "mane", "tail type"],
                 "similar": ["quadruped body", "muscular legs", "fur coat"]
             }
-        }
+            }
     },
     "chair": {
         "materials": ["wood", "metal", "plastic"],
@@ -921,8 +910,7 @@ meta_VOC_info_3 = {
         "features": ["extendable", "folding", "fixed"],
         "surface": ["smooth", "textured"],
         "colors": ["varied finishes"],
-        "Fine-grained classes": ["Rectangular Table", "Round Table", "Folding Table", "Extendable Table",
-                                 "Glass-top Table"]
+        "Fine-grained classes": ["Rectangular Table", "Round Table", "Folding Table", "Extendable Table", "Glass-top Table"]
     },
     "dog": {
         "colors": ["black", "brown", "white", "mix"],
@@ -935,9 +923,7 @@ meta_VOC_info_3 = {
         "eyes": ["round", "almond-shaped", "oval"],
         "expression": ["alert", "gentle", "playful"],
         "distinctive marking": ["spots", "patches", "brindle patterns"],
-        "Fine-grained classes": ["Golden Retriever", "Siberian Husky", "Border Collie", "Shiba Inu", "Chihuahua",
-                                 "Dachshund", "Bulldog", "Pomeranian", "German Shepherd",
-                                 "Cavalier King Charles Spaniel"]
+        "Fine-grained classes": ["Golden Retriever", "Siberian Husky", "Border Collie", "Shiba Inu", "Chihuahua", "Dachshund", "Bulldog", "Pomeranian", "German Shepherd", "Cavalier King Charles Spaniel"]
     },
     "horse": {
         "colors": ["brown", "black", "white", "gray", "chestnut"],
@@ -987,8 +973,8 @@ meta_VOC_info_3 = {
                 "distinguished": ["larger body", "mane", "muscular build"],
                 "similar": ["four-legged structure", "tail", "fur coat"]
             }
-        }
-    },
+            }
+            },
     "train": {
         "colors": ["metallic", "varied markings"],
         "design": ["sleek", "boxy"],
@@ -1044,16 +1030,15 @@ meta_VOC_info_3 = {
             "train": {
                 "distinguished": ["multiple passenger compartments", "large wheels", "city routes"],
                 "similar": ["large size", "long structure", "ability to transport many passengers"]
-            },
+                },
             "car": {
                 "distinguished": ["high seating capacity", "longer frame", "dedicated lanes"],
                 "similar": ["wheels", "engine-powered", "road-bound transportation"]
-            },
+                },
             "aeroplane": {
-                "distinguished": ["ground-bound movement", "four to six wheels",
-                                  "doors for passengers to board directly"],
+                "distinguished": ["ground-bound movement", "four to six wheels", "doors for passengers to board directly"],
                 "similar": ["transport passengers", "large size", "engine-powered"]
-            }
+                }
         },
     },
     "cow": {
@@ -1081,6 +1066,7 @@ meta_VOC_info_3 = {
                 "similar": ["four legs", "tail", "ability to walk on land"]
             }
         },
+        
 
     },
     "motorbike": {
@@ -1104,7 +1090,8 @@ meta_VOC_info_3 = {
                 "distinguished": ["mechanical body", "wheels"],
                 "similar": ["riding position", "overall silhouette"]
             }
-        },
+            },
+
 
     },
     "sofa": {
@@ -1116,460 +1103,458 @@ meta_VOC_info_3 = {
         "Fine-grained classes": ["Sectional Sofa", "Loveseat", "Recliner Sofa", "Sleeper Sofa", "Chaise Lounge"],
         "similar classes": {
             "chair": {
-                "distinguished": ["larger seating space", "soft cushions", "support for lying down"],
-                "similar": ["seating surface", "back support", "legs"]
+            "distinguished": ["larger seating space", "soft cushions", "support for lying down"],
+            "similar": ["seating surface", "back support", "legs"]
             },
             "diningtable": {
-                "distinguished": ["soft seating surface", "armrests", "back support"],
-                "similar": ["legs", "flat surface", "furniture for household use"]
+            "distinguished": ["soft seating surface", "armrests", "back support"],
+            "similar": ["legs", "flat surface", "furniture for household use"]
             },
             "pottedplant": {
-                "distinguished": ["seating surface", "back support", "made of fabric or leather"],
-                "similar": ["both can be placed indoors", "used to enhance room aesthetics", "stationary in position"]
+            "distinguished": ["seating surface", "back support", "made of fabric or leather"],
+            "similar": ["both can be placed indoors", "used to enhance room aesthetics", "stationary in position"]
             }
         },
+        }
     }
-}
 
-meta_VOC_info_4 = {
+meta_VOC_info_4 ={
     "bird": {
-        "colors": ["blue", "red", "yellow", "green", "white", "black", "spotted", "striped"],
-        "feathers": ["soft", "fluffy", "sleek", "glossy", "iridescent"],
-        "body": {
-            "weight": ["lightweight"],
-            "shape": ["streamlined"],
-            "features": ["hollow bones"]
-        },
-        "beak": ["short and pointed", "long and curved", "varied based on diet and habitat"],
-        "wings": {
-            "type": ["long", "strong"],
-            "features": ["structured feathers for lift and maneuverability"]
-        },
-        "legs": {
-            "type": ["thin", "sturdy"],
-            "ends": ["claws", "webbed feet"]
-        },
-        "face": {
-            "beak": ["short and pointed", "long and curved"],
-            "eyes": {
-                "shape": ["round"],
-                "colors": ["black", "brown", "yellow", "vibrant shades"]
-            }
-        },
-        "expression": ["alert", "curious"],
-        "behavior": ["flying", "singing", "hunting", "nesting"]
+      "colors": ["blue", "red", "yellow", "green", "white", "black", "spotted", "striped"],
+      "feathers": ["soft", "fluffy", "sleek", "glossy", "iridescent"],
+      "body": {
+        "weight": ["lightweight"],
+        "shape": ["streamlined"],
+        "features": ["hollow bones"]
+      },
+      "beak": ["short and pointed", "long and curved", "varied based on diet and habitat"],
+      "wings": {
+        "type": ["long", "strong"],
+        "features": ["structured feathers for lift and maneuverability"]
+      },
+      "legs": {
+        "type": ["thin", "sturdy"],
+        "ends": ["claws", "webbed feet"]
+      },
+      "face": {
+        "beak": ["short and pointed", "long and curved"],
+        "eyes": {
+          "shape": ["round"],
+          "colors": ["black", "brown", "yellow", "vibrant shades"]
+        }
+      },
+      "expression": ["alert", "curious"],
+      "behavior": ["flying", "singing", "hunting", "nesting"]
     },
 
     "bus": {
-        "colors": ["yellow", "white", "blue", "green", "red", "reflective patterns"],
-        "body": {
-            "size": ["large"],
-            "shape": ["rectangular", "boxy"],
-            "surface": ["smooth", "painted metallic"]
-        },
-        "windows": ["linear", "tinted glass", "clear glass"],
-        "wheels": {
-            "shape": ["circular"],
-            "features": ["large", "thick rubber tires"]
-        },
-        "parts": ["doors", "mirrors", "headlights", "grille"],
-        "doors": {
-            "type": ["wide", "automatic"],
-            "purpose": ["passenger entry", "passenger exit"]
-        },
-        "front": {
-            "features": ["large windshield", "rectangular headlights", "circular headlights", "varied grille design"]
-        },
-        "interior": {
-            "features": ["rows of seats", "handrails", "storage areas"],
-            "qualities": ["comfortable", "safe"]
-        },
-        "movement": ["stopping", "boarding passengers", "deboarding passengers", "fixed routes"],
-        "sound": ["low rumble", "quieter in electric models", "louder in diesel models"],
-        "purpose": ["mass transportation", "functional", "practical"]
+      "colors": ["yellow", "white", "blue", "green", "red", "reflective patterns"],
+      "body": {
+        "size": ["large"],
+        "shape": ["rectangular", "boxy"],
+        "surface": ["smooth", "painted metallic"]
+      },
+      "windows": ["linear", "tinted glass", "clear glass"],
+      "wheels": {
+        "shape": ["circular"],
+        "features": ["large", "thick rubber tires"]
+      },
+      "parts": ["doors", "mirrors", "headlights", "grille"],
+      "doors": {
+        "type": ["wide", "automatic"],
+        "purpose": ["passenger entry", "passenger exit"]
+      },
+      "front": {
+        "features": ["large windshield", "rectangular headlights", "circular headlights", "varied grille design"]
+      },
+      "interior": {
+        "features": ["rows of seats", "handrails", "storage areas"],
+        "qualities": ["comfortable", "safe"]
+      },
+      "movement": ["stopping", "boarding passengers", "deboarding passengers", "fixed routes"],
+      "sound": ["low rumble", "quieter in electric models", "louder in diesel models"],
+      "purpose": ["mass transportation", "functional", "practical"]
     },
 
     "cow": {
-        "colors": ["black", "white", "brown", "tan", "spotted", "patched"],
-        "body": {
-            "size": ["large", "stocky"],
-            "fur": ["short", "smooth"],
-            "shape": ["bulky torso", "broad back", "straight or slightly arched spine"]
-        },
-        "head": {
-            "features": ["large size", "flat snout", "long ears", "expressive eyes"]
-        },
-        "legs": {
-            "type": ["strong", "short"],
-            "ends": ["cloven hooves"]
-        },
-        "tail": {
-            "type": ["long", "slender"],
-            "ends": ["tuft of hair"]
-        },
-        "udder": ["large", "rounded", "used for milk production"],
-        "horns": ["curved", "straight", "absent in some breeds"],
-        "expression": ["calm", "docile"],
-        "behavior": ["grazing", "chewing cud", "moving in herds"],
-        "sound": ["moo"],
-        "environment": ["pastures", "barns"]
+      "colors": ["black", "white", "brown", "tan", "spotted", "patched"],
+      "body": {
+        "size": ["large", "stocky"],
+        "fur": ["short", "smooth"],
+        "shape": ["bulky torso", "broad back", "straight or slightly arched spine"]
+      },
+      "head": {
+        "features": ["large size", "flat snout", "long ears", "expressive eyes"]
+      },
+      "legs": {
+        "type": ["strong", "short"],
+        "ends": ["cloven hooves"]
+      },
+      "tail": {
+        "type": ["long", "slender"],
+        "ends": ["tuft of hair"]
+      },
+      "udder": ["large", "rounded", "used for milk production"],
+      "horns": ["curved", "straight", "absent in some breeds"],
+      "expression": ["calm", "docile"],
+      "behavior": ["grazing", "chewing cud", "moving in herds"],
+      "sound": ["moo"],
+      "environment": ["pastures", "barns"]
     },
 
     "motorbike": {
-        "colors": ["black", "white", "red", "blue", "silver", "custom-painted designs"],
-        "body": {
-            "size": ["compact"],
-            "shape": ["aerodynamic"],
-            "frame": ["lightweight metals", "aluminum", "steel"],
-            "surface": ["smooth", "glossy"]
-        },
-        "wheels": {
-            "shape": ["circular"],
-            "rims": ["alloy", "steel"],
-            "tires": ["durable", "rubber", "designed for traction"]
-        },
-        "parts": ["handlebars", "mirrors", "headlights"],
-        "engine": {
-            "position": ["central"],
-            "features": ["visible exhaust system"]
-        },
-        "seat": {
-            "type": ["narrow", "cushioned"],
-            "capacity": ["one rider", "two riders"]
-        },
-        "suspension": ["stability", "control during movement"],
-        "movement": ["accelerating", "braking", "leaning into turns"],
-        "sound": ["quiet hums in electric models", "loud roars in high-performance engines"],
-        "association": ["freedom", "adventure", "utility"],
-        "environment": ["urban", "rural"]
+      "colors": ["black", "white", "red", "blue", "silver", "custom-painted designs"],
+      "body": {
+        "size": ["compact"],
+        "shape": ["aerodynamic"],
+        "frame": ["lightweight metals", "aluminum", "steel"],
+        "surface": ["smooth", "glossy"]
+      },
+      "wheels": {
+        "shape": ["circular"],
+        "rims": ["alloy", "steel"],
+        "tires": ["durable", "rubber", "designed for traction"]
+      },
+      "parts": ["handlebars", "mirrors", "headlights"],
+      "engine": {
+        "position": ["central"],
+        "features": ["visible exhaust system"]
+      },
+      "seat": {
+        "type": ["narrow", "cushioned"],
+        "capacity": ["one rider", "two riders"]
+      },
+      "suspension": ["stability", "control during movement"],
+      "movement": ["accelerating", "braking", "leaning into turns"],
+      "sound": ["quiet hums in electric models", "loud roars in high-performance engines"],
+      "association": ["freedom", "adventure", "utility"],
+      "environment": ["urban", "rural"]
     },
 
     "sofa": {
-        "colors": ["beige", "gray", "black", "red", "blue", "patterned designs"],
-        "body": {
-            "shape": ["rectangular", "rounded"],
-            "surface": ["soft", "cushioned"],
-            "materials": ["leather", "fabric", "microfiber"]
-        },
-        "legs": {
-            "type": ["wooden", "metallic", "hidden"]
-        },
-        "parts": ["armrests", "backrests", "cushions"],
-        "armrests": ["wide and padded", "slim and minimalistic"],
-        "backrests": ["high", "low", "reclinable"],
-        "cushions": ["foam fillings", "down fillings", "soft", "durable"],
-        "purpose": ["sitting", "lounging", "sleeping"],
-        "expression": ["minimalist", "modern", "luxurious", "ornate"],
-        "environment": ["living rooms", "offices", "waiting areas"]
+      "colors": ["beige", "gray", "black", "red", "blue", "patterned designs"],
+      "body": {
+        "shape": ["rectangular", "rounded"],
+        "surface": ["soft", "cushioned"],
+        "materials": ["leather", "fabric", "microfiber"]
+      },
+      "legs": {
+        "type": ["wooden", "metallic", "hidden"]
+      },
+      "parts": ["armrests", "backrests", "cushions"],
+      "armrests": ["wide and padded", "slim and minimalistic"],
+      "backrests": ["high", "low", "reclinable"],
+      "cushions": ["foam fillings", "down fillings", "soft", "durable"],
+      "purpose": ["sitting", "lounging", "sleeping"],
+      "expression": ["minimalist", "modern", "luxurious", "ornate"],
+      "environment": ["living rooms", "offices", "waiting areas"]
     },
 
-    "aeroplane": {
-        "colors": ["white", "blue", "red", "camouflaged", "gray"],
-        "surface": ["smooth", "metallic"],
-        "body": ["elongated", "streamlined"],
-        "wings": {
-            "size": ["wide"],
-            "shapes": ["straight", "swept", "delta"]
-        },
-        "engines": {
-            "location": ["under wings", "on tail"],
-            "type": ["jet engines", "propellers"]
-        },
-        "wheels": {
-            "type": ["retractable"],
-            "location": ["fuselage"]
-        },
-        "cockpit": ["front location", "transparent windows"],
-        "tail": ["vertical stabilizer", "horizontal stabilizer"],
-        "actions": ["takeoff", "cruising", "landing"],
-        "sounds": ["engine noise"]
+  "aeroplane": {
+    "colors": ["white", "blue", "red", "camouflaged", "gray"],
+    "surface": ["smooth", "metallic"],
+    "body": ["elongated", "streamlined"],
+    "wings": {
+      "size": ["wide"],
+      "shapes": ["straight", "swept", "delta"]
     },
+    "engines": {
+      "location": ["under wings", "on tail"],
+      "type": ["jet engines", "propellers"]
+    },
+    "wheels": {
+      "type": ["retractable"],
+      "location": ["fuselage"]
+    },
+    "cockpit": ["front location", "transparent windows"],
+    "tail": ["vertical stabilizer", "horizontal stabilizer"],
+    "actions": ["takeoff", "cruising", "landing"],
+    "sounds": ["engine noise"]
+  },
 
-    "bicycle": {
-        "colors": ["black", "white", "red", "blue", "vibrant combinations"],
-        "surface": ["smooth", "glossy", "matte"],
-        "frame": {
-            "materials": ["steel", "aluminum", "carbon fiber"],
-            "geometry": ["triangular", "diamond-shaped"]
-        },
-        "wheels": {
-            "rims": ["thin", "circular", "aluminum", "carbon fiber"],
-            "tires": ["rubber", "smooth", "treaded"]
-        },
-        "handlebars": ["flat", "curved", "drop-style"],
-        "saddle": ["padded", "adjustable height"],
-        "drivetrain": ["pedals", "chain", "gears"],
-        "actions": ["cruising", "climbing hills", "traversing trails"],
-        "movements": ["pedaling", "turning", "braking"],
-        "sounds": ["clicking gears", "brake squeaks"]
+  "bicycle": {
+    "colors": ["black", "white", "red", "blue", "vibrant combinations"],
+    "surface": ["smooth", "glossy", "matte"],
+    "frame": {
+      "materials": ["steel", "aluminum", "carbon fiber"],
+      "geometry": ["triangular", "diamond-shaped"]
     },
+    "wheels": {
+      "rims": ["thin", "circular", "aluminum", "carbon fiber"],
+      "tires": ["rubber", "smooth", "treaded"]
+    },
+    "handlebars": ["flat", "curved", "drop-style"],
+    "saddle": ["padded", "adjustable height"],
+    "drivetrain": ["pedals", "chain", "gears"],
+    "actions": ["cruising", "climbing hills", "traversing trails"],
+    "movements": ["pedaling", "turning", "braking"],
+    "sounds": ["clicking gears", "brake squeaks"]
+  },
 
-    "boat": {
-        "colors": ["white", "blue", "red", "striped", "painted designs"],
-        "hull": {
-            "materials": ["wood", "fiberglass", "metal"],
-            "shapes": ["flat-bottomed", "V-shaped", "rounded"],
-            "finish": ["glossy", "matte"]
-        },
-        "structure": {
-            "deck": ["sturdy", "plank", "composite"],
-            "bow": ["pointed", "rounded"],
-            "components": ["masts", "motors", "rudders"]
-        },
-        "accessories": ["anchors", "life buoys", "ropes"],
-        "interior": {
-            "features": ["cabins", "open seating areas"],
-            "parts": ["storage", "comfort zones"]
-        },
-        "action": ["floating", "sailing", "speeding"]
+  "boat": {
+    "colors": ["white", "blue", "red", "striped", "painted designs"],
+    "hull": {
+      "materials": ["wood", "fiberglass", "metal"],
+      "shapes": ["flat-bottomed", "V-shaped", "rounded"],
+      "finish": ["glossy", "matte"]
     },
+    "structure": {
+      "deck": ["sturdy", "plank", "composite"],
+      "bow": ["pointed", "rounded"],
+      "components": ["masts", "motors", "rudders"]
+    },
+    "accessories": ["anchors", "life buoys", "ropes"],
+    "interior": {
+      "features": ["cabins", "open seating areas"],
+      "parts": ["storage", "comfort zones"]
+    },
+    "action": ["floating", "sailing", "speeding"]
+  },
 
-    "bottle": {
-        "colors": ["clear", "green", "blue", "opaque"],
-        "materials": ["plastic", "glass", "metal"],
-        "shape": ["cylindrical", "rectangular"],
-        "surface": ["smooth", "textured", "glossy", "matte"],
-        "structure": {
-            "neck": ["narrower than body"],
-            "opening": ["threaded", "corked"],
-            "caps_or_lids": ["screw-on", "flip-top", "cork stoppers"],
-            "handles_or_grips": ["handles", "indented grips"]
-        },
-        "interior": {
-            "design": ["hollow"],
-            "use": ["liquids", "powders", "substances"],
-            "features": ["nozzle", "straw", "dropper"]
-        },
-        "action": ["pouring", "storing", "transporting"]
+  "bottle": {
+    "colors": ["clear", "green", "blue", "opaque"],
+    "materials": ["plastic", "glass", "metal"],
+    "shape": ["cylindrical", "rectangular"],
+    "surface": ["smooth", "textured", "glossy", "matte"],
+    "structure": {
+      "neck": ["narrower than body"],
+      "opening": ["threaded", "corked"],
+      "caps_or_lids": ["screw-on", "flip-top", "cork stoppers"],
+      "handles_or_grips": ["handles", "indented grips"]
     },
-    "car": {
-        "colors": ["black", "white", "red", "blue", "metallic shades"],
-        "materials": ["metal", "plastic", "glass"],
-        "design": ["sleek", "aerodynamic"],
-        "features": ["hood", "roof", "trunk"],
-        "structure": {
-            "wheels": ["four", "sporty", "rugged", "all-terrain"],
-            "doors": ["two", "four", "traditional", "sliding", "lifting"],
-            "sections": ["front", "rear"],
-            "parts": ["headlights", "taillights", "grills"]
-        },
-        "interior": {
-            "features": ["seats", "steering wheel", "dashboard"],
-            "extras": ["upholstery", "air conditioning", "infotainment systems", "sunroofs", "cup holders",
-                       "foldable seats"]
-        },
-        "functional_parts": ["mirrors", "wipers", "exhaust pipes"],
-        "action": ["accelerating", "braking", "parking"]
+    "interior": {
+      "design": ["hollow"],
+      "use": ["liquids", "powders", "substances"],
+      "features": ["nozzle", "straw", "dropper"]
     },
+    "action": ["pouring", "storing", "transporting"]
+  },
+  "car": {
+    "colors": ["black", "white", "red", "blue", "metallic shades"],
+    "materials": ["metal", "plastic", "glass"],
+    "design": ["sleek", "aerodynamic"],
+    "features": ["hood", "roof", "trunk"],
+    "structure": {
+      "wheels": ["four", "sporty", "rugged", "all-terrain"],
+      "doors": ["two", "four", "traditional", "sliding", "lifting"],
+      "sections": ["front", "rear"],
+      "parts": ["headlights", "taillights", "grills"]
+    },
+    "interior": {
+      "features": ["seats", "steering wheel", "dashboard"],
+      "extras": ["upholstery", "air conditioning", "infotainment systems", "sunroofs", "cup holders", "foldable seats"]
+    },
+    "functional_parts": ["mirrors", "wipers", "exhaust pipes"],
+    "action": ["accelerating", "braking", "parking"]
+  },
 
-    "cat": {
-        "colors": ["black", "white", "gray", "orange", "brown", "striped", "spotted", "calico"],
-        "fur": ["soft", "smooth", "short", "long"],
-        "body": ["flexible", "lightweight", "sleek", "agile"],
-        "legs": {
-            "type": ["slender", "strong"],
-            "ends": ["padded paws", "retractable claws"]
-        },
-        "face": {
-            "shape": ["triangular"],
-            "eyes": {
-                "shape": ["almond-shaped"],
-                "colors": ["green", "blue", "yellow", "amber"]
-            },
-            "ears": ["upright", "pointed"],
-            "nose": ["small", "pink", "black"],
-            "whiskers": ["long", "sensitive"]
-        },
-        "behavior": ["purring", "meowing", "hunting", "grooming"]
+  "cat": {
+    "colors": ["black", "white", "gray", "orange", "brown", "striped", "spotted", "calico"],
+    "fur": ["soft", "smooth", "short", "long"],
+    "body": ["flexible", "lightweight", "sleek", "agile"],
+    "legs": {
+      "type": ["slender", "strong"],
+      "ends": ["padded paws", "retractable claws"]
     },
+    "face": {
+      "shape": ["triangular"],
+      "eyes": {
+        "shape": ["almond-shaped"],
+        "colors": ["green", "blue", "yellow", "amber"]
+      },
+      "ears": ["upright", "pointed"],
+      "nose": ["small", "pink", "black"],
+      "whiskers": ["long", "sensitive"]
+    },
+    "behavior": ["purring", "meowing", "hunting", "grooming"]
+  },
 
-    "chair": {
-        "materials": ["wood", "metal", "plastic", "upholstered fabric"],
-        "colors": ["black", "white", "brown", "gray", "vibrant hues"],
-        "structure": {
-            "shapes": ["rectangular", "square", "rounded"],
-            "components": ["seat", "backrest"],
-            "seat_types": ["cushioned", "contoured", "flat"]
-        },
-        "legs": {
-            "count": ["four"],
-            "styles": ["single pedestal", "cantilever"],
-            "features": ["protective caps", "wheels"]
-        },
-        "armrests": ["curved", "straight"],
-        "behavior": ["swiveling", "folding", "reclining"],
-        "settings": ["dining", "office", "relaxation spaces"]
+  "chair": {
+    "materials": ["wood", "metal", "plastic", "upholstered fabric"],
+    "colors": ["black", "white", "brown", "gray", "vibrant hues"],
+    "structure": {
+      "shapes": ["rectangular", "square", "rounded"],
+      "components": ["seat", "backrest"],
+      "seat_types": ["cushioned", "contoured", "flat"]
     },
+    "legs": {
+      "count": ["four"],
+      "styles": ["single pedestal", "cantilever"],
+      "features": ["protective caps", "wheels"]
+    },
+    "armrests": ["curved", "straight"],
+    "behavior": ["swiveling", "folding", "reclining"],
+    "settings": ["dining", "office", "relaxation spaces"]
+  },
 
-    "diningtable": {
-        "materials": ["wood", "metal", "glass", "composite materials"],
-        "colors": ["natural wood tones", "white", "black", "stained finishes"],
-        "tabletop": {
-            "surface": ["flat"],
-            "shapes": ["rectangular", "circular", "square", "oval"],
-            "features": ["decorative patterns", "smooth finishes", "protective coatings"]
-        },
-        "support": {
-            "type": ["legs", "pedestals"],
-            "styles": ["straight", "carved", "tapered"]
-        },
-        "mechanisms": ["extendable", "foldable"],
-        "height": ["consistent for dining"],
-        "settings": ["formal", "informal"],
-        "designs": ["modern", "rustic", "classic"]
+  "diningtable": {
+    "materials": ["wood", "metal", "glass", "composite materials"],
+    "colors": ["natural wood tones", "white", "black", "stained finishes"],
+    "tabletop": {
+      "surface": ["flat"],
+      "shapes": ["rectangular", "circular", "square", "oval"],
+      "features": ["decorative patterns", "smooth finishes", "protective coatings"]
     },
+    "support": {
+      "type": ["legs", "pedestals"],
+      "styles": ["straight", "carved", "tapered"]
+    },
+    "mechanisms": ["extendable", "foldable"],
+    "height": ["consistent for dining"],
+    "settings": ["formal", "informal"],
+    "designs": ["modern", "rustic", "classic"]
+  },
 
-    "dog": {
-        "colors": ["brown", "black", "white", "golden", "gray", "spotted", "brindle"],
-        "fur": ["smooth", "short", "long", "fluffy"],
-        "body_structure": ["balanced", "athletic", "small", "large"],
-        "ears": ["floppy", "upright", "semi-erect"],
-        "tail": ["bushy", "curled", "straight"],
-        "face": {
-            "muzzle": ["pronounced"],
-            "nose": ["wet", "black", "brown"]
-        },
-        "eyes": {
-            "expression": ["expressive"],
-            "colors": ["brown", "blue", "hazel"]
-        },
-        "mouth": ["panting", "smiling", "barking"],
-        "legs": {
-            "type": ["sturdy"],
-            "ends": ["padded paws", "claws"]
-        },
-        "emotions": ["playful", "excited", "calm", "alert"],
-        "actions": ["running", "barking", "wagging tail", "interacting socially"]
+  "dog": {
+    "colors": ["brown", "black", "white", "golden", "gray", "spotted", "brindle"],
+    "fur": ["smooth", "short", "long", "fluffy"],
+    "body_structure": ["balanced", "athletic", "small", "large"],
+    "ears": ["floppy", "upright", "semi-erect"],
+    "tail": ["bushy", "curled", "straight"],
+    "face": {
+      "muzzle": ["pronounced"],
+      "nose": ["wet", "black", "brown"]
     },
+    "eyes": {
+      "expression": ["expressive"],
+      "colors": ["brown", "blue", "hazel"]
+    },
+    "mouth": ["panting", "smiling", "barking"],
+    "legs": {
+      "type": ["sturdy"],
+      "ends": ["padded paws", "claws"]
+    },
+    "emotions": ["playful", "excited", "calm", "alert"],
+    "actions": ["running", "barking", "wagging tail", "interacting socially"]
+  },
 
-    "horse": {
-        "colors": ["chestnut", "bay", "black", "gray", "white", "palomino", "dappled", "roan", "spotted"],
-        "coat": ["smooth", "shiny"],
-        "body_structure": ["strong", "muscular", "speed", "endurance"],
-        "neck": ["long"],
-        "chest": ["broad"],
-        "mane_and_tail": ["long", "flowing"],
-        "face": {
-            "muzzle": ["long", "straight"],
-            "nostrils": ["large"],
-            "jaw": ["prominent"]
-        },
-        "eyes": {
-            "size": ["large"],
-            "placement": ["set wide apart"],
-            "colors": ["brown", "black"],
-            "expression": ["calm", "alert"]
-        },
-        "legs": {
-            "type": ["slender", "powerful"],
-            "ends": ["hard hooves", "durable"]
-        },
-        "emotions": ["calmness", "alertness", "excitement"],
-        "actions": ["running", "trotting", "galloping", "grazing"]
+  "horse": {
+    "colors": ["chestnut", "bay", "black", "gray", "white", "palomino", "dappled", "roan", "spotted"],
+    "coat": ["smooth", "shiny"],
+    "body_structure": ["strong", "muscular", "speed", "endurance"],
+    "neck": ["long"],
+    "chest": ["broad"],
+    "mane_and_tail": ["long", "flowing"],
+    "face": {
+      "muzzle": ["long", "straight"],
+      "nostrils": ["large"],
+      "jaw": ["prominent"]
     },
+    "eyes": {
+      "size": ["large"],
+      "placement": ["set wide apart"],
+      "colors": ["brown", "black"],
+      "expression": ["calm", "alert"]
+    },
+    "legs": {
+      "type": ["slender", "powerful"],
+      "ends": ["hard hooves", "durable"]
+    },
+    "emotions": ["calmness", "alertness", "excitement"],
+    "actions": ["running", "trotting", "galloping", "grazing"]
+  },
 
-    "person": {
-        "skin_tones": ["pale", "fair", "tan", "dark"],
-        "body_shapes": ["slender", "athletic", "stocky"],
-        "hair": {
-            "colors": ["black", "brown", "blonde", "red", "gray", "white"],
-            "textures": ["straight", "wavy", "curly", "coiled"]
-        },
-        "eyes": {
-            "shapes": ["round", "almond-shaped"],
-            "colors": ["brown", "blue", "green", "gray", "hazel"]
-        },
-        "face": {
-            "nose": ["varied sizes and shapes"],
-            "lips": ["thin", "full", "medium"],
-            "eyebrows": ["frame the eyes", "contribute to expressions"]
-        },
-        "arms_and_legs": {
-            "proportions": ["proportional length"],
-            "ends": {
-                "hands": ["fingers"],
-                "feet": ["toes"]
-            }
-        },
-        "emotions": ["happiness", "sadness", "surprise", "confidence", "curiosity", "anxiety"],
-        "actions": ["walking", "running", "sitting", "talking"]
+  "person": {
+    "skin_tones": ["pale", "fair", "tan", "dark"],
+    "body_shapes": ["slender", "athletic", "stocky"],
+    "hair": {
+      "colors": ["black", "brown", "blonde", "red", "gray", "white"],
+      "textures": ["straight", "wavy", "curly", "coiled"]
     },
+    "eyes": {
+      "shapes": ["round", "almond-shaped"],
+      "colors": ["brown", "blue", "green", "gray", "hazel"]
+    },
+    "face": {
+      "nose": ["varied sizes and shapes"],
+      "lips": ["thin", "full", "medium"],
+      "eyebrows": ["frame the eyes", "contribute to expressions"]
+    },
+    "arms_and_legs": {
+      "proportions": ["proportional length"],
+      "ends": {
+        "hands": ["fingers"],
+        "feet": ["toes"]
+      }
+    },
+    "emotions": ["happiness", "sadness", "surprise", "confidence", "curiosity", "anxiety"],
+    "actions": ["walking", "running", "sitting", "talking"]
+  },
 
-    "pottedplant": {
-        "colors": ["green", "red", "yellow", "pink", "white"],
-        "leaves": {
-            "shape": ["oval", "round", "narrow", "pointed"],
-            "edges": ["smooth", "wavy", "serrated"],
-            "texture": ["glossy", "velvety", "leathery"]
-        },
-        "stems": ["sturdy", "upright", "trailing", "visible nodes", "internodes"],
-        "pot": {
-            "materials": ["clay", "ceramic", "plastic", "metal"],
-            "shapes": ["cylindrical", "rectangular", "round"]
-        },
-        "roots": ["contained within soil"],
-        "soil": ["rich", "moist", "sandy", "rocky"],
-        "decorations": ["moss", "pebbles", "mulch"],
-        "expression": ["serene", "decorative"],
-        "behavior": ["blooming", "growing", "wilting"]
+  "pottedplant": {
+    "colors": ["green", "red", "yellow", "pink", "white"],
+    "leaves": {
+      "shape": ["oval", "round", "narrow", "pointed"],
+      "edges": ["smooth", "wavy", "serrated"],
+      "texture": ["glossy", "velvety", "leathery"]
     },
+    "stems": ["sturdy", "upright", "trailing", "visible nodes", "internodes"],
+    "pot": {
+      "materials": ["clay", "ceramic", "plastic", "metal"],
+      "shapes": ["cylindrical", "rectangular", "round"]
+    },
+    "roots": ["contained within soil"],
+    "soil": ["rich", "moist", "sandy", "rocky"],
+    "decorations": ["moss", "pebbles", "mulch"],
+    "expression": ["serene", "decorative"],
+    "behavior": ["blooming", "growing", "wilting"]
+  },
 
-    "sheep": {
-        "colors": ["white", "cream", "black", "mixed patterns"],
-        "fleece": ["soft", "dense", "insulating"],
-        "body": ["sturdy", "rounded", "compact"],
-        "hooves": {
-            "type": ["small", "split"],
-            "function": ["grip on uneven ground"]
-        },
-        "face": {
-            "snout": ["long", "slightly tapered"],
-            "eyes": {
-                "shape": ["almond-shaped"],
-                "colors": ["brown", "black", "amber"]
-            },
-            "ears": ["medium-sized", "point outward or downward"]
-        },
-        "behavior": ["grazing", "flocking", "playful bounding"]
+  "sheep": {
+    "colors": ["white", "cream", "black", "mixed patterns"],
+    "fleece": ["soft", "dense", "insulating"],
+    "body": ["sturdy", "rounded", "compact"],
+    "hooves": {
+      "type": ["small", "split"],
+      "function": ["grip on uneven ground"]
     },
-    "train": {
-        "colors": ["black", "white", "red", "blue", "green", "yellow"],
-        "body": {
-            "structure": ["long", "cylindrical", "aerodynamic", "boxy"],
-            "features": ["windows", "doors", "painted patterns", "logos"]
-        },
-        "wheels": ["large", "metallic", "attached to undercarriage"],
-        "interior": {
-            "features": ["rows of seats", "storage areas", "standing sections"],
-            "facilities": ["lighting", "air conditioning", "luggage racks"]
-        },
-        "locomotive": {
-            "components": ["engine", "control panel"]
-        },
-        "sounds": ["whistles", "horns", "clattering wheels"],
-        "expression": ["sleek", "modern", "vintage", "industrial"],
-        "behavior": ["starting", "stopping", "motion at varying speeds"],
-        "purpose": ["transportation of passengers", "transportation of cargo"]
+    "face": {
+      "snout": ["long", "slightly tapered"],
+      "eyes": {
+        "shape": ["almond-shaped"],
+        "colors": ["brown", "black", "amber"]
+      },
+      "ears": ["medium-sized", "point outward or downward"]
     },
-    "tvmonitor": {
-        "colors": ["black", "gray", "silver"],
-        "screen": {
-            "shape": ["rectangular"],
-            "features": ["thin bezels", "flat surface", "curved surface"],
-            "resolution": ["high-definition", "ultra-high-definition"]
-        },
-        "stand": {
-            "materials": ["metal", "plastic"],
-            "features": ["sturdy", "adjustable angles"]
-        },
-        "ports": ["HDMI", "USB", "VGA"],
-        "additional_features": ["built-in speakers", "ventilation grilles", "control buttons"],
-        "control": ["remote control"],
-        "placement": ["wall-mounted", "on stand"],
-        "expression": ["modern", "minimalistic", "professional", "high-tech"],
-        "behavior": ["display static images", "display dynamic video", "switch channels", "adjust brightness",
-                     "connect to external devices"]
+    "behavior": ["grazing", "flocking", "playful bounding"]
+  },
+  "train": {
+    "colors": ["black", "white", "red", "blue", "green", "yellow"],
+    "body": {
+      "structure": ["long", "cylindrical", "aerodynamic", "boxy"],
+      "features": ["windows", "doors", "painted patterns", "logos"]
     },
+    "wheels": ["large", "metallic", "attached to undercarriage"],
+    "interior": {
+      "features": ["rows of seats", "storage areas", "standing sections"],
+      "facilities": ["lighting", "air conditioning", "luggage racks"]
+    },
+    "locomotive": {
+      "components": ["engine", "control panel"]
+    },
+    "sounds": ["whistles", "horns", "clattering wheels"],
+    "expression": ["sleek", "modern", "vintage", "industrial"],
+    "behavior": ["starting", "stopping", "motion at varying speeds"],
+    "purpose": ["transportation of passengers", "transportation of cargo"]
+  },
+  "tvmonitor": {
+    "colors": ["black", "gray", "silver"],
+    "screen": {
+      "shape": ["rectangular"],
+      "features": ["thin bezels", "flat surface", "curved surface"],
+      "resolution": ["high-definition", "ultra-high-definition"]
+    },
+    "stand": {
+      "materials": ["metal", "plastic"],
+      "features": ["sturdy", "adjustable angles"]
+    },
+    "ports": ["HDMI", "USB", "VGA"],
+    "additional_features": ["built-in speakers", "ventilation grilles", "control buttons"],
+    "control": ["remote control"],
+    "placement": ["wall-mounted", "on stand"],
+    "expression": ["modern", "minimalistic", "professional", "high-tech"],
+    "behavior": ["display static images", "display dynamic video", "switch channels", "adjust brightness", "connect to external devices"]
+  },
 }
 
 meta_COCO_info = {
@@ -1587,18 +1572,18 @@ meta_COCO_info = {
         "distinctive marking": ["stripes", "spots", "colorful patterns"],
         "Fine-grained classes": ["Sparrow", "Eagle", "Parrot", "Owl", "Penguin", "Peacock"],
         "similar classes": {
-            "kite": {
-                "distinguished": ["feathers", "beak", "ability to fly independently"],
-                "similar": ["ability to glide through air", "aerodynamic structure", "used in aerial environments"]
-            },
-            "frisbee": {
-                "distinguished": ["living organism", "feathers", "beak"],
-                "similar": ["flies through the air", "circular or wing-like structure", "used in flight"]
-            },
-            "umbrella": {
-                "distinguished": ["feathers", "flying ability", "beak"],
-                "similar": ["can be spread open like wings", "lightweight structure", "curved form"]
-            }
+        "kite": {
+            "distinguished": ["feathers", "beak", "ability to fly independently"],
+            "similar": ["ability to glide through air", "aerodynamic structure", "used in aerial environments"]
+        },
+        "frisbee": {
+            "distinguished": ["living organism", "feathers", "beak"],
+            "similar": ["flies through the air", "circular or wing-like structure", "used in flight"]
+        },
+        "umbrella": {
+            "distinguished": ["feathers", "flying ability", "beak"],
+            "similar": ["can be spread open like wings", "lightweight structure", "curved form"]
+        }
         }
     },
 
@@ -1615,24 +1600,23 @@ meta_COCO_info = {
         "interior layout": ["rows of seats", "handrails", "overhead compartments", "accessible seating"],
         "size": ["small", "large", "articulated"],
         "Fine-grained classes": ["City Bus", "School Bus", "Double-Decker", "Coach", "Minibus", "Articulated Bus"],
-
+        
         "similar classes": {
-            "truck": {
-                "distinguished": ["passenger transport", "seating arrangement", "longer body"],
-                "similar": ["large vehicle", "wheels", "road transport"]
-            },
-            "bench": {
-                "distinguished": ["movement", "engine", "passenger capacity"],
-                "similar": ["provides seating", "used in public spaces", "can accommodate many people"]
-            },
-            "stop sign": {
-                "distinguished": ["movement", "large structure", "wheeled vehicle"],
-                "similar": ["seen in public transportation settings", "road-associated",
-                            "stationary object in transportation system"]
-            }
+        "truck": {
+            "distinguished": ["passenger transport", "seating arrangement", "longer body"],
+            "similar": ["large vehicle", "wheels", "road transport"]
+        },
+        "bench": {
+            "distinguished": ["movement", "engine", "passenger capacity"],
+            "similar": ["provides seating", "used in public spaces", "can accommodate many people"]
+        },
+        "stop sign": {
+            "distinguished": ["movement", "large structure", "wheeled vehicle"],
+            "similar": ["seen in public transportation settings", "road-associated", "stationary object in transportation system"]
         }
-    },
-
+        }
+        },
+        
     "cow": {
         "colors": ["black", "brown", "white", "mix"],
         "body": ["sturdy", "muscular", "lean", "stocky"],
@@ -1649,22 +1633,22 @@ meta_COCO_info = {
         "distinctive marking": ["spots", "patches", "stripes"],
         "Fine-grained classes": ["Holstein", "Jersey", "Hereford", "Angus", "Guernsey", "Ayrshire"],
         "similar classes": {
-            "zebra": {
-                "distinguished": ["solid coat color", "domesticated", "bulkier body"],
-                "similar": ["four-legged", "grazing animal", "herbivorous"]
-            },
-            "giraffe": {
-                "distinguished": ["long neck", "taller structure", "spotted coat"],
-                "similar": ["large body size", "four legs", "herbivore"]
-            },
-            "bear": {
-                "distinguished": ["different body structure", "carnivorous", "shorter fur"],
-                "similar": ["large mammal", "fur-covered body", "used in land environments"]
-            }
+        "zebra": {
+            "distinguished": ["solid coat color", "domesticated", "bulkier body"],
+            "similar": ["four-legged", "grazing animal", "herbivorous"]
+        },
+        "giraffe": {
+            "distinguished": ["long neck", "taller structure", "spotted coat"],
+            "similar": ["large body size", "four legs", "herbivore"]
+        },
+        "bear": {
+            "distinguished": ["different body structure", "carnivorous", "shorter fur"],
+            "similar": ["large mammal", "fur-covered body", "used in land environments"]
+        }
         }
 
     },
-
+            
     "motorbike": {
         "colors": ["black", "brown", "white", "mix"],
         "body": ["sleek", "aerodynamic", "metal", "plastic"],
@@ -1680,18 +1664,18 @@ meta_COCO_info = {
         "design": ["sporty", "aggressive", "classic", "vintage"],
         "Fine-grained classes": ["Cruiser", "Sportbike", "Touring", "Standard", "Dual-sport", "Scooter"],
         "similar classes": {
-            "skateboard": {
-                "distinguished": ["engine", "seating", "handlebars"],
-                "similar": ["requires balance", "two-wheeled design", "used for personal transport"]
-            },
-            "truck": {
-                "distinguished": ["smaller size", "open design", "two wheels"],
-                "similar": ["engine-powered", "used for transport", "road vehicle"]
-            },
-            "sports ball": {
-                "distinguished": ["engine", "wheels", "seating"],
-                "similar": ["round features", "movement involved", "used in active settings"]
-            }
+        "skateboard": {
+            "distinguished": ["engine", "seating", "handlebars"],
+            "similar": ["requires balance", "two-wheeled design", "used for personal transport"]
+        },
+        "truck": {
+            "distinguished": ["smaller size", "open design", "two wheels"],
+            "similar": ["engine-powered", "used for transport", "road vehicle"]
+        },
+        "sports ball": {
+            "distinguished": ["engine", "wheels", "seating"],
+            "similar": ["round features", "movement involved", "used in active settings"]
+        }
         }
     },
     "sofa": {
@@ -1707,399 +1691,391 @@ meta_COCO_info = {
         "features": ["recliners", "storage compartments", "convertible functions"],
         "Fine-grained classes": ["Loveseat", "Sectional", "Sleeper", "Chesterfield", "Recliner", "Modular"],
         "similar classes": {
-            "bench": {
-                "distinguished": ["padded cushions", "softer material", "used indoors"],
-                "similar": ["long structure", "provides seating", "can accommodate multiple people"]
-            },
-            "bed": {
-                "distinguished": ["upright seating", "backrest", "used for sitting not sleeping"],
-                "similar": ["soft surface", "supports reclining", "used for comfort"]
-            },
-            "umbrella": {
-                "distinguished": ["used for seating", "padded", "stationary"],
-                "similar": ["wide structure", "used for protection or comfort", "can cover multiple people"]
-            }
+        "bench": {
+            "distinguished": ["padded cushions", "softer material", "used indoors"],
+            "similar": ["long structure", "provides seating", "can accommodate multiple people"]
+        },
+        "bed": {
+            "distinguished": ["upright seating", "backrest", "used for sitting not sleeping"],
+            "similar": ["soft surface", "supports reclining", "used for comfort"]
+        },
+        "umbrella": {
+            "distinguished": ["used for seating", "padded", "stationary"],
+            "similar": ["wide structure", "used for protection or comfort", "can cover multiple people"]
+        }
+        }
+    },   
+
+    'aeroplane': { 
+    "colors": ["white", "silver", "blue", "combination"], 
+    "body": ["streamlined", "cylindrical"], "wings": ["large", "medium"], "tail": ["vertical", "horizontal", "with stabilizers"], 
+    "engines": ["under the wings", "rear"], 
+    "landing gear": ["retractable", "fixed"], 
+    "cockpit windows": ["angular"], 
+    "markings": ["logos", "stripes", "national insignia"], 
+    "Fine-grained classes": ["Jet airliner", "Private jet", "Cargo plane", "Military fighter jet", "Propeller plane", "Glider", "Seaplane"],
+    "similar classes": {
+        "kite": {
+            "distinguished": ["engine-powered", "metal structure", "passenger transport"],
+            "similar": ["ability to fly", "aerodynamic design", "used for travel through air"]
+        },
+        "frisbee": {
+            "distinguished": ["engine", "size", "mechanical complexity"],
+            "similar": ["circular or flat design", "ability to glide", "used in the air"]
+        },
+        "surfboard": {
+            "distinguished": ["wings", "engine", "flight capability"],
+            "similar": ["streamlined design", "used in open environments", "movement across surfaces (air for airplane, water for surfboard)"]
+        }
         }
     },
 
-    'aeroplane': {
-        "colors": ["white", "silver", "blue", "combination"],
-        "body": ["streamlined", "cylindrical"], "wings": ["large", "medium"],
-        "tail": ["vertical", "horizontal", "with stabilizers"],
-        "engines": ["under the wings", "rear"],
-        "landing gear": ["retractable", "fixed"],
-        "cockpit windows": ["angular"],
-        "markings": ["logos", "stripes", "national insignia"],
-        "Fine-grained classes": ["Jet airliner", "Private jet", "Cargo plane", "Military fighter jet",
-                                 "Propeller plane", "Glider", "Seaplane"],
-        "similar classes": {
-            "kite": {
-                "distinguished": ["engine-powered", "metal structure", "passenger transport"],
-                "similar": ["ability to fly", "aerodynamic design", "used for travel through air"]
-            },
-            "frisbee": {
-                "distinguished": ["engine", "size", "mechanical complexity"],
-                "similar": ["circular or flat design", "ability to glide", "used in the air"]
-            },
-            "surfboard": {
-                "distinguished": ["wings", "engine", "flight capability"],
-                "similar": ["streamlined design", "used in open environments",
-                            "movement across surfaces (air for airplane, water for surfboard)"]
-            }
+    'bicycle': { 
+    "colors": ["red", "black", "blue", "white", "combination"], 
+    "frame": ["thin", "sturdy", "thick"], 
+    "wheels": ["medium", "rubber tires", "metal spokes"], 
+    "handlebars": ["flat", "curved"], "seat": ["padded", "firm"], "pedals": ["metal", "plastic"], "chain": ["visible", "covered"], "features": ["gears", "fenders", "baskets"], 
+    "Fine-grained classes": ["Mountain bike", "Road bike", "Hybrid bike", "BMX", "Electric bike"],
+    "similar classes": {
+        "skateboard": {
+            "distinguished": ["handlebars", "pedals", "two wheels"],
+            "similar": ["wheeled transport", "used for personal mobility", "requires balance"]
+        },
+        "surfboard": {
+            "distinguished": ["wheels", "pedals", "land-based use"],
+            "similar": ["long, narrow structure", "requires balance", "used for leisure"]
+        },
+        "kite": {
+            "distinguished": ["wheels", "pedals", "ground transport"],
+            "similar": ["lightweight structure", "aerodynamic shape", "often seen in recreational environments"]
+        }
         }
     },
 
-    'bicycle': {
-        "colors": ["red", "black", "blue", "white", "combination"],
-        "frame": ["thin", "sturdy", "thick"],
-        "wheels": ["medium", "rubber tires", "metal spokes"],
-        "handlebars": ["flat", "curved"], "seat": ["padded", "firm"], "pedals": ["metal", "plastic"],
-        "chain": ["visible", "covered"], "features": ["gears", "fenders", "baskets"],
-        "Fine-grained classes": ["Mountain bike", "Road bike", "Hybrid bike", "BMX", "Electric bike"],
-        "similar classes": {
-            "skateboard": {
-                "distinguished": ["handlebars", "pedals", "two wheels"],
-                "similar": ["wheeled transport", "used for personal mobility", "requires balance"]
-            },
-            "surfboard": {
-                "distinguished": ["wheels", "pedals", "land-based use"],
-                "similar": ["long, narrow structure", "requires balance", "used for leisure"]
-            },
-            "kite": {
-                "distinguished": ["wheels", "pedals", "ground transport"],
-                "similar": ["lightweight structure", "aerodynamic shape", "often seen in recreational environments"]
-            }
+    'boat': { 
+    "colors": ["white", "blue", "black", "combination"], 
+    "hull": ["long", "narrow", "wide", "flat"], 
+    "power": ["motorized", "sail-powered"], 
+    "deck features": ["cabins", "masts", "navigation equipment"], "controls": ["rudder", "propeller"], 
+    "Fine-grained classes": ["Sailboat", "Motorboat", "Fishing boat", "Yacht", "Canoe", "Speedboat"],
+    "similar classes": {
+        "surfboard": {
+            "distinguished": ["engine (in some boats)", "enclosed structure", "used on water for passengers or cargo"],
+            "similar": ["floats on water", "long and flat shape", "used in water sports or travel"]
+        },
+        "bench": {
+            "distinguished": ["ability to float", "propulsion system", "water-based"],
+            "similar": ["long structure", "supports multiple people", "used in public settings"]
+        },
+        "kite": {
+            "distinguished": ["floats on water", "solid structure", "carrying capacity"],
+            "similar": ["lightweight", "glides through a medium", "used for recreational activities"]
+        }
         }
     },
 
-    'boat': {
-        "colors": ["white", "blue", "black", "combination"],
-        "hull": ["long", "narrow", "wide", "flat"],
-        "power": ["motorized", "sail-powered"],
-        "deck features": ["cabins", "masts", "navigation equipment"], "controls": ["rudder", "propeller"],
-        "Fine-grained classes": ["Sailboat", "Motorboat", "Fishing boat", "Yacht", "Canoe", "Speedboat"],
-        "similar classes": {
-            "surfboard": {
-                "distinguished": ["engine (in some boats)", "enclosed structure",
-                                  "used on water for passengers or cargo"],
-                "similar": ["floats on water", "long and flat shape", "used in water sports or travel"]
-            },
-            "bench": {
-                "distinguished": ["ability to float", "propulsion system", "water-based"],
-                "similar": ["long structure", "supports multiple people", "used in public settings"]
-            },
-            "kite": {
-                "distinguished": ["floats on water", "solid structure", "carrying capacity"],
-                "similar": ["lightweight", "glides through a medium", "used for recreational activities"]
-            }
+    'bottle': { 
+    "colors": ["transparent", "green", "brown", "blue"], 
+    "body": ["cylindrical", "square"], 
+    "neck": ["long", "short"], 
+    "materials": ["glass", "plastic"], 
+    "caps": ["screw-top", "corked", "flip-top"], 
+    "features": ["labels", "branding"], 
+    "Fine-grained classes": ["Water bottle", "Wine bottle", "Soda bottle", "Milk bottle", "Juice bottle"],
+    "similar classes": {
+        "wine glass": {
+            "distinguished": ["narrow neck", "often has a cap", "used for storage of liquids"],
+            "similar": ["cylindrical shape", "used to hold liquids", "transparent or translucent material"]
+        },
+        "cup": {
+            "distinguished": ["taller structure", "narrow neck", "sealable"],
+            "similar": ["used for drinking", "holds liquids", "portable"]
+        },
+        "vase": {
+            "distinguished": ["often has a cap", "used for beverages", "smaller opening"],
+            "similar": ["cylindrical shape", "holds contents", "glass or similar material"]
+        }
         }
     },
 
-    'bottle': {
-        "colors": ["transparent", "green", "brown", "blue"],
-        "body": ["cylindrical", "square"],
-        "neck": ["long", "short"],
-        "materials": ["glass", "plastic"],
-        "caps": ["screw-top", "corked", "flip-top"],
-        "features": ["labels", "branding"],
-        "Fine-grained classes": ["Water bottle", "Wine bottle", "Soda bottle", "Milk bottle", "Juice bottle"],
-        "similar classes": {
-            "wine glass": {
-                "distinguished": ["narrow neck", "often has a cap", "used for storage of liquids"],
-                "similar": ["cylindrical shape", "used to hold liquids", "transparent or translucent material"]
-            },
-            "cup": {
-                "distinguished": ["taller structure", "narrow neck", "sealable"],
-                "similar": ["used for drinking", "holds liquids", "portable"]
-            },
-            "vase": {
-                "distinguished": ["often has a cap", "used for beverages", "smaller opening"],
-                "similar": ["cylindrical shape", "holds contents", "glass or similar material"]
-            }
+    'car': { 
+    "colors": ["black", "white", "red", "blue", "combination"], 
+    "body": ["compact", "sleek", "large", "boxy"], 
+    "wheels": ["rubber tires", "metal rims"], 
+    "features": ["windows", "mirrors", "headlights", "tail lights", "air conditioning", "sound system", "navigation"], 
+    "Fine-grained classes": ["Sedan", "SUV", "Hatchback", "Convertible", "Truck", "Electric car"],
+    "similar classes": {
+        "truck": {
+            "distinguished": ["smaller size", "lower cargo capacity", "different load-bearing capacity"],
+            "similar": ["wheels", "engine-powered", "road-based transport"]
+        },
+        "parking meter": {
+            "distinguished": ["large moving body", "passenger capacity", "wheeled transport"],
+            "similar": ["seen in urban environments", "associated with roads", "involved in vehicle parking"]
+        },
+        "bench": {
+            "distinguished": ["engine", "movement capability", "wheeled structure"],
+            "similar": ["provides seating", "used in public spaces", "stationary feature in urban environments"]
+        }
         }
     },
 
-    'car': {
-        "colors": ["black", "white", "red", "blue", "combination"],
-        "body": ["compact", "sleek", "large", "boxy"],
-        "wheels": ["rubber tires", "metal rims"],
-        "features": ["windows", "mirrors", "headlights", "tail lights", "air conditioning", "sound system",
-                     "navigation"],
-        "Fine-grained classes": ["Sedan", "SUV", "Hatchback", "Convertible", "Truck", "Electric car"],
-        "similar classes": {
-            "truck": {
-                "distinguished": ["smaller size", "lower cargo capacity", "different load-bearing capacity"],
-                "similar": ["wheels", "engine-powered", "road-based transport"]
-            },
-            "parking meter": {
-                "distinguished": ["large moving body", "passenger capacity", "wheeled transport"],
-                "similar": ["seen in urban environments", "associated with roads", "involved in vehicle parking"]
-            },
-            "bench": {
-                "distinguished": ["engine", "movement capability", "wheeled structure"],
-                "similar": ["provides seating", "used in public spaces", "stationary feature in urban environments"]
-            }
+    'cat': { 
+    "colors": ["black", "white", "orange", "grey", "combination"], 
+    "fur": ["short", "medium", "long"], 
+    "ears": ["pointed", "rounded"], 
+    "tail": ["long", "flexible"], "size": ["small", "medium"],
+    "body": ["sleek", "muscular", "stocky"], 
+    "eyes": ["almond-shaped", "round", "green", "yellow", "blue"], 
+    "expression": ["curious", "alert", "calm"], 
+    "Fine-grained classes": ["Siamese", "Persian", "Maine Coon", "Bengal", "Sphynx"],
+    "similar classes": {
+        "bear": {
+            "distinguished": ["smaller size", "more agile", "domestic nature"],
+            "similar": ["four-legged", "mammal", "furry body"]
+        },
+        "backpack": {
+            "distinguished": ["living organism", "limbs", "mobility on its own"],
+            "similar": ["compact shape", "used in daily activities", "carried or moved easily"]
+        },
+        "handbag": {
+            "distinguished": ["limbs", "living organism", "mobility"],
+            "similar": ["small and portable", "compact structure", "often found in domestic environments"]
+        }
         }
     },
 
-    'cat': {
-        "colors": ["black", "white", "orange", "grey", "combination"],
-        "fur": ["short", "medium", "long"],
-        "ears": ["pointed", "rounded"],
-        "tail": ["long", "flexible"], "size": ["small", "medium"],
-        "body": ["sleek", "muscular", "stocky"],
-        "eyes": ["almond-shaped", "round", "green", "yellow", "blue"],
-        "expression": ["curious", "alert", "calm"],
-        "Fine-grained classes": ["Siamese", "Persian", "Maine Coon", "Bengal", "Sphynx"],
-        "similar classes": {
-            "bear": {
-                "distinguished": ["smaller size", "more agile", "domestic nature"],
-                "similar": ["four-legged", "mammal", "furry body"]
-            },
-            "backpack": {
-                "distinguished": ["living organism", "limbs", "mobility on its own"],
-                "similar": ["compact shape", "used in daily activities", "carried or moved easily"]
-            },
-            "handbag": {
-                "distinguished": ["limbs", "living organism", "mobility"],
-                "similar": ["small and portable", "compact structure", "often found in domestic environments"]
-            }
+    'chair': { 
+    "colors": ["black", "white", "brown", "combination"], 
+    "frame": ["wood", "metal", "plastic"], 
+    "seat": ["padded", "hard"], "back": ["high", "medium", "low"], 
+    "armrests": ["present", "absent"], 
+    "legs": ["short", "long", "straight", "curved"], 
+    "design": ["modern", "traditional", "minimalist"], 
+    "features": ["upholstery", "cushions", "decorative details"], 
+    "Fine-grained classes": ["Armchair", "Recliner", "Office chair", "Dining chair", "Folding chair"],
+    "similar classes": {
+        "bench": {
+            "distinguished": ["smaller size", "designed for individual use", "has a backrest"],
+            "similar": ["used for sitting", "provides seating support", "common in public places"]
+        },
+        "bed": {
+            "distinguished": ["upright seating", "smaller size", "not designed for sleeping"],
+            "similar": ["provides support", "used for resting", "has a surface to rest on"]
+        },
+        "suitcase": {
+            "distinguished": ["no mobility features", "no storage capacity", "doesn’t move"],
+            "similar": ["rectangular form", "often has a rigid frame", "used in everyday life"]
+        }
         }
     },
 
-    'chair': {
-        "colors": ["black", "white", "brown", "combination"],
-        "frame": ["wood", "metal", "plastic"],
-        "seat": ["padded", "hard"], "back": ["high", "medium", "low"],
-        "armrests": ["present", "absent"],
-        "legs": ["short", "long", "straight", "curved"],
-        "design": ["modern", "traditional", "minimalist"],
-        "features": ["upholstery", "cushions", "decorative details"],
-        "Fine-grained classes": ["Armchair", "Recliner", "Office chair", "Dining chair", "Folding chair"],
+    'diningtable': { 
+    "colors": ["brown", "black", "white", "combination"], 
+    "top": ["wood", "glass", "metal"], 
+    "legs": ["short", "medium", "tall"], 
+    "shape": ["rectangular", "square", "round"], "features": ["extendable leaves", "decorative legs"], 
+    "design": ["traditional", "modern", "minimalist"], 
+    "surface": ["polished", "matte"], 
+    "Fine-grained classes": ["Round table", "Square table", "Extendable table", "Glass top table"],
         "similar classes": {
-            "bench": {
-                "distinguished": ["smaller size", "designed for individual use", "has a backrest"],
-                "similar": ["used for sitting", "provides seating support", "common in public places"]
-            },
-            "bed": {
-                "distinguished": ["upright seating", "smaller size", "not designed for sleeping"],
-                "similar": ["provides support", "used for resting", "has a surface to rest on"]
-            },
-            "suitcase": {
-                "distinguished": ["no mobility features", "no storage capacity", "doesn’t move"],
-                "similar": ["rectangular form", "often has a rigid frame", "used in everyday life"]
-            }
+        "bench": {
+            "distinguished": ["used for dining", "usually larger", "has a flat top for placing items"],
+            "similar": ["used in public spaces", "provides support", "accommodates multiple people"]
+        },
+        "bed": {
+            "distinguished": ["upright structure", "used for eating", "does not support lying down"],
+            "similar": ["large surface", "provides support", "used in a room for activities"]
+        },
+        "suitcase": {
+            "distinguished": ["fixed structure", "not portable", "used for dining"],
+            "similar": ["rectangular form", "supports daily activities", "used in everyday environments"]
+        }
         }
     },
 
-    'diningtable': {
-        "colors": ["brown", "black", "white", "combination"],
-        "top": ["wood", "glass", "metal"],
-        "legs": ["short", "medium", "tall"],
-        "shape": ["rectangular", "square", "round"], "features": ["extendable leaves", "decorative legs"],
-        "design": ["traditional", "modern", "minimalist"],
-        "surface": ["polished", "matte"],
-        "Fine-grained classes": ["Round table", "Square table", "Extendable table", "Glass top table"],
-        "similar classes": {
-            "bench": {
-                "distinguished": ["used for dining", "usually larger", "has a flat top for placing items"],
-                "similar": ["used in public spaces", "provides support", "accommodates multiple people"]
-            },
-            "bed": {
-                "distinguished": ["upright structure", "used for eating", "does not support lying down"],
-                "similar": ["large surface", "provides support", "used in a room for activities"]
-            },
-            "suitcase": {
-                "distinguished": ["fixed structure", "not portable", "used for dining"],
-                "similar": ["rectangular form", "supports daily activities", "used in everyday environments"]
-            }
+    'dog': { 
+    "colors": ["black", "brown", "white", "mix"], 
+    "fur": ["short", "medium", "long"], 
+    "ears": ["floppy", "semi-floppy", "erect"], 
+    "tail": ["bushy", "curled", "straight"], 
+    "size": ["small", "medium", "large"], 
+    "body": ["muscular", "lean", "stout"], 
+    "face": ["short snout", "long snout"], 
+    "eyes": ["round", "almond-shaped", "oval"], 
+    "expression": ["alert", "gentle", "playful"], 
+    "distinctive marking": ["spots", "patches", "brindle patterns"], 
+    "Fine-grained classes": ["Labrador Retriever", "Bulldog", "Poodle", "German Shepherd", "Golden Retriever"],
+    "similar classes": {
+        "bear": {
+            "distinguished": ["smaller size", "domestic behavior", "more agile"],
+            "similar": ["four-legged mammal", "furry", "sharp senses"]
+        },
+        "teddy bear": {
+            "distinguished": ["living organism", "mobility", "real fur"],
+            "similar": ["fluffy appearance", "used for comfort", "compact body structure"]
+        },
+        "backpack": {
+            "distinguished": ["living organism", "mobility", "limbs"],
+            "similar": ["compact shape", "can be carried or held", "useful for daily life"]
         }
-    },
-
-    'dog': {
-        "colors": ["black", "brown", "white", "mix"],
-        "fur": ["short", "medium", "long"],
-        "ears": ["floppy", "semi-floppy", "erect"],
-        "tail": ["bushy", "curled", "straight"],
-        "size": ["small", "medium", "large"],
-        "body": ["muscular", "lean", "stout"],
-        "face": ["short snout", "long snout"],
-        "eyes": ["round", "almond-shaped", "oval"],
-        "expression": ["alert", "gentle", "playful"],
-        "distinctive marking": ["spots", "patches", "brindle patterns"],
-        "Fine-grained classes": ["Labrador Retriever", "Bulldog", "Poodle", "German Shepherd", "Golden Retriever"],
-        "similar classes": {
-            "bear": {
-                "distinguished": ["smaller size", "domestic behavior", "more agile"],
-                "similar": ["four-legged mammal", "furry", "sharp senses"]
-            },
-            "teddy bear": {
-                "distinguished": ["living organism", "mobility", "real fur"],
-                "similar": ["fluffy appearance", "used for comfort", "compact body structure"]
-            },
-            "backpack": {
-                "distinguished": ["living organism", "mobility", "limbs"],
-                "similar": ["compact shape", "can be carried or held", "useful for daily life"]
-            }
         }
     },
 
     'horse': {
-        "colors": ["brown", "black", "white", "combination"],
-        "coat": ["short", "sleek"],
-        "mane and tail": ["long", "wavy"],
-        "body": ["large", "muscular"],
-        "legs": ["long"],
-        "ears": ["medium", "pointed"],
-        "face": ["long", "prominent snout"],
-        "eyes": ["large", "expressive"],
-        "posture": ["strong", "graceful"],
-        "Fine-grained classes": ["Thoroughbred", "Arabian", "Quarter Horse", "Mustang", "Clydesdale"],
-        "similar classes": {
-            "zebra": {
-                "distinguished": ["different coat patterns", "wild nature", "striped appearance"],
-                "similar": ["four legs", "herbivorous diet", "similar body size and shape"]
-            },
-            "giraffe": {
-                "distinguished": ["long neck", "taller body", "spotted coat"],
-                "similar": ["large size", "four legs", "used for land travel"]
-            },
-            "bear": {
-                "distinguished": ["larger bulk", "different habitat", "carnivorous"],
-                "similar": ["four-legged structure", "mammalian", "fur-covered body"]
-            }
+    "colors": ["brown", "black", "white", "combination"], 
+    "coat": ["short", "sleek"], 
+    "mane and tail": ["long", "wavy"], 
+    "body": ["large", "muscular"], 
+    "legs": ["long"], 
+    "ears": ["medium", "pointed"], 
+    "face": ["long", "prominent snout"], 
+    "eyes": ["large", "expressive"], 
+    "posture": ["strong", "graceful"], 
+    "Fine-grained classes": ["Thoroughbred", "Arabian", "Quarter Horse", "Mustang", "Clydesdale"],
+    "similar classes": {
+        "zebra": {
+            "distinguished": ["different coat patterns", "wild nature", "striped appearance"],
+            "similar": ["four legs", "herbivorous diet", "similar body size and shape"]
+        },
+        "giraffe": {
+            "distinguished": ["long neck", "taller body", "spotted coat"],
+            "similar": ["large size", "four legs", "used for land travel"]
+        },
+        "bear": {
+            "distinguished": ["larger bulk", "different habitat", "carnivorous"],
+            "similar": ["four-legged structure", "mammalian", "fur-covered body"]
+        }
         }
     },
 
-    'person': {
-        "colors": ["varied skin tones"],
-        "height": ["small", "medium", "tall"],
-        "body size": ["slender", "muscular", "stocky"],
-        "hair": ["short", "medium", "long", "varied textures"],
-        "eyes": ["round", "almond-shaped", "hooded", "brown", "blue", "green", "hazel"],
-        "facial features": ["nose", "mouth", "jawlines"],
-        "clothing": ["diverse"],
-        "expression": ["varied"],
-        "Fine-grained classes": ["Men", "Women", "Children", "Athletes", "Professionals"],
-        "similar classes": {
-            "suitcase": {
-                "distinguished": ["limbs", "head", "mobility on its own"],
-                "similar": ["upright structure", "portable", "used for travel"]
-            },
-            "backpack": {
-                "distinguished": ["limbs", "head", "speech ability"],
-                "similar": ["portable", "carry-on item", "supports daily tasks"]
-            },
-            "tie": {
-                "distinguished": ["entire body structure", "limbs", "ability to move"],
-                "similar": ["used with clothing", "fashionable", "found in professional settings"]
-            }
+    'person': { 
+    "colors": ["varied skin tones"], 
+    "height": ["small", "medium", "tall"], 
+    "body size": ["slender", "muscular", "stocky"], 
+    "hair": ["short", "medium", "long", "varied textures"], 
+    "eyes": ["round", "almond-shaped", "hooded", "brown", "blue", "green", "hazel"], 
+    "facial features": ["nose", "mouth", "jawlines"], 
+    "clothing": ["diverse"], 
+    "expression": ["varied"], 
+    "Fine-grained classes": ["Men", "Women", "Children", "Athletes", "Professionals"],
+    "similar classes": {
+        "suitcase": {
+            "distinguished": ["limbs", "head", "mobility on its own"],
+            "similar": ["upright structure", "portable", "used for travel"]
+        },
+        "backpack": {
+            "distinguished": ["limbs", "head", "speech ability"],
+            "similar": ["portable", "carry-on item", "supports daily tasks"]
+        },
+        "tie": {
+            "distinguished": ["entire body structure", "limbs", "ability to move"],
+            "similar": ["used with clothing", "fashionable", "found in professional settings"]
+        }
         }
     },
 
-    'pottedplant': {
-        "colors": ["green leaves", "brown stems", "colorful flowers"],
-        "leaves": ["broad", "thin", "spiky", "succulent"],
-        "pot": ["plastic", "ceramic", "clay"],
-        "height": ["small", "medium"],
-        "features": ["decorative stones", "moss"],
-        "Fine-grained classes": ["Succulent", "Fern", "Flowering plant", "Cactus", "Palm"],
-        "similar classes": {
-            "vase": {
-                "distinguished": ["contains soil", "supports living plants", "heavier with soil and water"],
-                "similar": ["holds contents", "cylindrical shape", "used for decoration"]
-            },
-            "bowl": {
-                "distinguished": ["contains soil and plants", "used for holding life", "heavier"],
-                "similar": ["round shape", "holds items", "used for decorative purposes"]
-            },
-            "sink": {
-                "distinguished": ["contains plants", "doesn't drain water", "used for decoration"],
-                "similar": ["holds contents", "can contain water", "has a basin shape"]
-            }
+    'pottedplant': { 
+    "colors": ["green leaves", "brown stems", "colorful flowers"],
+    "leaves": ["broad", "thin", "spiky", "succulent"], 
+    "pot": ["plastic", "ceramic", "clay"], 
+    "height": ["small", "medium"], 
+    "features": ["decorative stones", "moss"], 
+    "Fine-grained classes": ["Succulent", "Fern", "Flowering plant", "Cactus", "Palm"] ,
+    "similar classes": {
+        "vase": {
+            "distinguished": ["contains soil", "supports living plants", "heavier with soil and water"],
+            "similar": ["holds contents", "cylindrical shape", "used for decoration"]
+        },
+        "bowl": {
+            "distinguished": ["contains soil and plants", "used for holding life", "heavier"],
+            "similar": ["round shape", "holds items", "used for decorative purposes"]
+        },
+        "sink": {
+            "distinguished": ["contains plants", "doesn't drain water", "used for decoration"],
+            "similar": ["holds contents", "can contain water", "has a basin shape"]
+        }
+        }
+        },
+
+    'sheep': { "colors": ["white", "black", "brown", "combination"], 
+    "wool": ["thick", "curly", "fluffy"], "ears": ["medium", "floppy"], 
+    "tail": ["short"], 
+    "body": ["stocky", "robust"], 
+    "hooves": ["adapted for varied terrain"], 
+    "face": ["long snout", "short snout"], 
+    "eyes": ["round", "oval", "calm", "gentle"], 
+    "Fine-grained classes": ["Merino", "Suffolk", "Dorset", "Katahdin", "Hampshire"],
+    "similar classes": {
+        "zebra": {
+            "distinguished": ["wooly coat", "smaller size", "domestic"],
+            "similar": ["four legs", "herbivorous", "grazing behavior"]
+        },
+        "giraffe": {
+            "distinguished": ["long neck", "taller body", "spotted coat"],
+            "similar": ["quadruped", "herbivore", "grazing behavior"]
+        },
+        "bench": {
+            "distinguished": ["non-living object", "stationary", "no limbs"],
+            "similar": ["supports weight", "used in public spaces", "relatively stationary"]
+        }
         }
     },
 
-    'sheep': {"colors": ["white", "black", "brown", "combination"],
-              "wool": ["thick", "curly", "fluffy"], "ears": ["medium", "floppy"],
-              "tail": ["short"],
-              "body": ["stocky", "robust"],
-              "hooves": ["adapted for varied terrain"],
-              "face": ["long snout", "short snout"],
-              "eyes": ["round", "oval", "calm", "gentle"],
-              "Fine-grained classes": ["Merino", "Suffolk", "Dorset", "Katahdin", "Hampshire"],
-              "similar classes": {
-                  "zebra": {
-                      "distinguished": ["wooly coat", "smaller size", "domestic"],
-                      "similar": ["four legs", "herbivorous", "grazing behavior"]
-                  },
-                  "giraffe": {
-                      "distinguished": ["long neck", "taller body", "spotted coat"],
-                      "similar": ["quadruped", "herbivore", "grazing behavior"]
-                  },
-                  "bench": {
-                      "distinguished": ["non-living object", "stationary", "no limbs"],
-                      "similar": ["supports weight", "used in public spaces", "relatively stationary"]
-                  }
-              }
-              },
-
-    "train": {"colors": ["black", "brown", "white", "mix"],
-              "exterior": ["sleek", "boxy", "smooth", "ribbed"],
-              "train cars": ["connected series"],
-              "windows": ["large", "rectangular", "rounded"],
-              "wheels": ["sturdy", "metallic"],
-              "front": ["streamlined", "rounded", "angular"],
-              "features": ["pantographs", "electrical components", "diesel exhausts"],
-              "interior": ["seating", "luggage compartments", "dining areas", "sleeping areas"],
-              "Fine-grained classes": ["Freight Train", "Passenger Train", "High-Speed Train", "Subway Train",
-                                       "Monorail", "Diesel Locomotive", "Electric Locomotive", "Bullet Train"],
-              "similar classes": {
-                  "truck": {
-                      "distinguished": ["tracks", "longer body", "lack of wheels for roads"],
-                      "similar": ["large structure", "used for cargo and passenger transport", "mechanized engine"]
-                  },
-                  "bench": {
-                      "distinguished": ["engine", "wheels", "motion capability"],
-                      "similar": ["long structure", "accommodates passengers", "used in public places"]
-                  },
-                  "surfboard": {
-                      "distinguished": ["engine", "metal body", "ground-based"],
-                      "similar": ["elongated design", "travels long distances", "streamlined form"]
-                  }
-              }
-              },
-
-    "tvmonitor": {
-        "colors": ["black", "brown", "white", "mix"],
-        "screen": ["flat", "rectangular"],
-        "bezels": ["slim", "thicker"],
-        "size": ["small", "medium", "large"],
-        "finish": ["glossy", "matte"],
-        "back panel": ["vents", "ports"],
-        "stand": ["minimalistic", "wide", "adjustable"],
-        "mounting options": ["wall mounting"],
-        "display technology": ["LED", "LCD", "OLED"],
-        "surface": ["glare-resistant", "anti-reflective"],
-        "features": ["built-in speakers", "adjustable controls"],
-        "Fine-grained classes": ["CRT TV", "LED Monitor", "LCD TV", "Plasma Screen", "OLED Display", "Smart TV",
-                                 "Gaming Monitor"],
-        "similar classes": {
-            "laptop": {
-                "distinguished": ["larger screen", "fixed position", "used mainly for watching"],
-                "similar": ["screen display", "used for media viewing", "rectangular shape"]
-            },
-            "clock": {
-                "distinguished": ["displays time", "smaller size", "used for tracking time"],
-                "similar": ["flat surface", "used in homes", "rectangular or square shape"]
-            },
-            "microwave": {
-                "distinguished": ["used for cooking", "enclosed structure", "heats food"],
-                "similar": ["rectangular shape", "found in homes", "electronic device"]
-            }
+    "train": { "colors": ["black", "brown", "white", "mix"],
+    "exterior": ["sleek", "boxy", "smooth", "ribbed"], 
+    "train cars": ["connected series"], 
+    "windows": ["large", "rectangular", "rounded"], 
+    "wheels": ["sturdy", "metallic"], 
+    "front": ["streamlined", "rounded", "angular"], 
+    "features": ["pantographs", "electrical components", "diesel exhausts"], 
+    "interior": ["seating", "luggage compartments", "dining areas", "sleeping areas"], 
+    "Fine-grained classes": ["Freight Train", "Passenger Train", "High-Speed Train", "Subway Train", "Monorail", "Diesel Locomotive", "Electric Locomotive", "Bullet Train"],
+    "similar classes": {
+        "truck": {
+            "distinguished": ["tracks", "longer body", "lack of wheels for roads"],
+            "similar": ["large structure", "used for cargo and passenger transport", "mechanized engine"]
+        },
+        "bench": {
+            "distinguished": ["engine", "wheels", "motion capability"],
+            "similar": ["long structure", "accommodates passengers", "used in public places"]
+        },
+        "surfboard": {
+            "distinguished": ["engine", "metal body", "ground-based"],
+            "similar": ["elongated design", "travels long distances", "streamlined form"]
+        }
         }
     },
-}
+
+    "tvmonitor": { 
+    "colors": ["black", "brown", "white", "mix"], 
+    "screen": ["flat", "rectangular"], 
+    "bezels": ["slim", "thicker"], 
+    "size": ["small", "medium", "large"], 
+    "finish": ["glossy", "matte"], 
+    "back panel": ["vents", "ports"], 
+    "stand": ["minimalistic", "wide", "adjustable"], 
+    "mounting options": ["wall mounting"], 
+    "display technology": ["LED", "LCD", "OLED"], 
+    "surface": ["glare-resistant", "anti-reflective"], 
+    "features": ["built-in speakers", "adjustable controls"], 
+    "Fine-grained classes": ["CRT TV", "LED Monitor", "LCD TV", "Plasma Screen", "OLED Display", "Smart TV", "Gaming Monitor"] ,
+    "similar classes": {
+        "laptop": {
+            "distinguished": ["larger screen", "fixed position", "used mainly for watching"],
+            "similar": ["screen display", "used for media viewing", "rectangular shape"]
+        },
+        "clock": {
+            "distinguished": ["displays time", "smaller size", "used for tracking time"],
+            "similar": ["flat surface", "used in homes", "rectangular or square shape"]
+        },
+        "microwave": {
+            "distinguished": ["used for cooking", "enclosed structure", "heats food"],
+            "similar": ["rectangular shape", "found in homes", "electronic device"]
+        }
+        }
+    },
+    }
 
 # ["bird", "bus", "cow", "motorbike", "sofa", ["aeroplane", "bicycle", "boat", "bottle", "car", "cat", "chair", "diningtable", "dog", "horse", "person", "pottedplant", "sheep", "train", "tvmonitor"]
 
@@ -2132,205 +2108,201 @@ PASCAL_VOC_BASE_CATEGORIES = {
 
 """
 voc_fine_grained_classes = {
-    "bird": ["sparrow", "eagle", "parrot", "penguin", "owl", "hawk", "falcon", "peacock", "pigeon", "hummingbird",
+    "bird": ["sparrow", "eagle", "parrot", "penguin", "owl", "hawk", "falcon", "peacock", "pigeon", "hummingbird", 
              "canary", "crow", "duck", "goose", "swallow", "kingfisher", "woodpecker", "macaw", "flamingo", "seagull"],
-
-    "bus": ["school bus", "double-decker bus", "shuttle bus", "minibus", "tourist bus", "coach bus", "city bus",
-            "articulated bus", "trolleybus", "van", "airport shuttle", "electric bus", "fuel-cell bus",
+    
+    "bus": ["school bus", "double-decker bus", "shuttle bus", "minibus", "tourist bus", "coach bus", "city bus", 
+            "articulated bus", "trolleybus", "van", "airport shuttle", "electric bus", "fuel-cell bus", 
             "diesel bus", "hybrid bus", "tram", "charter bus", "party bus", "open-top bus", "prison bus"],
-
-    "cow": ["jersey cow", "holstein cow", "angus cow", "hereford cow", "guernsey cow", "brahman cow",
-            "longhorn cow", "brown swiss cow", "ayrshire cow", "milking shorthorn cow", "beefmaster cow",
-            "galloway cow", "dexter cow", "belted galloway cow", "zebu cow", "simmental cow", "charolais cow",
+    
+    "cow": ["jersey cow", "holstein cow", "angus cow", "hereford cow", "guernsey cow", "brahman cow", 
+            "longhorn cow", "brown swiss cow", "ayrshire cow", "milking shorthorn cow", "beefmaster cow", 
+            "galloway cow", "dexter cow", "belted galloway cow", "zebu cow", "simmental cow", "charolais cow", 
             "limousin cow", "wagyu cow", "texas longhorn cow"],
-
-    "motorbike": ["sportbike", "cruiser", "dirt bike", "touring bike", "scooter", "moped", "café racer",
-                  "adventure bike", "dual-sport", "naked bike", "chopper", "electric bike", "minibike",
-                  "superbike", "motocross bike", "enduro bike", "streetfighter", "off-road bike", "trials bike",
-                  "scrambler"],
-
-    "sofa": ["sectional sofa", "chesterfield sofa", "sleeper sofa", "recliner sofa", "loveseat", "futon",
-             "cabriole sofa", "chaise lounge", "tuxedo sofa", "divan", "settee", "modular sofa",
-             "lawson sofa", "mid-century modern sofa", "english roll arm sofa", "camelback sofa",
+    
+    "motorbike": ["sportbike", "cruiser", "dirt bike", "touring bike", "scooter", "moped", "café racer", 
+                  "adventure bike", "dual-sport", "naked bike", "chopper", "electric bike", "minibike", 
+                  "superbike", "motocross bike", "enduro bike", "streetfighter", "off-road bike", "trials bike", "scrambler"],
+    
+    "sofa": ["sectional sofa", "chesterfield sofa", "sleeper sofa", "recliner sofa", "loveseat", "futon", 
+             "cabriole sofa", "chaise lounge", "tuxedo sofa", "divan", "settee", "modular sofa", 
+             "lawson sofa", "mid-century modern sofa", "english roll arm sofa", "camelback sofa", 
              "slipcovered sofa", "convertible sofa", "slope arm sofa", "track arm sofa"],
-
-    "aeroplane": ["commercial jet", "private jet", "fighter jet", "cargo plane", "glider", "biplane",
-                  "helicopter", "seaplane", "airliner", "jumbo jet", "propeller plane", "airbus", "boeing",
-                  "concorde", "light aircraft", "regional jet", "stealth bomber", "supersonic jet", "turboprop",
-                  "drone"],
-
-    "bicycle": ["mountain bike", "road bike", "hybrid bike", "electric bike", "folding bike", "BMX",
-                "touring bike", "cruiser bike", "gravel bike", "tandem bike", "cyclocross bike",
-                "recumbent bike", "track bike", "fixie bike", "triathlon bike", "cargo bike", "city bike",
+    
+    "aeroplane": ["commercial jet", "private jet", "fighter jet", "cargo plane", "glider", "biplane", 
+                  "helicopter", "seaplane", "airliner", "jumbo jet", "propeller plane", "airbus", "boeing", 
+                  "concorde", "light aircraft", "regional jet", "stealth bomber", "supersonic jet", "turboprop", "drone"],
+    
+    "bicycle": ["mountain bike", "road bike", "hybrid bike", "electric bike", "folding bike", "BMX", 
+                "touring bike", "cruiser bike", "gravel bike", "tandem bike", "cyclocross bike", 
+                "recumbent bike", "track bike", "fixie bike", "triathlon bike", "cargo bike", "city bike", 
                 "fat bike", "kids bike", "balance bike"],
-
-    "boat": ["sailboat", "yacht", "fishing boat", "speedboat", "canoe", "kayak", "dinghy", "rowboat",
-             "catamaran", "ferry", "pontoon boat", "houseboat", "motorboat", "jet ski", "tugboat", "submarine",
+    
+    "boat": ["sailboat", "yacht", "fishing boat", "speedboat", "canoe", "kayak", "dinghy", "rowboat", 
+             "catamaran", "ferry", "pontoon boat", "houseboat", "motorboat", "jet ski", "tugboat", "submarine", 
              "cargo ship", "cruise ship", "barge", "raft"],
-
-    "bottle": ["water bottle", "wine bottle", "beer bottle", "soda bottle", "milk bottle", "glass bottle",
-               "plastic bottle", "sports bottle", "flask", "baby bottle", "insulated bottle", "thermos",
-               "aluminum bottle", "juice bottle", "potion bottle", "oil bottle", "vinegar bottle", "whiskey bottle",
+    
+    "bottle": ["water bottle", "wine bottle", "beer bottle", "soda bottle", "milk bottle", "glass bottle", 
+               "plastic bottle", "sports bottle", "flask", "baby bottle", "insulated bottle", "thermos", 
+               "aluminum bottle", "juice bottle", "potion bottle", "oil bottle", "vinegar bottle", "whiskey bottle", 
                "tequila bottle", "shampoo bottle"],
-
-    "car": ["sedan", "SUV", "coupe", "convertible", "hatchback", "station wagon", "pickup truck",
-            "sports car", "minivan", "crossover", "limousine", "electric car", "hybrid car", "diesel car",
+    
+    "car": ["sedan", "SUV", "coupe", "convertible", "hatchback", "station wagon", "pickup truck", 
+            "sports car", "minivan", "crossover", "limousine", "electric car", "hybrid car", "diesel car", 
             "luxury car", "compact car", "muscle car", "roadster", "supercar", "off-road vehicle"],
-
-    "cat": ["persian cat", "siamese cat", "maine coon", "ragdoll", "sphynx cat", "bengal cat",
-            "british shorthair", "scottish fold", "himalayan cat", "abyssinian cat", "birman cat",
-            "oriental shorthair", "turkish van", "devon rex", "egyptian mau", "siberian cat",
+    
+    "cat": ["persian cat", "siamese cat", "maine coon", "ragdoll", "sphynx cat", "bengal cat", 
+            "british shorthair", "scottish fold", "himalayan cat", "abyssinian cat", "birman cat", 
+            "oriental shorthair", "turkish van", "devon rex", "egyptian mau", "siberian cat", 
             "american shorthair", "savannah cat", "chartreux", "norwegian forest cat"],
-
-    "chair": ["rocking chair", "recliner", "dining chair", "office chair", "armchair", "bar stool",
-              "folding chair", "accent chair", "lounge chair", "wingback chair", "slipper chair",
-              "chaise lounge", "side chair", "parsons chair", "club chair", "bean bag chair", "director's chair",
+    
+    "chair": ["rocking chair", "recliner", "dining chair", "office chair", "armchair", "bar stool", 
+              "folding chair", "accent chair", "lounge chair", "wingback chair", "slipper chair", 
+              "chaise lounge", "side chair", "parsons chair", "club chair", "bean bag chair", "director's chair", 
               "ottoman", "hammock chair", "butterfly chair"],
-
-    "diningtable": ["round dining table", "rectangular dining table", "square dining table",
-                    "oval dining table", "drop-leaf dining table", "extendable dining table",
-                    "pedestal dining table", "farmhouse dining table", "glass dining table",
-                    "marble dining table", "wooden dining table", "contemporary dining table",
-                    "rustic dining table", "modern dining table", "industrial dining table",
-                    "mid-century dining table", "parsons dining table", "pub dining table", "counter-height table",
-                    "tulip dining table"],
-
-    "dog": ["labrador retriever", "german shepherd", "golden retriever", "bulldog", "beagle", "poodle",
-            "rottweiler", "yorkshire terrier", "boxer", "dachshund", "shih tzu", "pomeranian", "border collie",
-            "chihuahua", "french bulldog", "great dane", "siberian husky", "doberman pinscher", "pug",
-            "cocker spaniel"],
-
-    "horse": ["arabian horse", "thoroughbred", "mustang", "clydesdale", "quarter horse", "shetland pony",
-              "friesian horse", "appaloosa", "paint horse", "belgian horse", "morgan horse", "andalusian horse",
-              "haflinger horse", "icelandic horse", "lipizzaner horse", "shire horse", "tennessee walker",
+    
+    "diningtable": ["round dining table", "rectangular dining table", "square dining table", 
+                    "oval dining table", "drop-leaf dining table", "extendable dining table", 
+                    "pedestal dining table", "farmhouse dining table", "glass dining table", 
+                    "marble dining table", "wooden dining table", "contemporary dining table", 
+                    "rustic dining table", "modern dining table", "industrial dining table", 
+                    "mid-century dining table", "parsons dining table", "pub dining table", "counter-height table", "tulip dining table"],
+    
+    "dog": ["labrador retriever", "german shepherd", "golden retriever", "bulldog", "beagle", "poodle", 
+            "rottweiler", "yorkshire terrier", "boxer", "dachshund", "shih tzu", "pomeranian", "border collie", 
+            "chihuahua", "french bulldog", "great dane", "siberian husky", "doberman pinscher", "pug", "cocker spaniel"],
+    
+    "horse": ["arabian horse", "thoroughbred", "mustang", "clydesdale", "quarter horse", "shetland pony", 
+              "friesian horse", "appaloosa", "paint horse", "belgian horse", "morgan horse", "andalusian horse", 
+              "haflinger horse", "icelandic horse", "lipizzaner horse", "shire horse", "tennessee walker", 
               "gypsy vanner", "percheron", "welsh pony"],
-
-    "person": ["adult", "child", "teenager", "elderly person", "woman", "man", "infant", "athlete",
-               "student", "worker", "police officer", "doctor", "teacher", "firefighter", "artist",
+    
+    "person": ["adult", "child", "teenager", "elderly person", "woman", "man", "infant", "athlete", 
+               "student", "worker", "police officer", "doctor", "teacher", "firefighter", "artist", 
                "musician", "actor", "dancer", "pilot", "scientist"],
-
-    "pottedplant": ["succulent", "fern", "bonsai tree", "cactus", "orchid", "palm", "ivy",
-                    "aloe vera", "snake plant", "peace lily", "philodendron", "rubber plant",
-                    "spider plant", "jade plant", "bamboo", "money tree", "fiddle leaf fig",
+    
+    "pottedplant": ["succulent", "fern", "bonsai tree", "cactus", "orchid", "palm", "ivy", 
+                    "aloe vera", "snake plant", "peace lily", "philodendron", "rubber plant", 
+                    "spider plant", "jade plant", "bamboo", "money tree", "fiddle leaf fig", 
                     "pothos", "zz plant", "air plant"],
-
-    "sheep": ["merino sheep", "suffolk sheep", "dorper sheep", "dorset sheep", "katahdin sheep",
-              "hampshire sheep", "southdown sheep", "jacob sheep", "romney sheep", "barbados blackbelly sheep",
-              "texel sheep", "lincoln sheep", "columbia sheep", "cheviot sheep", "corriedale sheep",
+    
+    "sheep": ["merino sheep", "suffolk sheep", "dorper sheep", "dorset sheep", "katahdin sheep", 
+              "hampshire sheep", "southdown sheep", "jacob sheep", "romney sheep", "barbados blackbelly sheep", 
+              "texel sheep", "lincoln sheep", "columbia sheep", "cheviot sheep", "corriedale sheep", 
               "black welsh mountain sheep", "icelandic sheep", "shropshire sheep", "wensleydale sheep", "tunis sheep"],
-
-    "train": ["bullet train", "freight train", "passenger train", "steam locomotive", "electric train",
-              "diesel train", "monorail", "subway train", "light rail", "high-speed rail", "metro train",
-              "tram", "cog railway", "maglev train", "tilting train", "cable car", "funicular",
+    
+    "train": ["bullet train", "freight train", "passenger train", "steam locomotive", "electric train", 
+              "diesel train", "monorail", "subway train", "light rail", "high-speed rail", "metro train", 
+              "tram", "cog railway", "maglev train", "tilting train", "cable car", "funicular", 
               "commuter train", "long-distance train", "intercity train"],
-
-    "tvmonitor": ["LED TV", "OLED TV", "LCD TV", "plasma TV", "curved TV", "smart TV", "4K TV",
-                  "8K TV", "portable TV", "touchscreen monitor", "gaming monitor", "widescreen monitor",
-                  "ultrawide monitor", "dual-monitor setup", "projector", "CRT monitor", "flat-screen TV",
+    
+    "tvmonitor": ["LED TV", "OLED TV", "LCD TV", "plasma TV", "curved TV", "smart TV", "4K TV", 
+                  "8K TV", "portable TV", "touchscreen monitor", "gaming monitor", "widescreen monitor", 
+                  "ultrawide monitor", "dual-monitor setup", "projector", "CRT monitor", "flat-screen TV", 
                   "desktop monitor", "HDR monitor", "QLED TV"]
 }
 
 # To access, just query the dictionary:
 # Example: print(fine_grained_classes['dog'])
 coco_fine_grained_classes = {
-    "person": ["adult", "child", "teenager", "woman", "man", "baby", "athlete", "doctor", "police officer",
-               "firefighter", "student", "worker", "teacher", "musician", "pilot", "chef", "artist",
+    "person": ["adult", "child", "teenager", "woman", "man", "baby", "athlete", "doctor", "police officer", 
+               "firefighter", "student", "worker", "teacher", "musician", "pilot", "chef", "artist", 
                "actor", "soldier", "scientist"],
-
-    "bicycle": ["mountain bike", "road bike", "hybrid bike", "electric bike", "BMX", "folding bike",
-                "gravel bike", "tandem bike", "cruiser bike", "fixie", "track bike", "cargo bike",
-                "racing bike", "fat bike", "cyclocross bike", "recumbent bike", "urban bike",
+    
+    "bicycle": ["mountain bike", "road bike", "hybrid bike", "electric bike", "BMX", "folding bike", 
+                "gravel bike", "tandem bike", "cruiser bike", "fixie", "track bike", "cargo bike", 
+                "racing bike", "fat bike", "cyclocross bike", "recumbent bike", "urban bike", 
                 "electric cargo bike", "folding e-bike", "kid’s bike"],
-
-    "car": ["sedan", "SUV", "coupe", "convertible", "hatchback", "station wagon", "minivan", "pickup truck",
-            "sports car", "electric car", "luxury car", "compact car", "supercar", "muscle car",
+    
+    "car": ["sedan", "SUV", "coupe", "convertible", "hatchback", "station wagon", "minivan", "pickup truck", 
+            "sports car", "electric car", "luxury car", "compact car", "supercar", "muscle car", 
             "roadster", "hybrid car", "diesel car", "crossover", "off-road vehicle", "limousine"],
-
-    "motorcycle": ["sportbike", "cruiser", "touring bike", "dirt bike", "scooter", "moped",
-                   "adventure bike", "dual-sport", "naked bike", "café racer", "chopper",
-                   "minibike", "motocross bike", "enduro bike", "scrambler", "electric motorcycle",
+    
+    "motorcycle": ["sportbike", "cruiser", "touring bike", "dirt bike", "scooter", "moped", 
+                   "adventure bike", "dual-sport", "naked bike", "café racer", "chopper", 
+                   "minibike", "motocross bike", "enduro bike", "scrambler", "electric motorcycle", 
                    "sidecar motorcycle", "trials bike", "rally bike", "flat tracker"],
-
-    "airplane": ["commercial jet", "private jet", "fighter jet", "cargo plane", "helicopter", "glider",
-                 "seaplane", "biplane", "airliner", "jumbo jet", "propeller plane", "turboprop",
-                 "supersonic jet", "light aircraft", "regional jet", "business jet", "ultralight plane",
+    
+    "airplane": ["commercial jet", "private jet", "fighter jet", "cargo plane", "helicopter", "glider", 
+                 "seaplane", "biplane", "airliner", "jumbo jet", "propeller plane", "turboprop", 
+                 "supersonic jet", "light aircraft", "regional jet", "business jet", "ultralight plane", 
                  "electric aircraft", "amphibious aircraft", "concorde"],
-
-    "bus": ["school bus", "double-decker bus", "shuttle bus", "tourist bus", "minibus", "coach bus",
-            "city bus", "articulated bus", "trolleybus", "party bus", "airport shuttle", "hybrid bus",
-            "fuel-cell bus", "electric bus", "charter bus", "open-top bus", "transit bus",
+    
+    "bus": ["school bus", "double-decker bus", "shuttle bus", "tourist bus", "minibus", "coach bus", 
+            "city bus", "articulated bus", "trolleybus", "party bus", "airport shuttle", "hybrid bus", 
+            "fuel-cell bus", "electric bus", "charter bus", "open-top bus", "transit bus", 
             "paratransit bus", "tram", "commuter bus"],
-
-    "train": ["bullet train", "freight train", "passenger train", "steam locomotive", "monorail",
-              "electric train", "diesel train", "high-speed train", "metro train", "subway",
-              "light rail", "intercity train", "regional train", "commuter train", "funicular",
+    
+    "train": ["bullet train", "freight train", "passenger train", "steam locomotive", "monorail", 
+              "electric train", "diesel train", "high-speed train", "metro train", "subway", 
+              "light rail", "intercity train", "regional train", "commuter train", "funicular", 
               "tilting train", "tram", "long-distance train", "maglev train", "shinkansen"],
-
-    "boat": ["sailboat", "yacht", "fishing boat", "speedboat", "canoe", "kayak", "dinghy",
-             "pontoon boat", "houseboat", "motorboat", "ferry", "jet ski", "catamaran",
+    
+    "boat": ["sailboat", "yacht", "fishing boat", "speedboat", "canoe", "kayak", "dinghy", 
+             "pontoon boat", "houseboat", "motorboat", "ferry", "jet ski", "catamaran", 
              "cargo ship", "cruise ship", "submarine", "tugboat", "barge", "gondola", "rowing boat"],
-
-    "bird": ["sparrow", "eagle", "parrot", "penguin", "owl", "falcon", "peacock", "pigeon",
-             "hummingbird", "crow", "canary", "duck", "goose", "swallow", "woodpecker",
+    
+    "bird": ["sparrow", "eagle", "parrot", "penguin", "owl", "falcon", "peacock", "pigeon", 
+             "hummingbird", "crow", "canary", "duck", "goose", "swallow", "woodpecker", 
              "macaw", "flamingo", "seagull", "kingfisher", "hawk"],
-
-    "cat": ["persian cat", "siamese cat", "maine coon", "ragdoll", "sphynx cat", "bengal cat",
-            "british shorthair", "scottish fold", "himalayan cat", "abyssinian cat", "birman cat",
-            "oriental shorthair", "devon rex", "siberian cat", "egyptian mau", "turkish angora",
+    
+    "cat": ["persian cat", "siamese cat", "maine coon", "ragdoll", "sphynx cat", "bengal cat", 
+            "british shorthair", "scottish fold", "himalayan cat", "abyssinian cat", "birman cat", 
+            "oriental shorthair", "devon rex", "siberian cat", "egyptian mau", "turkish angora", 
             "korat", "savannah cat", "ragamuffin", "norwegian forest cat"],
-
-    "dog": ["labrador retriever", "german shepherd", "golden retriever", "bulldog", "beagle", "poodle",
-            "rottweiler", "yorkshire terrier", "boxer", "shih tzu", "pomeranian", "border collie",
-            "chihuahua", "french bulldog", "doberman", "great dane", "siberian husky", "pug",
+    
+    "dog": ["labrador retriever", "german shepherd", "golden retriever", "bulldog", "beagle", "poodle", 
+            "rottweiler", "yorkshire terrier", "boxer", "shih tzu", "pomeranian", "border collie", 
+            "chihuahua", "french bulldog", "doberman", "great dane", "siberian husky", "pug", 
             "cocker spaniel", "dalmatian"],
-
-    "horse": ["arabian horse", "thoroughbred", "clydesdale", "mustang", "quarter horse",
-              "shetland pony", "appaloosa", "friesian", "morgan horse", "andalusian",
-              "haflinger", "icelandic horse", "lipizzaner", "shire horse", "belgian draft horse",
+    
+    "horse": ["arabian horse", "thoroughbred", "clydesdale", "mustang", "quarter horse", 
+              "shetland pony", "appaloosa", "friesian", "morgan horse", "andalusian", 
+              "haflinger", "icelandic horse", "lipizzaner", "shire horse", "belgian draft horse", 
               "tennessee walker", "gypsy vanner", "paint horse", "percheron", "welsh pony"],
-
-    "sheep": ["merino sheep", "suffolk sheep", "dorper sheep", "hampshire sheep", "katahdin sheep",
-              "southdown sheep", "jacob sheep", "romney sheep", "texel sheep", "cheviot sheep",
-              "columbia sheep", "black welsh mountain sheep", "icelandic sheep", "lincoln sheep",
-              "corriedale sheep", "wensleydale sheep", "shropshire sheep", "tunis sheep",
+    
+    "sheep": ["merino sheep", "suffolk sheep", "dorper sheep", "hampshire sheep", "katahdin sheep", 
+              "southdown sheep", "jacob sheep", "romney sheep", "texel sheep", "cheviot sheep", 
+              "columbia sheep", "black welsh mountain sheep", "icelandic sheep", "lincoln sheep", 
+              "corriedale sheep", "wensleydale sheep", "shropshire sheep", "tunis sheep", 
               "barbados blackbelly", "dorper sheep"],
-
-    "cow": ["holstein cow", "jersey cow", "angus cow", "hereford cow", "guernsey cow", "brahman cow",
-            "longhorn cow", "brown swiss cow", "simmental cow", "ayrshire cow", "charolais cow",
-            "limousin cow", "galloway cow", "belted galloway", "dexter cow", "zebu", "beefmaster cow",
+    
+    "cow": ["holstein cow", "jersey cow", "angus cow", "hereford cow", "guernsey cow", "brahman cow", 
+            "longhorn cow", "brown swiss cow", "simmental cow", "ayrshire cow", "charolais cow", 
+            "limousin cow", "galloway cow", "belted galloway", "dexter cow", "zebu", "beefmaster cow", 
             "wagyu cow", "red angus", "brangus"],
-
-    "bottle": ["water bottle", "wine bottle", "beer bottle", "soda bottle", "milk bottle",
-               "glass bottle", "plastic bottle", "sports bottle", "baby bottle", "flask",
-               "thermos", "insulated bottle", "aluminum bottle", "juice bottle", "potion bottle",
+    
+    "bottle": ["water bottle", "wine bottle", "beer bottle", "soda bottle", "milk bottle", 
+               "glass bottle", "plastic bottle", "sports bottle", "baby bottle", "flask", 
+               "thermos", "insulated bottle", "aluminum bottle", "juice bottle", "potion bottle", 
                "oil bottle", "whiskey bottle", "tequila bottle", "vinegar bottle", "shampoo bottle"],
-
-    "chair": ["rocking chair", "recliner", "office chair", "dining chair", "armchair", "lounge chair",
-              "bar stool", "folding chair", "accent chair", "wingback chair", "club chair",
-              "chaise lounge", "side chair", "parsons chair", "bean bag chair", "deck chair",
+    
+    "chair": ["rocking chair", "recliner", "office chair", "dining chair", "armchair", "lounge chair", 
+              "bar stool", "folding chair", "accent chair", "wingback chair", "club chair", 
+              "chaise lounge", "side chair", "parsons chair", "bean bag chair", "deck chair", 
               "slipper chair", "butterfly chair", "director's chair", "ottoman"],
-
-    "couch": ["sectional sofa", "sleeper sofa", "loveseat", "recliner sofa", "chaise lounge",
-              "chesterfield sofa", "futon", "cabriole sofa", "mid-century modern sofa",
-              "slipcovered sofa", "track arm sofa", "tuxedo sofa", "modular sofa", "daybed",
-              "convertible sofa", "lawson sofa", "english roll arm sofa", "camelback sofa",
+    
+    "couch": ["sectional sofa", "sleeper sofa", "loveseat", "recliner sofa", "chaise lounge", 
+              "chesterfield sofa", "futon", "cabriole sofa", "mid-century modern sofa", 
+              "slipcovered sofa", "track arm sofa", "tuxedo sofa", "modular sofa", "daybed", 
+              "convertible sofa", "lawson sofa", "english roll arm sofa", "camelback sofa", 
               "chaise sectional", "u-shaped sectional"],
-
-    "potted plant": ["succulent", "fern", "bonsai tree", "cactus", "palm", "orchid",
-                     "ivy", "snake plant", "aloe vera", "philodendron", "peace lily",
-                     "rubber plant", "spider plant", "jade plant", "money tree",
+    
+    "potted plant": ["succulent", "fern", "bonsai tree", "cactus", "palm", "orchid", 
+                     "ivy", "snake plant", "aloe vera", "philodendron", "peace lily", 
+                     "rubber plant", "spider plant", "jade plant", "money tree", 
                      "fiddle leaf fig", "bamboo plant", "pothos", "air plant", "zz plant"],
-
-    "dining table": ["round dining table", "rectangular dining table", "square dining table",
-                     "oval dining table", "drop-leaf table", "extendable table", "pedestal table",
-                     "glass dining table", "wooden dining table", "contemporary dining table",
-                     "farmhouse dining table", "industrial dining table", "mid-century dining table",
-                     "rustic dining table", "marble dining table", "modern dining table",
+    
+    "dining table": ["round dining table", "rectangular dining table", "square dining table", 
+                     "oval dining table", "drop-leaf table", "extendable table", "pedestal table", 
+                     "glass dining table", "wooden dining table", "contemporary dining table", 
+                     "farmhouse dining table", "industrial dining table", "mid-century dining table", 
+                     "rustic dining table", "marble dining table", "modern dining table", 
                      "pub table", "counter-height table", "tulip dining table", "parsons table"],
-
-    "tv": ["LED TV", "OLED TV", "LCD TV", "plasma TV", "smart TV", "curved TV", "4K TV",
-           "8K TV", "flat-screen TV", "touchscreen monitor", "widescreen monitor",
-           "projector", "HDR TV", "QLED TV", "portable TV", "gaming monitor", "CRT TV",
+    
+    "tv": ["LED TV", "OLED TV", "LCD TV", "plasma TV", "smart TV", "curved TV", "4K TV", 
+           "8K TV", "flat-screen TV", "touchscreen monitor", "widescreen monitor", 
+           "projector", "HDR TV", "QLED TV", "portable TV", "gaming monitor", "CRT TV", 
            "dual-monitor setup", "wall-mounted TV", "home theater screen"]
 }
 
@@ -2350,7 +2322,7 @@ COCO_CATEGORIES = [
     {"color": [100, 170, 30], "isthing": 1, "id": 11, "name": "fire hydrant"},
     {"color": [220, 220, 0], "isthing": 1, "id": 13, "name": "stop sign"},
     {"color": [175, 116, 175], "isthing": 1,
-     "id": 14, "name": "parking meter", },
+        "id": 14, "name": "parking meter", },
     {"color": [250, 0, 30], "isthing": 1, "id": 15, "name": "bench"},
     {"color": [165, 42, 42], "isthing": 1, "id": 16, "name": "bird"},
     {"color": [255, 77, 255], "isthing": 1, "id": 17, "name": "cat"},
@@ -2377,7 +2349,7 @@ COCO_CATEGORIES = [
     {"color": [134, 134, 103], "isthing": 1, "id": 41, "name": "skateboard"},
     {"color": [145, 148, 174], "isthing": 1, "id": 42, "name": "surfboard"},
     {"color": [255, 208, 186], "isthing": 1,
-     "id": 43, "name": "tennis racket", },
+        "id": 43, "name": "tennis racket", },
     {"color": [197, 226, 255], "isthing": 1, "id": 44, "name": "bottle"},
     {"color": [171, 134, 1], "isthing": 1, "id": 46, "name": "wine glass"},
     {"color": [109, 63, 54], "isthing": 1, "id": 47, "name": "cup"},
@@ -2437,7 +2409,7 @@ COCO_CATEGORIES = [
     {"color": [76, 91, 113], "isthing": 0, "id": 141, "name": "pillow"},
     {"color": [255, 180, 195], "isthing": 0, "id": 144, "name": "platform"},
     {"color": [106, 154, 176], "isthing": 0,
-     "id": 145, "name": "playingfield"},
+        "id": 145, "name": "playingfield"},
     {"color": [230, 150, 140], "isthing": 0, "id": 147, "name": "railroad"},
     {"color": [60, 143, 255], "isthing": 0, "id": 148, "name": "river"},
     {"color": [128, 64, 128], "isthing": 0, "id": 149, "name": "road"},
@@ -2455,37 +2427,37 @@ COCO_CATEGORIES = [
     {"color": [107, 255, 200], "isthing": 0, "id": 177, "name": "wall-wood"},
     {"color": [58, 41, 149], "isthing": 0, "id": 178, "name": "water-other"},
     {"color": [183, 121, 142], "isthing": 0,
-     "id": 180, "name": "window-blind"},
+        "id": 180, "name": "window-blind"},
     {"color": [255, 73, 97], "isthing": 0, "id": 181, "name": "window-other"},
     {"color": [107, 142, 35], "isthing": 0, "id": 184, "name": "tree-merged"},
     {"color": [190, 153, 153], "isthing": 0,
-     "id": 185, "name": "fence-merged"},
+        "id": 185, "name": "fence-merged"},
     {"color": [146, 139, 141], "isthing": 0,
-     "id": 186, "name": "ceiling-merged"},
+        "id": 186, "name": "ceiling-merged"},
     {"color": [70, 130, 180], "isthing": 0,
-     "id": 187, "name": "sky-other-merged"},
+        "id": 187, "name": "sky-other-merged"},
     {"color": [134, 199, 156], "isthing": 0,
-     "id": 188, "name": "cabinet-merged"},
+        "id": 188, "name": "cabinet-merged"},
     {"color": [209, 226, 140], "isthing": 0,
-     "id": 189, "name": "table-merged"},
+        "id": 189, "name": "table-merged"},
     {"color": [96, 36, 108], "isthing": 0,
-     "id": 190, "name": "floor-other-merged"},
+        "id": 190, "name": "floor-other-merged"},
     {"color": [96, 96, 96], "isthing": 0,
-     "id": 191, "name": "pavement-merged"},
+        "id": 191, "name": "pavement-merged"},
     {"color": [64, 170, 64], "isthing": 0,
-     "id": 192, "name": "mountain-merged"},
+        "id": 192, "name": "mountain-merged"},
     {"color": [152, 251, 152], "isthing": 0,
-     "id": 193, "name": "grass-merged"},
+        "id": 193, "name": "grass-merged"},
     {"color": [208, 229, 228], "isthing": 0, "id": 194, "name": "dirt-merged"},
     {"color": [206, 186, 171], "isthing": 0,
-     "id": 195, "name": "paper-merged"},
+        "id": 195, "name": "paper-merged"},
     {"color": [152, 161, 64], "isthing": 0,
-     "id": 196, "name": "food-other-merged"},
+        "id": 196, "name": "food-other-merged"},
     {"color": [116, 112, 0], "isthing": 0,
-     "id": 197, "name": "building-other-merged"},
+        "id": 197, "name": "building-other-merged"},
     {"color": [0, 114, 143], "isthing": 0, "id": 198, "name": "rock-merged"},
     {"color": [102, 102, 156], "isthing": 0,
-     "id": 199, "name": "wall-other-merged"},
+        "id": 199, "name": "wall-other-merged"},
     {"color": [250, 141, 255], "isthing": 0, "id": 200, "name": "rug-merged"},
 ]
 
@@ -2956,6 +2928,7 @@ places_dict = {
     }
 }
 
+
 chatGPT_prompts = {
     "bird": [
         "A colorful parrot perched on a branch in a tropical rainforest.",
@@ -3095,29 +3068,30 @@ chatGPT_prompts = {
 }
 
 coco2voc = {
-    'motorcycle': 'motorbike',
-    'airplane': 'aeroplane',
-    'potted plant': 'pottedplant',
-    'dining table': 'diningtable',
-    'tv': 'tvmonitor',
-    'couch': 'sofa',
+    'motorcycle':'motorbike',
+    'airplane':'aeroplane',
+    'potted plant':'pottedplant',
+    'dining table':'diningtable',
+    'tv':'tvmonitor',
+    'couch':'sofa',
 }
 
-voc2coco = {val: key for key, val in coco2voc.items()}
+voc2coco ={val:key for key, val in coco2voc.items()}
 convert_object = {"diningtable": "dining table",
-                  "pottedplant": "potted plant",
-                  "tvmonitor": "tv monitor"}
+               "pottedplant":"potted plant",
+               "tvmonitor": "tv monitor"}
 
-# download pre-trained weights of diffusion models at
+
+# download pre-trained weights of diffusion models at 
 # https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-inpainting
 # and
 # https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
-stable_inpaint_path = 'mpad_generation/PowerPaint/models/stable-diffusion-inpainting'
-stable_diffusion_path = 'mpad_generation/PowerPaint/models/stable-diffusion-v1-5'
+stable_inpaint_path ='mpad_generation/PowerPaint/models/stable-diffusion-inpainting'
+stable_diffusion_path ='mpad_generation/PowerPaint/models/stable-diffusion-v1-5'
 
 # download pre-trained weights of PowerPaint at https://huggingface.co/JunhaoZhuang/PowerPaint-v1/tree/main
-unet_path = "mpad_generation/PowerPaint/models/unet/unet.safetensors"
-text_encoder_path = "mpad_generation/PowerPaint/models/text_encoder/text_encoder.safetensors"
+unet_path        = "mpad_generation/PowerPaint/models/unet/unet.safetensors"
+text_encoder_path= "mpad_generation/PowerPaint/models/text_encoder/text_encoder.safetensors"
 
 # download extracted features of pre-processing step from https://drive.google.com/file/d/1DCiLXICXqVqrFd675DXGpC-jib2O2Pa7/view?usp=sharing
 feature_dir = "mpad_generation/NovelClassSynthesis"
