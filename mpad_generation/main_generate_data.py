@@ -445,11 +445,11 @@ if __name__ == "__main__":
         if sid == 1:
             COCO_DATASET = [(1, 'FS_OWODB', "coco", "t1")]
         elif sid == 2:
-            COCO_DATASET = [(2, 'FS_OWODB', "coco", "t2")]
+            COCO_DATASET = [(2, 'FS_OWODB', "coco", "t1")]
         elif sid == 3:
-            COCO_DATASET = [(3, 'FS_OWODB', "coco", "t3")]
-        elif sid == 4:
-            COCO_DATASET = [(4, 'FS_OWODB', "coco", "t4")]
+            COCO_DATASET = [(3, 'FS_OWODB', "coco", "t1")]
+        # elif sid == 4:
+        #     COCO_DATASET = [(4, 'FS_OWODB', "coco", "t4")]
 
         for id_dataset, name, dirname, split in COCO_DATASET:
             tic = time()

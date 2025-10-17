@@ -389,42 +389,26 @@ def get_k_sample(dataset_path, list_files, novel_classes, num_max_ins):
     print(sample_counts)
     return selected
 
-
 def create_meta_infor(dataset_path, novel_classes, num_max_ins):
     set_dir = os.path.join(dataset_path, 'ImageSets/Main')
-    annotation_dir = os.path.join(dataset_path, 'Annotations')
+    annotation_dir = os.path.join(dataset_path, 'Annotations_gen')
     os.makedirs(set_dir, exist_ok=True)
 
-    jpeg_dir = os.path.join(dataset_path, 'JPEGImages')
-
-    # ===== 수정된 부분 시작 =====
-    # synthetic으로 생성된 이미지만 처리 (syn으로 시작)
-    all_jpg_files = [f for f in os.listdir(jpeg_dir) if f.endswith('.jpg')]
-
-    # syn으로 시작하는 파일들만 필터링
-    synthetic_files = [f for f in all_jpg_files if f.startswith('syn')]
-
-    # 파일명에서 확장자 제거
-    image_files = [f.split('.')[0] for f in synthetic_files]
-
-    print(f"Total JPG files: {len(all_jpg_files)}")
-    print(f"Synthetic images (starting with 'syn'): {len(image_files)}")
-    # ===== 수정된 부분 끝 =====
-
+    image_files = [f.split('.')[0] for f in os.listdir(os.path.join(dataset_path, 'JPEGImages')) if f.endswith('.jpg')] + [f.split('.')[0] for f in os.listdir(os.path.join(dataset_path, 'JPEGImages_gen')) if f.endswith('.jpg')]
     all_files = set(image_files)
     num_files = len(all_files)
 
     remove_list = [f for f in all_files if remove_file(dataset_path, f)]
-
+    # print(remove_list)
     rm_cnt = [
         filter_bbox_voc(os.path.join(annotation_dir, f"{file}.xml"), novel_classes, alpha=0.7)
         for file in all_files
     ]
-
     print(sum(rm_cnt))
+    # print(rm_cnt)
     saved_files = [file for i, file in enumerate(all_files) if file not in remove_list and rm_cnt[i] == 0]
     saved_files = get_k_sample(dataset_path, saved_files, novel_classes, num_max_ins)
-
+    # saved_files = list(all_files)
     print(
         f'There are {num_files} files, remained {len(saved_files)} files, removed {num_files - len(saved_files)} files')
 

@@ -269,10 +269,9 @@ def load_filtered_voc_instances(
         with open(
                 os.path.join(dirname, "ImageSets", "Main", split + ".txt")
         ) as f:
-            print(f'os.path.join(dirname, "ImageSets", "Main", split + ".txt") : {os.path.join(dirname, "ImageSets", "Main", split + ".txt")}')
+            #print(f'os.path.join(dirname, "ImageSets", "Main", split + ".txt") : {os.path.join(dirname, "ImageSets", "Main", split + ".txt")}')
             fileids = np.loadtxt(f, dtype=str)
-            print(f"fileids : {fileids}, fileids length : {len(fileids)}")
-
+            # print(f"fileids : {fileids}, fileids length : {len(fileids)}")
     dicts = []
     removed_id = []
     choose_id = []
@@ -338,7 +337,7 @@ def load_filtered_voc_instances(
         for i, fileid in enumerate(fileids):
             anno_file = os.path.join(dirname, "Annotations", fileid + ".xml")
             jpeg_file = os.path.join(dirname, "JPEGImages", fileid + ".jpg")
-            print(f"anno_file : {anno_file}, jpeg_file : {jpeg_file}")
+            # print(f"anno_file : {anno_file}, jpeg_file : {jpeg_file}")
 
             tree = ET.parse(anno_file)
 
@@ -354,11 +353,16 @@ def load_filtered_voc_instances(
 
             for obj in tree.findall("object"):
                 cls = obj.find("name").text
-                print(f"cls : {cls}")
-                print(f"base_classnames : {classnames}, base_classnames length : {len(classnames)}")
-                if not (cls in classnames):
+                #print(f"cls : {cls}")
+                #print(f"base_classnames : {classnames}, base_classnames length : {len(classnames)}")
+                #print(cls in classnames)
+                if not (cls in classnames): # cls is novel class
                     instances = []
+                    #print("class not in classnames")
                     break
+
+                # if cls is base class
+                #print("cls is base class")
                 bbox = obj.find("bndbox")
                 bbox = [
                     int(bbox.find(x).text)
@@ -366,7 +370,7 @@ def load_filtered_voc_instances(
                 ]
                 bbox[0] -= 1
                 bbox[1] -= 1
-
+                #print(f"category_id : {classnames.index(cls)}, cls : {cls}, bbox : {bbox}")
                 instances.append(
                     {
                         "category_id": classnames.index(cls),
@@ -375,6 +379,7 @@ def load_filtered_voc_instances(
                         "bbox_mode": 'XYXY_ABS',
                     }
                 )
+                #print(f"instances :{instances}")
             if len(instances) == 0:
                 removed_id.append(i)
                 continue

@@ -1572,7 +1572,9 @@ meta_VOC_info_4 = {
     },
 }
 
-meta_COCO_info = {
+
+
+meta_COCO_info_T1 = {
     "bird": {
         "colors": ["black", "brown", "white", "mix"],
         "feathers": ["smooth", "fluffy", "sleek"],
@@ -2101,6 +2103,1757 @@ meta_COCO_info = {
     },
 }
 
+meta_COCO_info_T2 = {
+    "truck": {
+        "colors": ["black", "white", "red", "blue", "gray", "mix"],
+        "body shape": ["boxy", "flat front", "aerodynamic"],
+        "cab": ["single", "extended", "crew"],
+        "bed": ["short", "long", "flatbed", "enclosed"],
+        "axles": ["two", "three", "multiple"],
+        "windows": ["large", "tinted", "rectangular"],
+        "doors": ["two", "four"],
+        "wheels": ["large", "heavy-duty", "dual rear wheels"],
+        "headlights": ["large", "LED", "halogen"],
+        "grille": ["prominent", "chrome", "painted"],
+        "roof": ["flat", "sleeper cab", "wind deflector"],
+        "features": ["towing hitch", "running boards", "toolbox", "ladder rack"],
+        "size": ["pickup", "medium-duty", "heavy-duty", "semi-truck"],
+        "Fine-grained classes": ["Pickup Truck", "Dump Truck", "Box Truck", "Semi-Truck", "Tow Truck", "Flatbed Truck"],
+        "similar classes": {
+            "bus": {
+                "distinguished": ["cargo transport", "open bed", "different body structure"],
+                "similar": ["large vehicle", "wheels", "road transport"]
+            },
+            "car": {
+                "distinguished": ["larger size", "cargo capacity", "higher ground clearance"],
+                "similar": ["wheeled vehicle", "engine-powered", "used for transportation"]
+            },
+            "train": {
+                "distinguished": ["wheels for roads", "smaller size", "independent travel"],
+                "similar": ["used for cargo transport", "long body", "heavy-duty construction"]
+            }
+        }
+    },
+
+    "traffic light": {
+        "colors": ["red", "yellow", "green", "black housing"],
+        "shape": ["vertical", "horizontal"],
+        "lights": ["three lights", "red on top", "yellow middle", "green bottom"],
+        "housing": ["rectangular", "cylindrical"],
+        "mounting": ["pole-mounted", "suspended by wires", "wall-mounted"],
+        "features": ["sun shade", "backboard", "countdown timer", "arrow signals"],
+        "size": ["standard", "large", "pedestrian-sized"],
+        "visibility": ["bright", "LED", "incandescent"],
+        "expression": ["authoritative", "guiding", "regulatory"],
+        "Fine-grained classes": ["Pedestrian Signal", "Vehicle Signal", "Arrow Signal", "Countdown Signal", "Bicycle Signal"],
+        "similar classes": {
+            "stop sign": {
+                "distinguished": ["multiple colored lights", "taller structure", "changes state"],
+                "similar": ["traffic control", "mounted on pole", "road safety device"]
+            },
+            "parking meter": {
+                "distinguished": ["lights", "traffic control function", "mounted higher"],
+                "similar": ["pole-mounted", "metal structure", "found on streets"]
+            },
+            "clock": {
+                "distinguished": ["colored lights", "traffic control", "larger size"],
+                "similar": ["displays information", "circular elements", "time-related function (traffic timing)"]
+            }
+        }
+    },
+
+    "fire hydrant": {
+        "colors": ["red", "yellow", "white", "orange", "silver"],
+        "body": ["cylindrical", "metal", "sturdy"],
+        "height": ["short", "medium"],
+        "outlets": ["two nozzles", "three nozzles", "four nozzles"],
+        "cap": ["flat top", "rounded top", "chain attached"],
+        "valve": ["top valve", "side outlets"],
+        "mounting": ["ground-mounted", "sidewalk"],
+        "chain": ["attached chain", "loose chain"],
+        "features": ["reflective bands", "numbering", "paint markings"],
+        "condition": ["new", "weathered", "rusty"],
+        "expression": ["sturdy", "reliable", "emergency-ready"],
+        "Fine-grained classes": ["Wet Barrel", "Dry Barrel", "Flush Hydrant", "Pillar Hydrant"],
+        "similar classes": {
+            "parking meter": {
+                "distinguished": ["wider body", "water outlet", "emergency use"],
+                "similar": ["pole-like structure", "metal construction", "found on sidewalks"]
+            },
+            "stop sign": {
+                "distinguished": ["cylindrical shape", "ground-mounted", "water function"],
+                "similar": ["street furniture", "painted bright colors", "safety-related"]
+            },
+            "bench": {
+                "distinguished": ["metal construction", "vertical structure", "functional purpose"],
+                "similar": ["found in public spaces", "ground-mounted", "sturdy construction"]
+            }
+        }
+    },
+
+    "stop sign": {
+        "colors": ["red", "white text"],
+        "shape": ["octagonal"],
+        "text": ["STOP"],
+        "mounting": ["pole-mounted", "high-mounted", "low-mounted"],
+        "pole": ["metal", "wooden", "single pole", "double pole"],
+        "size": ["standard", "large", "small"],
+        "reflectivity": ["reflective", "non-reflective"],
+        "condition": ["new", "faded", "weathered", "graffiti"],
+        "features": ["white border", "bold letters"],
+        "expression": ["authoritative", "warning", "regulatory"],
+        "Fine-grained classes": ["Standard Stop Sign", "All-Way Stop", "Multi-Way Stop", "School Zone Stop"],
+        "similar classes": {
+            "traffic light": {
+                "distinguished": ["octagonal shape", "single message", "static display"],
+                "similar": ["traffic control", "pole-mounted", "road safety device"]
+            },
+            "parking meter": {
+                "distinguished": ["flat sign", "octagonal", "different function"],
+                "similar": ["pole-mounted", "metal structure", "found on streets"]
+            },
+            "frisbee": {
+                "distinguished": ["stationary", "pole-mounted", "regulatory function"],
+                "similar": ["circular/octagonal shape", "flat surface", "visible from distance"]
+            }
+        }
+    },
+
+    "parking meter": {
+        "colors": ["gray", "black", "green", "silver"],
+        "body": ["rectangular", "cylindrical"],
+        "pole": ["metal", "tall", "short"],
+        "display": ["digital", "mechanical"],
+        "payment": ["coin slot", "card reader", "digital payment"],
+        "buttons": ["multiple buttons", "touchscreen"],
+        "mounting": ["sidewalk", "curb-mounted"],
+        "size": ["compact", "standard", "tall"],
+        "features": ["solar panel", "receipt printer", "timer display"],
+        "condition": ["new", "weathered", "damaged"],
+        "expression": ["functional", "modern", "utilitarian"],
+        "Fine-grained classes": ["Single Space Meter", "Multi-Space Meter", "Smart Meter", "Solar Meter"],
+        "similar classes": {
+            "fire hydrant": {
+                "distinguished": ["payment function", "display screen", "taller structure"],
+                "similar": ["pole-like structure", "metal construction", "found on sidewalks"]
+            },
+            "traffic light": {
+                "distinguished": ["payment function", "smaller size", "parking-specific"],
+                "similar": ["pole-mounted", "metal structure", "regulatory device"]
+            },
+            "stop sign": {
+                "distinguished": ["vertical structure", "payment function", "digital display"],
+                "similar": ["pole-mounted", "street furniture", "regulatory purpose"]
+            }
+        }
+    },
+
+    "bench": {
+        "colors": ["brown", "black", "green", "white", "gray"],
+        "frame": ["wood", "metal", "plastic", "concrete"],
+        "seat": ["slatted", "solid", "contoured"],
+        "backrest": ["present", "absent", "low", "high"],
+        "armrests": ["present", "absent", "center divider"],
+        "legs": ["metal", "wood", "concrete base"],
+        "mounting": ["ground-mounted", "freestanding", "wall-mounted"],
+        "size": ["two-seater", "three-seater", "long"],
+        "features": ["memorial plaque", "decorative ironwork", "cushions"],
+        "condition": ["new", "weathered", "painted", "rusty"],
+        "expression": ["welcoming", "sturdy", "restful"],
+        "Fine-grained classes": ["Park Bench", "Garden Bench", "Memorial Bench", "Transit Bench", "Picnic Bench"],
+        "similar classes": {
+            "chair": {
+                "distinguished": ["longer structure", "accommodates multiple people", "outdoor use"],
+                "similar": ["provides seating", "has backrest", "used for resting"]
+            },
+            "sofa": {
+                "distinguished": ["outdoor use", "harder surface", "public setting"],
+                "similar": ["long seating", "accommodates multiple people", "backrest present"]
+            },
+            "diningtable": {
+                "distinguished": ["used for sitting", "has backrest", "not a flat top"],
+                "similar": ["found in public spaces", "accommodates multiple people", "sturdy structure"]
+            }
+        }
+    },
+
+    "elephant": {
+        "colors": ["gray", "dark gray", "brownish gray"],
+        "body": ["large", "massive", "wrinkled skin"],
+        "trunk": ["long", "flexible", "muscular"],
+        "ears": ["very large", "fan-shaped", "flapping"],
+        "tusks": ["long", "curved", "ivory", "absent in some"],
+        "legs": ["thick", "columnar", "powerful"],
+        "feet": ["padded", "large", "circular"],
+        "tail": ["long", "thin", "tuft of hair at end"],
+        "eyes": ["small", "expressive"],
+        "size": ["very large", "massive"],
+        "skin texture": ["wrinkled", "thick", "rough"],
+        "expression": ["gentle", "intelligent", "powerful"],
+        "Fine-grained classes": ["African Elephant", "Asian Elephant", "Forest Elephant", "Savanna Elephant"],
+        "similar classes": {
+            "bear": {
+                "distinguished": ["trunk", "tusks", "much larger size"],
+                "similar": ["large mammal", "four legs", "powerful build"]
+            },
+            "cow": {
+                "distinguished": ["trunk", "tusks", "much larger size"],
+                "similar": ["large herbivore", "four legs", "domesticated or wild"]
+            },
+            "giraffe": {
+                "distinguished": ["shorter neck", "trunk present", "different body proportions"],
+                "similar": ["large African animal", "herbivore", "impressive size"]
+            }
+        }
+    },
+
+    "bear": {
+        "colors": ["black", "brown", "white", "grizzled"],
+        "body": ["large", "stocky", "muscular", "powerful"],
+        "fur": ["thick", "shaggy", "dense"],
+        "head": ["large", "rounded"],
+        "snout": ["short", "prominent"],
+        "ears": ["small", "rounded", "furry"],
+        "legs": ["strong", "thick"],
+        "paws": ["large", "clawed"],
+        "claws": ["long", "curved", "sharp"],
+        "tail": ["short", "stubby"],
+        "size": ["medium", "large", "very large"],
+        "posture": ["all fours", "standing upright"],
+        "expression": ["powerful", "wild", "fierce", "curious"],
+        "Fine-grained classes": ["Grizzly Bear", "Black Bear", "Polar Bear", "Brown Bear", "Panda Bear"],
+        "similar classes": {
+            "dog": {
+                "distinguished": ["larger size", "different body structure", "wild nature"],
+                "similar": ["four-legged", "furry", "mammal"]
+            },
+            "cow": {
+                "distinguished": ["carnivorous", "claws", "wild behavior"],
+                "similar": ["large mammal", "four legs", "fur-covered"]
+            },
+            "elephant": {
+                "distinguished": ["smaller size", "no trunk", "different body shape"],
+                "similar": ["large mammal", "powerful build", "wild animal"]
+            }
+        }
+    },
+
+    "zebra": {
+        "colors": ["black and white stripes"],
+        "body": ["muscular", "horse-like"],
+        "stripes": ["vertical", "unique pattern", "covering entire body"],
+        "mane": ["short", "upright", "striped"],
+        "tail": ["long", "tufted end", "striped"],
+        "legs": ["long", "slender", "striped"],
+        "hooves": ["black", "solid"],
+        "head": ["long", "horse-like"],
+        "ears": ["medium", "upright", "rounded"],
+        "eyes": ["dark", "expressive"],
+        "size": ["medium", "large"],
+        "expression": ["alert", "wild", "graceful"],
+        "Fine-grained classes": ["Plains Zebra", "Mountain Zebra", "Grevy's Zebra"],
+        "similar classes": {
+            "horse": {
+                "distinguished": ["striped pattern", "wild nature", "different coloring"],
+                "similar": ["four legs", "hooves", "similar body shape"]
+            },
+            "cow": {
+                "distinguished": ["striped pattern", "wild behavior", "slender build"],
+                "similar": ["herbivore", "four legs", "grazing animal"]
+            },
+            "giraffe": {
+                "distinguished": ["shorter neck", "striped pattern", "different proportions"],
+                "similar": ["African animal", "herbivore", "distinctive markings"]
+            }
+        }
+    },
+
+    "giraffe": {
+        "colors": ["tan", "brown", "white", "spotted pattern"],
+        "body": ["tall", "long-legged"],
+        "neck": ["very long", "flexible"],
+        "spots": ["irregular patches", "brown on tan"],
+        "legs": ["very long", "slender"],
+        "hooves": ["split", "large"],
+        "tail": ["long", "tufted end"],
+        "head": ["small", "elongated"],
+        "ossicones": ["horn-like protrusions", "fur-covered"],
+        "ears": ["large", "pointed"],
+        "eyes": ["large", "dark", "prominent lashes"],
+        "tongue": ["long", "dark", "prehensile"],
+        "size": ["very tall", "largest land animal by height"],
+        "expression": ["gentle", "graceful", "curious"],
+        "Fine-grained classes": ["Masai Giraffe", "Reticulated Giraffe", "Northern Giraffe", "Southern Giraffe"],
+        "similar classes": {
+            "horse": {
+                "distinguished": ["much taller", "long neck", "spotted pattern"],
+                "similar": ["four legs", "hooves", "herbivore"]
+            },
+            "zebra": {
+                "distinguished": ["long neck", "spotted not striped", "much taller"],
+                "similar": ["African animal", "herbivore", "long legs"]
+            },
+            "cow": {
+                "distinguished": ["long neck", "much taller", "different body proportions"],
+                "similar": ["herbivore", "four legs", "hooves"]
+            }
+        }
+    },
+
+    "backpack": {
+        "colors": ["black", "blue", "red", "gray", "green", "mix"],
+        "material": ["canvas", "nylon", "leather", "polyester"],
+        "size": ["small", "medium", "large", "oversized"],
+        "compartments": ["single", "multiple", "laptop sleeve"],
+        "straps": ["padded", "adjustable", "two shoulder straps"],
+        "zippers": ["one", "multiple", "front pocket"],
+        "features": ["water bottle holder", "chest strap", "hip belt", "reflective strips"],
+        "shape": ["rectangular", "rounded", "top-loading"],
+        "style": ["school", "hiking", "tactical", "fashion"],
+        "condition": ["new", "worn", "packed full", "empty"],
+        "expression": ["practical", "functional", "portable"],
+        "Fine-grained classes": ["School Backpack", "Hiking Backpack", "Laptop Backpack", "Military Backpack", "Daypack"],
+        "similar classes": {
+            "handbag": {
+                "distinguished": ["shoulder straps", "worn on back", "larger capacity"],
+                "similar": ["used for carrying items", "portable", "has compartments"]
+            },
+            "suitcase": {
+                "distinguished": ["worn on back", "softer material", "smaller size"],
+                "similar": ["used for carrying belongings", "has compartments", "portable"]
+            },
+            "person": {
+                "distinguished": ["inanimate object", "no limbs", "carried by person"],
+                "similar": ["seen with people", "portable item", "everyday object"]
+            }
+        }
+    },
+
+    "umbrella": {
+        "colors": ["black", "red", "blue", "rainbow", "transparent"],
+        "canopy": ["dome-shaped", "circular", "octagonal"],
+        "material": ["nylon", "polyester", "transparent plastic"],
+        "ribs": ["metal", "fiberglass", "multiple"],
+        "shaft": ["straight", "telescoping", "J-shaped"],
+        "handle": ["curved", "straight", "ergonomic", "wooden", "plastic"],
+        "size": ["compact", "standard", "golf umbrella"],
+        "features": ["automatic open", "wind-resistant", "inverted design"],
+        "state": ["open", "closed", "folded"],
+        "condition": ["new", "weathered", "broken"],
+        "expression": ["protective", "portable", "practical"],
+        "Fine-grained classes": ["Compact Umbrella", "Golf Umbrella", "Beach Umbrella", "Patio Umbrella", "Automatic Umbrella"],
+        "similar classes": {
+            "kite": {
+                "distinguished": ["held by hand", "rain protection", "collapsible"],
+                "similar": ["lightweight", "fabric canopy", "used outdoors"]
+            },
+            "frisbee": {
+                "distinguished": ["has handle", "protective function", "larger size"],
+                "similar": ["circular shape", "lightweight", "outdoor use"]
+            },
+            "bird": {
+                "distinguished": ["inanimate object", "man-made", "no movement"],
+                "similar": ["opens like wings", "lightweight", "used in outdoor settings"]
+            }
+        }
+    },
+
+    "handbag": {
+        "colors": ["black", "brown", "red", "white", "mix"],
+        "material": ["leather", "synthetic", "canvas", "suede"],
+        "size": ["small", "medium", "large"],
+        "handles": ["short", "long", "double handles", "single strap"],
+        "closure": ["zipper", "magnetic snap", "clasp", "open top"],
+        "compartments": ["single", "multiple", "interior pockets"],
+        "shape": ["rectangular", "hobo", "tote", "clutch", "satchel"],
+        "features": ["metal hardware", "decorative elements", "brand logo", "adjustable strap"],
+        "style": ["casual", "formal", "designer", "vintage"],
+        "condition": ["new", "worn", "luxury"],
+        "expression": ["fashionable", "elegant", "practical"],
+        "Fine-grained classes": ["Tote Bag", "Shoulder Bag", "Clutch", "Crossbody Bag", "Hobo Bag", "Satchel"],
+        "similar classes": {
+            "backpack": {
+                "distinguished": ["hand-carried or shoulder", "smaller capacity", "fashion-oriented"],
+                "similar": ["used for carrying items", "has compartments", "portable"]
+            },
+            "suitcase": {
+                "distinguished": ["smaller size", "carried by hand", "daily use"],
+                "similar": ["used for carrying belongings", "has handles", "portable"]
+            },
+            "cat": {
+                "distinguished": ["inanimate object", "no mobility", "carried item"],
+                "similar": ["small and compact", "found in daily settings", "portable"]
+            }
+        }
+    },
+
+    "tie": {
+        "colors": ["black", "blue", "red", "striped", "patterned"],
+        "material": ["silk", "polyester", "cotton", "wool"],
+        "width": ["slim", "standard", "wide"],
+        "length": ["short", "standard", "long"],
+        "pattern": ["solid", "striped", "dotted", "paisley", "checkered"],
+        "knot": ["four-in-hand", "windsor", "half-windsor"],
+        "style": ["traditional", "modern", "bow tie", "skinny tie"],
+        "features": ["clip", "tie bar", "textured"],
+        "condition": ["neatly tied", "loosened", "hanging"],
+        "expression": ["formal", "professional", "elegant"],
+        "Fine-grained classes": ["Necktie", "Bow Tie", "Ascot", "Bolo Tie", "Skinny Tie"],
+        "similar classes": {
+            "person": {
+                "distinguished": ["clothing accessory", "worn around neck", "fabric"],
+                "similar": ["associated with people", "worn item", "professional setting"]
+            },
+            "belt": {
+                "distinguished": ["worn around neck", "narrower", "decorative"],
+                "similar": ["fabric accessory", "worn item", "adjustable length"]
+            },
+            "ribbon": {
+                "distinguished": ["specific knot", "professional use", "worn on person"],
+                "similar": ["fabric strip", "decorative", "tied in knot"]
+            }
+        }
+    },
+
+    "suitcase": {
+        "colors": ["black", "gray", "blue", "red", "brown"],
+        "material": ["hard plastic", "soft fabric", "leather", "polycarbonate"],
+        "size": ["carry-on", "medium", "large", "oversized"],
+        "wheels": ["two wheels", "four spinner wheels"],
+        "handle": ["telescoping", "retractable", "top handle", "side handle"],
+        "compartments": ["single", "divided", "zippered pockets"],
+        "closure": ["zipper", "latches", "combination lock", "TSA lock"],
+        "features": ["expandable", "lightweight", "hard shell", "soft shell"],
+        "condition": ["new", "travel-worn", "scratched", "packed"],
+        "expression": ["practical", "sturdy", "travel-ready"],
+        "Fine-grained classes": ["Carry-on Luggage", "Checked Luggage", "Rolling Suitcase", "Hard Shell Case", "Duffel Bag"],
+        "similar classes": {
+            "backpack": {
+                "distinguished": ["wheeled", "larger capacity", "rigid structure"],
+                "similar": ["used for carrying belongings", "portable", "has compartments"]
+            },
+            "handbag": {
+                "distinguished": ["larger size", "wheels present", "travel-specific"],
+                "similar": ["used for carrying items", "has handles", "portable"]
+            },
+            "chair": {
+                "distinguished": ["storage function", "portable", "wheeled"],
+                "similar": ["rectangular form", "rigid structure", "found in daily settings"]
+            }
+        }
+    },
+
+    "microwave": {
+        "colors": ["white", "black", "stainless steel", "gray"],
+        "body": ["rectangular", "boxy"],
+        "door": ["glass window", "hinged", "drop-down"],
+        "control panel": ["buttons", "digital display", "dial knobs"],
+        "size": ["compact", "standard", "large"],
+        "interior": ["turntable", "metal interior", "light"],
+        "features": ["ventilation grilles", "handle", "timer display"],
+        "mounting": ["countertop", "built-in", "over-range"],
+        "finish": ["glossy", "matte", "fingerprint-resistant"],
+        "power": ["600-1200 watts"],
+        "expression": ["modern", "functional", "utilitarian"],
+        "Fine-grained classes": ["Countertop Microwave", "Over-the-Range Microwave", "Built-in Microwave", "Convection Microwave"],
+        "similar classes": {
+            "oven": {
+                "distinguished": ["smaller size", "countertop placement", "microwave technology"],
+                "similar": ["cooking appliance", "rectangular shape", "door with window"]
+            },
+            "tvmonitor": {
+                "distinguished": ["cooking function", "control panel", "different purpose"],
+                "similar": ["rectangular shape", "display screen", "electronic device"]
+            },
+            "refrigerator": {
+                "distinguished": ["smaller size", "heating function", "different purpose"],
+                "similar": ["kitchen appliance", "door with handle", "rectangular shape"]
+            }
+        }
+    },
+
+    "oven": {
+        "colors": ["white", "black", "stainless steel", "gray"],
+        "body": ["large", "rectangular", "built-in"],
+        "door": ["glass window", "hinged", "drop-down"],
+        "racks": ["multiple levels", "adjustable", "wire racks"],
+        "control panel": ["knobs", "digital display", "buttons"],
+        "burners": ["gas", "electric", "induction"],
+        "size": ["compact", "standard", "double oven"],
+        "features": ["self-cleaning", "convection fan", "temperature display", "oven light"],
+        "placement": ["standalone", "built-in", "under counter"],
+        "finish": ["glossy", "matte", "stainless"],
+        "expression": ["professional", "functional", "kitchen-essential"],
+        "Fine-grained classes": ["Gas Oven", "Electric Oven", "Convection Oven", "Double Oven", "Wall Oven"],
+        "similar classes": {
+            "microwave": {
+                "distinguished": ["larger size", "conventional heating", "multiple racks"],
+                "similar": ["cooking appliance", "door with window", "kitchen device"]
+            },
+            "refrigerator": {
+                "distinguished": ["heating function", "higher temperature", "different purpose"],
+                "similar": ["large kitchen appliance", "door with handle", "rectangular shape"]
+            },
+            "dishwasher": {
+                "distinguished": ["cooking function", "different interior", "higher temperature"],
+                "similar": ["kitchen appliance", "door with control panel", "built-in option"]
+            }
+        }
+    },
+
+    "toaster": {
+        "colors": ["silver", "black", "white", "red", "chrome"],
+        "body": ["rectangular", "compact", "metal"],
+        "slots": ["two slots", "four slots", "long slot"],
+        "size": ["small", "compact"],
+        "features": ["crumb tray", "browning control", "cancel button", "defrost function"],
+        "finish": ["chrome", "brushed metal", "plastic", "glossy"],
+        "lever": ["push-down", "spring-loaded"],
+        "design": ["modern", "retro", "minimalist"],
+        "condition": ["new", "used", "clean"],
+        "expression": ["compact", "efficient", "practical"],
+        "Fine-grained classes": ["Pop-up Toaster", "Toaster Oven", "Long Slot Toaster", "Four Slice Toaster"],
+        "similar classes": {
+            "microwave": {
+                "distinguished": ["smaller size", "slots for bread", "specific toasting function"],
+                "similar": ["kitchen appliance", "heating function", "countertop placement"]
+            },
+            "blender": {
+                "distinguished": ["vertical slots", "heating element", "different function"],
+                "similar": ["small kitchen appliance", "countertop device", "electric-powered"]
+            },
+            "clock": {
+                "distinguished": ["heating function", "slots", "kitchen appliance"],
+                "similar": ["rectangular shape", "small size", "displays information (browning level)"]
+            }
+        }
+    },
+
+    "sink": {
+        "colors": ["white", "stainless steel", "black", "gray"],
+        "material": ["porcelain", "stainless steel", "granite composite", "cast iron"],
+        "bowl": ["single bowl", "double bowl", "deep", "shallow"],
+        "shape": ["rectangular", "oval", "square", "farmhouse"],
+        "faucet": ["single handle", "double handle", "pull-down sprayer"],
+        "mounting": ["top-mount", "undermount", "vessel"],
+        "size": ["small", "standard", "large", "extra-large"],
+        "features": ["drainboard", "soap dispenser", "garbage disposal", "drain"],
+        "finish": ["polished", "brushed", "matte"],
+        "condition": ["clean", "used", "stained"],
+        "expression": ["functional", "clean", "practical"],
+        "Fine-grained classes": ["Kitchen Sink", "Bathroom Sink", "Utility Sink", "Farmhouse Sink", "Vessel Sink"],
+        "similar classes": {
+            "toilet": {
+                "distinguished": ["washing function", "faucet present", "different placement"],
+                "similar": ["porcelain fixture", "plumbing fixture", "water-based"]
+            },
+            "bowl": {
+                "distinguished": ["built-in fixture", "faucet", "drain present"],
+                "similar": ["holds water", "basin shape", "used for washing"]
+            },
+            "pottedplant": {
+                "distinguished": ["plumbing fixture", "washing function", "faucet"],
+                "similar": ["basin shape", "holds water", "found in homes"]
+            }
+        }
+    },
+
+    "refrigerator": {
+        "colors": ["white", "black", "stainless steel", "gray", "custom panels"],
+        "body": ["tall", "rectangular", "boxy"],
+        "doors": ["single door", "double door", "french door"],
+        "handles": ["bar handles", "recessed handles", "no handles"],
+        "freezer": ["top-mount", "bottom-mount", "side-by-side"],
+        "size": ["compact", "standard", "large", "commercial"],
+        "features": ["ice maker", "water dispenser", "digital display", "temperature control"],
+        "finish": ["glossy", "matte", "fingerprint-resistant", "stainless"],
+        "shelves": ["adjustable", "glass", "wire"],
+        "drawers": ["crisper drawers", "deli drawer", "freezer drawer"],
+        "expression": ["modern", "spacious", "essential"],
+        "Fine-grained classes": ["Top-Freezer", "Bottom-Freezer", "Side-by-Side", "French Door", "Mini Fridge"],
+        "similar classes": {
+            "oven": {
+                "distinguished": ["cooling function", "larger size", "vertical orientation"],
+                "similar": ["large kitchen appliance", "door with handle", "rectangular shape"]
+            },
+            "microwave": {
+                "distinguished": ["much larger", "cooling function", "different purpose"],
+                "similar": ["kitchen appliance", "rectangular shape", "door with handle"]
+            },
+            "cabinet": {
+                "distinguished": ["cooling function", "electronic", "sealed compartment"],
+                "similar": ["storage furniture", "doors", "tall structure"]
+            }
+        }
+    }
+}
+
+meta_COCO_info_T3 = {
+    "frisbee": {
+        "colors": ["white", "red", "blue", "yellow", "orange", "neon"],
+        "shape": ["disc", "circular", "flat"],
+        "material": ["plastic", "rubber"],
+        "size": ["standard", "large", "mini"],
+        "rim": ["rounded", "beveled"],
+        "surface": ["smooth", "textured", "grip pattern"],
+        "weight": ["lightweight", "standard", "heavy-duty"],
+        "design": ["solid color", "patterned", "logo printed"],
+        "condition": ["new", "worn", "scuffed"],
+        "flight pattern": ["stable", "curving"],
+        "expression": ["playful", "dynamic", "recreational"],
+        "Fine-grained classes": ["Ultimate Frisbee", "Disc Golf", "Freestyle Disc", "Dog Frisbee", "Beach Frisbee", "Glow Disc"],
+        "similar classes": {
+            "sports ball": {
+                "distinguished": ["flat disc shape", "thrown horizontally", "glides through air"],
+                "similar": ["used in sports", "thrown object", "recreational use"]
+            },
+            "kite": {
+                "distinguished": ["heavier", "thrown not flown", "no string attached"],
+                "similar": ["flies through air", "lightweight", "outdoor activity"]
+            },
+            "plate": {
+                "distinguished": ["sports equipment", "aerodynamic design", "durable plastic"],
+                "similar": ["circular flat shape", "disc-like", "lightweight"]
+            }
+        }
+    },
+
+    "skis": {
+        "colors": ["black", "white", "red", "blue", "yellow", "graphic designs"],
+        "shape": ["long", "narrow", "curved tip"],
+        "material": ["fiberglass", "carbon fiber", "wood core"],
+        "length": ["short", "medium", "long"],
+        "width": ["narrow", "wide"],
+        "tip": ["upturned", "rocker", "traditional camber"],
+        "tail": ["flat", "twin-tip"],
+        "bindings": ["mounted", "adjustable"],
+        "edges": ["metal edges", "sharp"],
+        "base": ["flat", "waxed", "patterned"],
+        "design": ["racing", "all-mountain", "powder", "freestyle"],
+        "expression": ["sleek", "performance-oriented", "winter-ready"],
+        "Fine-grained classes": ["Downhill Skis", "Cross-Country Skis", "Freestyle Skis", "Touring Skis", "Powder Skis", "Racing Skis"],
+        "similar classes": {
+            "snowboard": {
+                "distinguished": ["two separate skis", "poles used", "parallel stance"],
+                "similar": ["winter sports equipment", "glides on snow", "long flat surface"]
+            },
+            "surfboard": {
+                "distinguished": ["used on snow", "narrower", "pair of boards"],
+                "similar": ["long board shape", "gliding motion", "recreational equipment"]
+            },
+            "baseball bat": {
+                "distinguished": ["flat surface", "two items", "used for gliding"],
+                "similar": ["long shape", "held by user", "sports equipment"]
+            }
+        }
+    },
+
+    "snowboard": {
+        "colors": ["black", "white", "colorful graphics", "custom designs"],
+        "shape": ["wide", "flat", "curved edges"],
+        "material": ["wood core", "fiberglass", "carbon fiber"],
+        "length": ["short", "medium", "long"],
+        "width": ["narrow waist", "wide"],
+        "tip and tail": ["twin-tip", "directional", "tapered"],
+        "stance": ["centered", "setback"],
+        "bindings": ["strap bindings", "mounted"],
+        "edges": ["metal edges", "beveled"],
+        "base": ["extruded", "sintered", "waxed"],
+        "flex": ["soft", "medium", "stiff"],
+        "expression": ["aggressive", "freestyle", "all-mountain"],
+        "Fine-grained classes": ["Freestyle Snowboard", "Freeride Snowboard", "All-Mountain Snowboard", "Powder Snowboard", "Split Board"],
+        "similar classes": {
+            "skis": {
+                "distinguished": ["single board", "sideways stance", "no poles"],
+                "similar": ["winter sports equipment", "glides on snow", "long flat surface"]
+            },
+            "surfboard": {
+                "distinguished": ["used on snow", "bindings attached", "different shape"],
+                "similar": ["board shape", "gliding motion", "balance required"]
+            },
+            "skateboard": {
+                "distinguished": ["used on snow", "bindings", "different terrain"],
+                "similar": ["board shape", "balance sport", "youth culture"]
+            }
+        }
+    },
+
+    "sports ball": {
+        "colors": ["white", "orange", "yellow", "red", "black and white"],
+        "shape": ["spherical", "round"],
+        "material": ["leather", "rubber", "synthetic"],
+        "size": ["small", "medium", "large"],
+        "surface": ["smooth", "textured", "paneled", "dimpled"],
+        "pattern": ["solid", "paneled", "striped", "stitched seams"],
+        "inflation": ["inflated", "firm", "soft"],
+        "weight": ["lightweight", "medium", "heavy"],
+        "type": ["soccer", "basketball", "volleyball", "tennis", "baseball"],
+        "condition": ["new", "worn", "scuffed"],
+        "expression": ["dynamic", "competitive", "athletic"],
+        "Fine-grained classes": ["Soccer Ball", "Basketball", "Volleyball", "Tennis Ball", "Baseball", "Football"],
+        "similar classes": {
+            "frisbee": {
+                "distinguished": ["spherical shape", "bounces", "various sports"],
+                "similar": ["thrown or kicked", "sports equipment", "recreational use"]
+            },
+            "orange": {
+                "distinguished": ["synthetic material", "sports use", "different texture"],
+                "similar": ["round shape", "similar size (some balls)", "spherical"]
+            },
+            "apple": {
+                "distinguished": ["man-made", "sports equipment", "uniform shape"],
+                "similar": ["round shape", "similar size", "spherical"]
+            }
+        }
+    },
+
+    "kite": {
+        "colors": ["red", "blue", "yellow", "rainbow", "multicolored"],
+        "shape": ["diamond", "delta", "box", "dragon"],
+        "material": ["nylon", "polyester", "ripstop fabric"],
+        "frame": ["wooden sticks", "fiberglass rods", "flexible"],
+        "tail": ["long ribbon", "short", "multiple tails"],
+        "string": ["attached", "reel", "control lines"],
+        "size": ["small", "medium", "large", "giant"],
+        "design": ["traditional", "stunt", "decorative patterns"],
+        "features": ["single line", "dual line", "quad line"],
+        "flight": ["stable", "maneuverable", "acrobatic"],
+        "expression": ["colorful", "playful", "soaring"],
+        "Fine-grained classes": ["Diamond Kite", "Delta Kite", "Box Kite", "Stunt Kite", "Parafoil", "Dragon Kite"],
+        "similar classes": {
+            "frisbee": {
+                "distinguished": ["flies with string", "larger size", "fabric material"],
+                "similar": ["flies through air", "outdoor activity", "wind-dependent"]
+            },
+            "bird": {
+                "distinguished": ["inanimate object", "requires wind", "controlled by string"],
+                "similar": ["flies in sky", "lightweight", "aerial movement"]
+            },
+            "umbrella": {
+                "distinguished": ["flies in air", "string attached", "recreational use"],
+                "similar": ["fabric canopy", "lightweight", "wind interaction"]
+            }
+        }
+    },
+
+    "baseball bat": {
+        "colors": ["brown", "black", "natural wood", "silver", "colorful"],
+        "material": ["wood", "aluminum", "composite"],
+        "shape": ["cylindrical", "tapered handle", "barrel end"],
+        "length": ["short", "standard", "long"],
+        "barrel": ["thick", "thin", "wide sweet spot"],
+        "handle": ["thin grip", "wrapped grip", "knob end"],
+        "finish": ["polished", "matte", "painted"],
+        "weight": ["lightweight", "standard", "heavy"],
+        "type": ["youth", "adult", "professional"],
+        "condition": ["new", "used", "dented"],
+        "expression": ["powerful", "athletic", "classic"],
+        "Fine-grained classes": ["Wood Bat", "Aluminum Bat", "Composite Bat", "Youth Bat", "Softball Bat", "Training Bat"],
+        "similar classes": {
+            "tennis racket": {
+                "distinguished": ["solid construction", "no strings", "cylindrical shape"],
+                "similar": ["sports equipment", "held in hand", "swinging motion"]
+            },
+            "baseball glove": {
+                "distinguished": ["hitting tool", "hard material", "cylindrical"],
+                "similar": ["baseball equipment", "sports gear", "handheld"]
+            },
+            "umbrella": {
+                "distinguished": ["solid structure", "sports use", "swinging purpose"],
+                "similar": ["long handle", "held by hand", "cylindrical shaft"]
+            }
+        }
+    },
+
+    "baseball glove": {
+        "colors": ["brown", "black", "tan", "red"],
+        "material": ["leather", "synthetic leather"],
+        "shape": ["curved", "pocket", "webbed"],
+        "size": ["small", "medium", "large"],
+        "webbing": ["closed web", "open web", "H-web", "basket web"],
+        "pocket": ["deep", "shallow", "broken-in"],
+        "padding": ["thick", "thin", "padded palm"],
+        "fingers": ["separate", "connected"],
+        "wrist": ["adjustable strap", "velcro", "laced"],
+        "hand": ["right-handed", "left-handed"],
+        "condition": ["new", "broken-in", "well-worn"],
+        "expression": ["protective", "athletic", "traditional"],
+        "Fine-grained classes": ["Catcher's Mitt", "First Base Glove", "Infield Glove", "Outfield Glove", "Pitcher's Glove", "Youth Glove"],
+        "similar classes": {
+            "baseball bat": {
+                "distinguished": ["catching tool", "soft material", "hand-shaped"],
+                "similar": ["baseball equipment", "sports gear", "handheld"]
+            },
+            "oven mitt": {
+                "distinguished": ["sports use", "specific finger design", "leather material"],
+                "similar": ["hand protection", "padded", "worn on hand"]
+            },
+            "backpack": {
+                "distinguished": ["worn on hand", "catching purpose", "smaller size"],
+                "similar": ["leather material", "straps", "holds items"]
+            }
+        }
+    },
+
+    "skateboard": {
+        "colors": ["black", "natural wood", "colorful graphics", "custom designs"],
+        "deck": ["wooden", "flat", "concave", "kick tail", "nose"],
+        "length": ["short", "standard", "long"],
+        "width": ["narrow", "wide"],
+        "trucks": ["metal", "adjustable", "mounted underneath"],
+        "wheels": ["four wheels", "polyurethane", "small", "large"],
+        "bearings": ["metal bearings", "smooth rolling"],
+        "grip tape": ["black", "textured", "custom patterns"],
+        "graphics": ["bottom design", "brand logo", "custom art"],
+        "style": ["street", "vert", "cruiser", "longboard"],
+        "expression": ["rebellious", "athletic", "urban"],
+        "Fine-grained classes": ["Street Skateboard", "Longboard", "Cruiser", "Penny Board", "Electric Skateboard", "Vert Skateboard"],
+        "similar classes": {
+            "snowboard": {
+                "distinguished": ["wheels attached", "used on pavement", "smaller size"],
+                "similar": ["board shape", "balance sport", "youth culture"]
+            },
+            "surfboard": {
+                "distinguished": ["wheels", "used on land", "different shape"],
+                "similar": ["board design", "balance required", "gliding motion"]
+            },
+            "bicycle": {
+                "distinguished": ["no pedals", "pushed with foot", "smaller"],
+                "similar": ["wheeled transport", "outdoor activity", "youth-oriented"]
+            }
+        }
+    },
+
+    "surfboard": {
+        "colors": ["white", "blue", "yellow", "multicolored", "custom designs"],
+        "shape": ["long", "streamlined", "pointed nose", "tail"],
+        "material": ["foam core", "fiberglass", "epoxy"],
+        "length": ["short", "medium", "long"],
+        "thickness": ["thin", "thick"],
+        "nose": ["pointed", "rounded"],
+        "tail": ["square", "round", "swallow", "pin"],
+        "rails": ["sharp", "soft", "rounded"],
+        "fins": ["single fin", "tri-fin", "quad fin", "removable"],
+        "rocker": ["flat", "curved"],
+        "design": ["shortboard", "longboard", "fish", "funboard"],
+        "expression": ["sleek", "oceanic", "adventurous"],
+        "Fine-grained classes": ["Shortboard", "Longboard", "Fish Board", "Funboard", "Gun", "Stand-Up Paddleboard"],
+        "similar classes": {
+            "skateboard": {
+                "distinguished": ["used on water", "no wheels", "larger size"],
+                "similar": ["board design", "balance sport", "gliding motion"]
+            },
+            "snowboard": {
+                "distinguished": ["used on water", "no bindings", "different shape"],
+                "similar": ["board shape", "gliding motion", "balance required"]
+            },
+            "boat": {
+                "distinguished": ["smaller", "ridden standing", "no motor"],
+                "similar": ["water vehicle", "floats on water", "recreational use"]
+            }
+        }
+    },
+
+    "tennis racket": {
+        "colors": ["black", "white", "red", "blue", "yellow"],
+        "frame": ["graphite", "aluminum", "carbon fiber"],
+        "shape": ["oval head", "elongated"],
+        "head size": ["small", "midsize", "oversize"],
+        "strings": ["nylon", "polyester", "natural gut", "criss-cross pattern"],
+        "handle": ["grip wrapped", "cushioned", "leather grip"],
+        "length": ["standard", "extended"],
+        "weight": ["lightweight", "medium", "heavy"],
+        "throat": ["open throat", "closed throat"],
+        "condition": ["new", "restrung", "worn"],
+        "expression": ["dynamic", "precise", "athletic"],
+        "Fine-grained classes": ["Power Racket", "Control Racket", "Tweener Racket", "Junior Racket", "Professional Racket"],
+        "similar classes": {
+            "baseball bat": {
+                "distinguished": ["has strings", "oval head", "hitting different object"],
+                "similar": ["sports equipment", "swinging motion", "held in hand"]
+            },
+            "badminton racket": {
+                "distinguished": ["thicker strings", "larger head", "different sport"],
+                "similar": ["racket design", "strings present", "swinging sports"]
+            },
+            "frying pan": {
+                "distinguished": ["sports use", "strings", "lightweight"],
+                "similar": ["flat surface with handle", "circular head", "held by handle"]
+            }
+        }
+    },
+
+    "banana": {
+        "colors": ["yellow", "green", "brown spots"],
+        "shape": ["curved", "elongated", "crescent"],
+        "size": ["small", "medium", "large"],
+        "peel": ["smooth", "textured", "spotted", "bruised"],
+        "stem": ["attached", "green stem"],
+        "ripeness": ["green", "yellow", "overripe with spots"],
+        "condition": ["fresh", "ripe", "overripe"],
+        "bunch": ["single", "clustered"],
+        "texture": ["firm", "soft"],
+        "expression": ["fresh", "natural", "tropical"],
+        "distinctive marking": ["natural curve", "stem end"],
+        "Fine-grained classes": ["Cavendish", "Plantain", "Lady Finger", "Red Banana", "Burro Banana"],
+        "similar classes": {
+            "hot dog": {
+                "distinguished": ["fruit", "peel", "grows on plant"],
+                "similar": ["elongated shape", "curved form", "yellow/tan color"]
+            },
+            "carrot": {
+                "distinguished": ["curved shape", "yellow color", "peelable skin"],
+                "similar": ["elongated vegetable/fruit", "natural food", "similar length"]
+            },
+            "tennis racket": {
+                "distinguished": ["edible", "soft", "organic"],
+                "similar": ["curved shape", "yellow color", "handheld object"]
+            }
+        }
+    },
+
+    "apple": {
+        "colors": ["red", "green", "yellow", "mix"],
+        "shape": ["round", "spherical", "slightly flattened"],
+        "size": ["small", "medium", "large"],
+        "skin": ["smooth", "waxy", "shiny"],
+        "stem": ["short", "brown", "attached"],
+        "bottom": ["indented", "crowned"],
+        "condition": ["fresh", "bruised", "polished"],
+        "variety": ["red delicious", "granny smith", "fuji", "gala"],
+        "expression": ["fresh", "crisp", "healthy"],
+        "distinctive marking": ["natural shine", "stem indent"],
+        "Fine-grained classes": ["Red Delicious", "Granny Smith", "Fuji", "Gala", "Honeycrisp", "Golden Delicious"],
+        "similar classes": {
+            "orange": {
+                "distinguished": ["different color", "smooth skin", "different taste"],
+                "similar": ["round fruit", "similar size", "fresh produce"]
+            },
+            "sports ball": {
+                "distinguished": ["edible", "organic", "softer"],
+                "similar": ["round shape", "similar size", "spherical"]
+            },
+            "tomato": {
+                "distinguished": ["firmer", "sweet taste", "different stem"],
+                "similar": ["round shape", "smooth skin", "produce item"]
+            }
+        }
+    },
+
+    "sandwich": {
+        "colors": ["brown bread", "white bread", "multicolored fillings"],
+        "bread": ["white", "wheat", "sourdough", "bun", "sliced"],
+        "shape": ["rectangular", "triangular", "round"],
+        "layers": ["multiple layers", "visible fillings"],
+        "fillings": ["meat", "cheese", "vegetables", "condiments"],
+        "size": ["small", "regular", "large", "sub"],
+        "cut": ["whole", "half", "quarters", "diagonal cut"],
+        "presentation": ["stacked", "toothpick inserted", "wrapped"],
+        "condition": ["fresh", "toasted", "grilled"],
+        "type": ["deli", "grilled", "club", "submarine"],
+        "expression": ["appetizing", "hearty", "satisfying"],
+        "Fine-grained classes": ["Club Sandwich", "BLT", "Grilled Cheese", "Submarine", "Panini", "Open-faced"],
+        "similar classes": {
+            "hot dog": {
+                "distinguished": ["bread slices", "stacked layers", "different shape"],
+                "similar": ["bread-based food", "handheld meal", "common lunch item"]
+            },
+            "pizza": {
+                "distinguished": ["stacked construction", "bread slices", "portable"],
+                "similar": ["bread-based food", "multiple ingredients", "popular food"]
+            },
+            "cake": {
+                "distinguished": ["savory food", "bread not cake", "lunch item"],
+                "similar": ["layered structure", "stacked appearance", "can be sliced"]
+            }
+        }
+    },
+
+    "orange": {
+        "colors": ["orange", "yellow-orange", "reddish-orange"],
+        "shape": ["round", "spherical", "slightly oval"],
+        "size": ["small", "medium", "large"],
+        "peel": ["textured", "dimpled", "bumpy", "thick"],
+        "surface": ["rough", "pebbled texture"],
+        "stem": ["small green stem", "button top"],
+        "condition": ["fresh", "ripe", "dried"],
+        "segments": ["visible when peeled", "sectioned"],
+        "expression": ["fresh", "juicy", "citrus"],
+        "distinctive marking": ["pebbled texture", "bright color"],
+        "Fine-grained classes": ["Navel Orange", "Valencia Orange", "Blood Orange", "Mandarin", "Tangerine", "Clementine"],
+        "similar classes": {
+            "apple": {
+                "distinguished": ["orange color", "textured peel", "citrus"],
+                "similar": ["round fruit", "similar size", "fresh produce"]
+            },
+            "sports ball": {
+                "distinguished": ["edible", "organic", "peelable"],
+                "similar": ["round shape", "similar size (basketball)", "spherical"]
+            },
+            "grapefruit": {
+                "distinguished": ["smaller size", "orange color", "sweeter taste"],
+                "similar": ["citrus fruit", "round shape", "textured peel"]
+            }
+        }
+    },
+
+    "broccoli": {
+        "colors": ["green", "dark green", "forest green"],
+        "shape": ["tree-like", "clustered florets", "crown"],
+        "florets": ["tightly packed", "bumpy texture", "small buds"],
+        "stalk": ["thick", "pale green", "fibrous"],
+        "size": ["small", "medium", "large head"],
+        "texture": ["rough", "bumpy florets", "smooth stalk"],
+        "condition": ["fresh", "crisp", "wilted"],
+        "presentation": ["whole", "cut florets", "with stem"],
+        "expression": ["healthy", "fresh", "nutritious"],
+        "distinctive marking": ["tree-like appearance", "dense florets"],
+        "Fine-grained classes": ["Calabrese Broccoli", "Sprouting Broccoli", "Purple Broccoli", "Broccolini"],
+        "similar classes": {
+            "pottedplant": {
+                "distinguished": ["edible", "cut vegetable", "no pot"],
+                "similar": ["green color", "plant-based", "organic structure"]
+            },
+            "cauliflower": {
+                "distinguished": ["green color", "different texture", "looser florets"],
+                "similar": ["cruciferous vegetable", "floret structure", "similar shape"]
+            },
+            "tree": {
+                "distinguished": ["small size", "edible", "vegetable"],
+                "similar": ["tree-like appearance", "branching structure", "green canopy"]
+            }
+        }
+    },
+
+    "carrot": {
+        "colors": ["orange", "purple", "yellow", "white"],
+        "shape": ["elongated", "tapered", "conical"],
+        "size": ["small", "medium", "large"],
+        "top": ["green leafy tops", "trimmed"],
+        "skin": ["smooth", "slightly rough"],
+        "texture": ["firm", "crisp"],
+        "condition": ["fresh", "peeled", "whole", "chopped"],
+        "root": ["pointed tip", "root hairs"],
+        "presentation": ["whole", "baby carrots", "sliced", "peeled"],
+        "expression": ["fresh", "crunchy", "healthy"],
+        "distinctive marking": ["orange color", "tapered shape"],
+        "Fine-grained classes": ["Imperator", "Danvers", "Chantenay", "Nantes", "Baby Carrots", "Purple Carrots"],
+        "similar classes": {
+            "banana": {
+                "distinguished": ["straight or tapered", "orange color", "vegetable"],
+                "similar": ["elongated shape", "similar length", "natural food"]
+            },
+            "hot dog": {
+                "distinguished": ["vegetable", "firm texture", "orange color"],
+                "similar": ["elongated shape", "similar size", "tapered form"]
+            },
+            "baseball bat": {
+                "distinguished": ["edible", "smaller", "vegetable"],
+                "similar": ["elongated shape", "tapered", "held by one end"]
+            }
+        }
+    },
+
+    "hot dog": {
+        "colors": ["brown", "reddish-brown", "pink"],
+        "bun": ["white", "wheat", "sesame seeds"],
+        "shape": ["elongated", "cylindrical sausage"],
+        "size": ["regular", "foot-long"],
+        "toppings": ["ketchup", "mustard", "relish", "onions"],
+        "presentation": ["in bun", "loaded", "plain"],
+        "condition": ["grilled", "boiled", "charred"],
+        "style": ["classic", "Chicago-style", "New York-style"],
+        "features": ["grill marks", "split bun", "overflowing toppings"],
+        "expression": ["appetizing", "casual", "street food"],
+        "distinctive marking": ["sausage in bun", "various toppings"],
+        "Fine-grained classes": ["Classic Hot Dog", "Chicago Dog", "Chili Dog", "Corn Dog", "Bratwurst"],
+        "similar classes": {
+            "sandwich": {
+                "distinguished": ["single sausage", "long bun", "different shape"],
+                "similar": ["bread-based food", "handheld meal", "common food"]
+            },
+            "banana": {
+                "distinguished": ["cooked food", "in bun", "savory"],
+                "similar": ["elongated shape", "curved form", "similar length"]
+            },
+            "carrot": {
+                "distinguished": ["cooked meat", "in bun", "prepared food"],
+                "similar": ["elongated shape", "similar size", "cylindrical"]
+            }
+        }
+    },
+
+    "pizza": {
+        "colors": ["red sauce", "yellow cheese", "brown crust", "varied toppings"],
+        "shape": ["round", "square", "triangular slice"],
+        "crust": ["thin", "thick", "stuffed", "crispy"],
+        "sauce": ["tomato sauce", "white sauce"],
+        "cheese": ["melted", "mozzarella", "stretchy"],
+        "toppings": ["pepperoni", "vegetables", "meat", "variety"],
+        "size": ["personal", "medium", "large", "extra-large"],
+        "presentation": ["whole pizza", "sliced", "one slice"],
+        "condition": ["hot", "fresh", "cheesy"],
+        "style": ["New York", "Chicago", "Neapolitan", "Sicilian"],
+        "expression": ["delicious", "cheesy", "satisfying"],
+        "Fine-grained classes": ["Margherita", "Pepperoni", "Hawaiian", "Meat Lovers", "Veggie", "Deep Dish"],
+        "similar classes": {
+            "sandwich": {
+                "distinguished": ["round flat shape", "baked", "sliced radially"],
+                "similar": ["bread-based food", "multiple ingredients", "popular meal"]
+            },
+            "cake": {
+                "distinguished": ["savory", "cheese and sauce", "dinner food"],
+                "similar": ["round shape", "sliced", "layered ingredients"]
+            },
+            "frisbee": {
+                "distinguished": ["edible", "thick", "topped with ingredients"],
+                "similar": ["round flat shape", "disc-like", "circular"]
+            }
+        }
+    },
+
+    "donut": {
+        "colors": ["brown", "golden", "pink frosting", "chocolate", "varied"],
+        "shape": ["ring", "round with hole", "filled round"],
+        "size": ["regular", "mini", "large"],
+        "coating": ["glazed", "frosted", "powdered sugar", "plain"],
+        "frosting": ["chocolate", "vanilla", "strawberry", "maple"],
+        "toppings": ["sprinkles", "nuts", "coconut flakes", "crumbles"],
+        "texture": ["fluffy", "cake-like", "yeast-raised"],
+        "hole": ["center hole", "no hole if filled"],
+        "condition": ["fresh", "glazed", "decorated"],
+        "type": ["glazed", "jelly-filled", "cream-filled", "old-fashioned"],
+        "expression": ["sweet", "indulgent", "tempting"],
+        "Fine-grained classes": ["Glazed Donut", "Jelly Donut", "Chocolate Donut", "Old-Fashioned", "Cruller", "Boston Cream"],
+        "similar classes": {
+            "cake": {
+                "distinguished": ["ring shape", "smaller size", "individual serving"],
+                "similar": ["sweet dessert", "frosted", "baked good"]
+            },
+            "bagel": {
+                "distinguished": ["sweet", "frosted", "softer texture"],
+                "similar": ["ring shape", "baked good", "circular with hole"]
+            },
+            "frisbee": {
+                "distinguished": ["edible", "smaller", "sweet food"],
+                "similar": ["circular shape", "ring form", "flat"]
+            }
+        }
+    },
+
+    "cake": {
+        "colors": ["white frosting", "chocolate", "pink", "varied colors"],
+        "shape": ["round layers", "rectangular", "square"],
+        "layers": ["single", "multiple", "tiered"],
+        "frosting": ["smooth", "textured", "buttercream", "fondant"],
+        "decoration": ["flowers", "writing", "candles", "sprinkles"],
+        "size": ["small", "medium", "large", "wedding-sized"],
+        "presentation": ["whole", "sliced", "plated"],
+        "style": ["birthday", "wedding", "sheet cake", "cupcake"],
+        "features": ["candles", "piped decorations", "fruit toppings"],
+        "condition": ["decorated", "fresh", "celebration"],
+        "expression": ["festive", "sweet", "celebratory"],
+        "Fine-grained classes": ["Birthday Cake", "Wedding Cake", "Chocolate Cake", "Cheesecake", "Layer Cake", "Bundt Cake"],
+        "similar classes": {
+            "pizza": {
+                "distinguished": ["sweet dessert", "frosted", "celebration food"],
+                "similar": ["round shape", "sliced", "layered"]
+            },
+            "donut": {
+                "distinguished": ["larger size", "layers", "served on occasions"],
+                "similar": ["sweet dessert", "frosted", "baked good"]
+            },
+            "sandwich": {
+                "distinguished": ["sweet", "frosted", "dessert item"],
+                "similar": ["layered structure", "stacked", "can be sliced"]
+            }
+        }
+    }
+}
+
+meta_COCO_info_T4 = {
+    "bed": {
+        "colors": ["white", "brown", "gray", "black", "beige"],
+        "frame": ["wood", "metal", "upholstered"],
+        "headboard": ["tall", "short", "padded", "slatted", "absent"],
+        "footboard": ["present", "absent", "low", "high"],
+        "size": ["twin", "full", "queen", "king"],
+        "mattress": ["visible", "covered with bedding"],
+        "bedding": ["sheets", "comforter", "pillows", "blankets"],
+        "legs": ["short", "tall", "platform", "no legs"],
+        "style": ["modern", "traditional", "minimalist", "canopy"],
+        "features": ["storage drawers", "built-in nightstands", "adjustable"],
+        "condition": ["made", "unmade", "neat"],
+        "expression": ["comfortable", "inviting", "restful"],
+        "Fine-grained classes": ["Platform Bed", "Sleigh Bed", "Canopy Bed", "Murphy Bed", "Bunk Bed", "Adjustable Bed"],
+        "similar classes": {
+            "sofa": {
+                "distinguished": ["designed for sleeping", "horizontal use", "larger size"],
+                "similar": ["soft surface", "provides comfort", "furniture for resting"]
+            },
+            "bench": {
+                "distinguished": ["mattress", "bedding", "sleeping purpose"],
+                "similar": ["long structure", "provides support", "can accommodate person"]
+            },
+            "chair": {
+                "distinguished": ["horizontal orientation", "sleeping function", "much larger"],
+                "similar": ["provides comfort", "furniture item", "used for resting"]
+            }
+        }
+    },
+
+    "toilet": {
+        "colors": ["white", "beige", "cream"],
+        "material": ["porcelain", "ceramic"],
+        "bowl": ["round", "elongated"],
+        "tank": ["attached", "wall-mounted", "concealed"],
+        "seat": ["closed", "open", "with lid"],
+        "flush": ["handle", "button", "dual-flush"],
+        "height": ["standard", "comfort height"],
+        "style": ["one-piece", "two-piece", "wall-hung"],
+        "features": ["soft-close lid", "bidet function", "water-saving"],
+        "condition": ["clean", "in use"],
+        "expression": ["functional", "sanitary", "essential"],
+        "Fine-grained classes": ["Two-Piece Toilet", "One-Piece Toilet", "Wall-Mounted Toilet", "Smart Toilet", "Bidet Toilet"],
+        "similar classes": {
+            "sink": {
+                "distinguished": ["sitting fixture", "bowl shape", "different purpose"],
+                "similar": ["porcelain fixture", "plumbing fixture", "bathroom item"]
+            },
+            "chair": {
+                "distinguished": ["plumbing fixture", "porcelain material", "specific function"],
+                "similar": ["sitting furniture", "bowl-like shape", "found in homes"]
+            },
+            "potted plant": {
+                "distinguished": ["plumbing fixture", "porcelain", "functional purpose"],
+                "similar": ["white color", "bowl shape", "found indoors"]
+            }
+        }
+    },
+
+    "laptop": {
+        "colors": ["silver", "black", "gray", "white", "gold"],
+        "body": ["thin", "compact", "rectangular"],
+        "screen": ["LED", "LCD", "retina display", "matte", "glossy"],
+        "keyboard": ["built-in", "backlit", "standard layout"],
+        "touchpad": ["centered", "rectangular", "smooth"],
+        "size": ["11-inch", "13-inch", "15-inch", "17-inch"],
+        "ports": ["USB", "HDMI", "headphone jack", "charging port"],
+        "logo": ["brand logo", "on lid", "illuminated"],
+        "condition": ["open", "closed", "in use"],
+        "features": ["webcam", "fingerprint sensor", "touchscreen"],
+        "expression": ["portable", "modern", "productive"],
+        "Fine-grained classes": ["Ultrabook", "Gaming Laptop", "Business Laptop", "2-in-1 Convertible", "Chromebook", "MacBook"],
+        "similar classes": {
+            "tvmonitor": {
+                "distinguished": ["portable", "keyboard attached", "computing device"],
+                "similar": ["screen display", "rectangular shape", "electronic device"]
+            },
+            "keyboard": {
+                "distinguished": ["includes screen", "portable computer", "integrated device"],
+                "similar": ["has keyboard", "rectangular", "input device"]
+            },
+            "book": {
+                "distinguished": ["electronic", "screen", "powered device"],
+                "similar": ["opens like book", "portable", "rectangular when closed"]
+            }
+        }
+    },
+
+    "mouse": {
+        "colors": ["black", "white", "gray", "silver"],
+        "shape": ["ergonomic", "curved", "symmetrical"],
+        "size": ["small", "standard", "large"],
+        "buttons": ["two buttons", "three buttons", "scroll wheel"],
+        "connection": ["wired", "wireless", "bluetooth"],
+        "sensor": ["optical", "laser"],
+        "material": ["plastic", "rubber grip", "matte finish"],
+        "features": ["programmable buttons", "adjustable DPI", "RGB lighting"],
+        "style": ["office", "gaming", "travel"],
+        "condition": ["new", "used"],
+        "expression": ["precise", "functional", "ergonomic"],
+        "Fine-grained classes": ["Wireless Mouse", "Gaming Mouse", "Ergonomic Mouse", "Trackball Mouse", "Vertical Mouse"],
+        "similar classes": {
+            "remote": {
+                "distinguished": ["computer accessory", "smaller size", "pointing device"],
+                "similar": ["handheld device", "has buttons", "wireless option"]
+            },
+            "cell phone": {
+                "distinguished": ["computer peripheral", "no screen", "input device"],
+                "similar": ["small handheld", "electronic device", "portable"]
+            },
+            "apple": {
+                "distinguished": ["electronic device", "plastic material", "tech accessory"],
+                "similar": ["small size", "rounded shape", "fits in hand"]
+            }
+        }
+    },
+
+    "remote": {
+        "colors": ["black", "gray", "silver", "white"],
+        "shape": ["rectangular", "elongated", "ergonomic"],
+        "size": ["small", "standard", "large"],
+        "buttons": ["many buttons", "number pad", "directional pad"],
+        "display": ["LED indicator", "small screen", "no display"],
+        "battery": ["compartment on back", "rechargeable"],
+        "material": ["plastic", "rubber buttons"],
+        "features": ["voice control", "touchpad", "backlit buttons"],
+        "type": ["TV remote", "universal remote", "streaming remote"],
+        "condition": ["new", "worn buttons"],
+        "expression": ["functional", "convenient", "handheld"],
+        "Fine-grained classes": ["TV Remote", "Universal Remote", "Streaming Remote", "Smart Remote", "Voice Remote"],
+        "similar classes": {
+            "mouse": {
+                "distinguished": ["entertainment device", "many buttons", "infrared sensor"],
+                "similar": ["handheld device", "wireless", "has buttons"]
+            },
+            "cell phone": {
+                "distinguished": ["single purpose", "simpler display", "IR signal"],
+                "similar": ["handheld device", "has buttons", "rectangular shape"]
+            },
+            "calculator": {
+                "distinguished": ["control device", "different button layout", "entertainment use"],
+                "similar": ["button array", "rectangular", "handheld"]
+            }
+        }
+    },
+
+    "keyboard": {
+        "colors": ["black", "white", "gray", "RGB multicolor"],
+        "shape": ["rectangular", "ergonomic split", "compact"],
+        "size": ["full-size", "tenkeyless", "60%", "compact"],
+        "keys": ["QWERTY layout", "mechanical", "membrane", "chiclet"],
+        "connection": ["wired", "wireless", "bluetooth"],
+        "features": ["numeric keypad", "function keys", "media keys", "backlit"],
+        "material": ["plastic", "aluminum", "metal frame"],
+        "switches": ["mechanical", "membrane", "scissor"],
+        "style": ["gaming", "office", "ergonomic"],
+        "condition": ["new", "worn keycaps"],
+        "expression": ["functional", "tactile", "productive"],
+        "Fine-grained classes": ["Mechanical Keyboard", "Membrane Keyboard", "Ergonomic Keyboard", "Gaming Keyboard", "Wireless Keyboard"],
+        "similar classes": {
+            "laptop": {
+                "distinguished": ["separate device", "no screen", "input only"],
+                "similar": ["has keys", "QWERTY layout", "rectangular"]
+            },
+            "piano": {
+                "distinguished": ["computer input", "smaller keys", "letters not notes"],
+                "similar": ["many keys in row", "pressed for input", "rectangular"]
+            },
+            "remote": {
+                "distinguished": ["many more keys", "typing purpose", "larger size"],
+                "similar": ["button array", "input device", "rectangular"]
+            }
+        }
+    },
+
+    "cell phone": {
+        "colors": ["black", "white", "silver", "gold", "blue", "various"],
+        "shape": ["rectangular", "rounded edges", "slim"],
+        "screen": ["touchscreen", "large display", "edge-to-edge"],
+        "size": ["small", "standard", "phablet"],
+        "case": ["with case", "without case", "screen protector"],
+        "camera": ["front camera", "rear camera", "multiple lenses"],
+        "buttons": ["side buttons", "power button", "volume buttons"],
+        "ports": ["charging port", "headphone jack"],
+        "condition": ["new", "scratched", "cracked screen"],
+        "features": ["notch", "hole-punch camera", "fingerprint sensor"],
+        "expression": ["modern", "essential", "connected"],
+        "Fine-grained classes": ["Smartphone", "iPhone", "Android Phone", "Flip Phone", "Folding Phone"],
+        "similar classes": {
+            "remote": {
+                "distinguished": ["touchscreen", "many functions", "communication device"],
+                "similar": ["handheld device", "rectangular", "has buttons"]
+            },
+            "tablet": {
+                "distinguished": ["smaller size", "phone functions", "portable"],
+                "similar": ["touchscreen", "rectangular", "portable device"]
+            },
+            "calculator": {
+                "distinguished": ["touchscreen", "many apps", "communication"],
+                "similar": ["rectangular", "handheld", "has display"]
+            }
+        }
+    },
+
+    "book": {
+        "colors": ["varied cover colors", "white pages", "colorful"],
+        "shape": ["rectangular", "thick", "thin"],
+        "size": ["small", "standard", "large", "oversized"],
+        "cover": ["hardcover", "paperback", "dust jacket"],
+        "spine": ["visible title", "thick", "thin"],
+        "pages": ["many pages", "white", "yellowed"],
+        "condition": ["new", "worn", "open", "closed"],
+        "features": ["bookmark", "illustrations", "text"],
+        "type": ["novel", "textbook", "magazine", "comic"],
+        "binding": ["perfect bound", "spiral", "hardbound"],
+        "expression": ["informative", "classic", "literary"],
+        "Fine-grained classes": ["Hardcover Book", "Paperback", "Textbook", "Novel", "Comic Book", "Magazine"],
+        "similar classes": {
+            "laptop": {
+                "distinguished": ["paper pages", "no screen", "printed text"],
+                "similar": ["opens like laptop", "rectangular", "portable"]
+            },
+            "magazine": {
+                "distinguished": ["bound pages", "longer content", "book format"],
+                "similar": ["printed pages", "rectangular", "reading material"]
+            },
+            "tablet": {
+                "distinguished": ["physical pages", "no power needed", "printed"],
+                "similar": ["rectangular", "portable", "reading device"]
+            }
+        }
+    },
+
+    "clock": {
+        "colors": ["white", "black", "silver", "gold", "wood"],
+        "shape": ["round", "square", "rectangular"],
+        "face": ["analog", "digital", "numbered", "roman numerals"],
+        "hands": ["hour hand", "minute hand", "second hand"],
+        "size": ["small", "medium", "large", "wall-sized"],
+        "mounting": ["wall-mounted", "tabletop", "standing"],
+        "frame": ["wood", "metal", "plastic"],
+        "display": ["LED", "LCD", "mechanical"],
+        "features": ["alarm", "pendulum", "chimes", "date display"],
+        "style": ["modern", "vintage", "minimalist", "ornate"],
+        "expression": ["precise", "decorative", "functional"],
+        "Fine-grained classes": ["Wall Clock", "Alarm Clock", "Grandfather Clock", "Digital Clock", "Cuckoo Clock", "Atomic Clock"],
+        "similar classes": {
+            "tvmonitor": {
+                "distinguished": ["displays time only", "smaller", "simpler function"],
+                "similar": ["displays information", "rectangular or circular", "found in homes"]
+            },
+            "plate": {
+                "distinguished": ["displays time", "has hands or digits", "functional device"],
+                "similar": ["circular shape", "flat face", "wall-mounted option"]
+            },
+            "picture frame": {
+                "distinguished": ["displays time", "has mechanism", "functional"],
+                "similar": ["wall-mounted", "framed", "decorative"]
+            }
+        }
+    },
+
+    "vase": {
+        "colors": ["white", "blue", "clear", "multicolored", "ceramic colors"],
+        "material": ["ceramic", "glass", "porcelain", "crystal"],
+        "shape": ["cylindrical", "bulbous", "tapered", "wide mouth"],
+        "size": ["small", "medium", "tall", "large"],
+        "neck": ["narrow", "wide", "flared"],
+        "base": ["stable", "flat", "rounded"],
+        "surface": ["smooth", "textured", "glazed", "painted"],
+        "pattern": ["floral", "geometric", "solid color", "decorative"],
+        "style": ["modern", "traditional", "antique", "minimalist"],
+        "condition": ["empty", "with flowers", "decorative"],
+        "expression": ["elegant", "decorative", "artistic"],
+        "Fine-grained classes": ["Flower Vase", "Decorative Vase", "Bud Vase", "Floor Vase", "Ceramic Vase", "Glass Vase"],
+        "similar classes": {
+            "bottle": {
+                "distinguished": ["wider opening", "decorative purpose", "holds flowers"],
+                "similar": ["cylindrical shape", "holds liquids", "glass or ceramic"]
+            },
+            "cup": {
+                "distinguished": ["taller", "decorative use", "not for drinking"],
+                "similar": ["holds contents", "cylindrical", "various materials"]
+            },
+            "pottedplant": {
+                "distinguished": ["no soil", "holds cut flowers", "watertight"],
+                "similar": ["holds plants", "decorative", "cylindrical container"]
+            }
+        }
+    },
+
+    "scissors": {
+        "colors": ["silver blades", "black handles", "colored handles"],
+        "blades": ["metal", "sharp", "stainless steel", "crossed"],
+        "handles": ["plastic", "rubber grip", "metal", "finger holes"],
+        "size": ["small", "medium", "large"],
+        "type": ["straight", "curved", "serrated"],
+        "pivot": ["screw joint", "rivet"],
+        "tips": ["pointed", "blunt", "rounded"],
+        "features": ["ergonomic grip", "soft grip", "spring-loaded"],
+        "style": ["office", "kitchen", "craft", "medical"],
+        "condition": ["sharp", "dull", "open", "closed"],
+        "expression": ["sharp", "precise", "functional"],
+        "Fine-grained classes": ["Office Scissors", "Kitchen Shears", "Craft Scissors", "Pinking Shears", "Medical Scissors"],
+        "similar classes": {
+            "knife": {
+                "distinguished": ["two blades", "crossing design", "finger holes"],
+                "similar": ["cutting tool", "sharp blades", "metal construction"]
+            },
+            "pliers": {
+                "distinguished": ["sharp blades", "cutting function", "scissor action"],
+                "similar": ["two handles", "pivot point", "hand tool"]
+            },
+            "tweezers": {
+                "distinguished": ["larger size", "finger holes", "cutting ability"],
+                "similar": ["two pieces joined", "gripping action", "precision tool"]
+            }
+        }
+    },
+
+    "teddy bear": {
+        "colors": ["brown", "tan", "white", "pink", "various"],
+        "fur": ["soft", "fluffy", "plush", "fuzzy"],
+        "size": ["small", "medium", "large", "giant"],
+        "ears": ["round", "oval", "sewn on"],
+        "eyes": ["black button", "plastic", "embroidered"],
+        "nose": ["stitched", "black", "button"],
+        "limbs": ["movable", "jointed", "stuffed"],
+        "body": ["stuffed", "plump", "soft"],
+        "features": ["bow tie", "ribbon", "clothing", "accessories"],
+        "condition": ["new", "worn", "loved"],
+        "expression": ["cute", "friendly", "comforting"],
+        "Fine-grained classes": ["Classic Teddy Bear", "Plush Bear", "Build-a-Bear", "Vintage Bear", "Character Bear"],
+        "similar classes": {
+            "dog": {
+                "distinguished": ["inanimate", "plush toy", "no movement"],
+                "similar": ["furry", "four limbs", "cute appearance"]
+            },
+            "bear": {
+                "distinguished": ["toy", "soft material", "smaller size"],
+                "similar": ["bear shape", "furry", "brown color"]
+            },
+            "backpack": {
+                "distinguished": ["toy", "not functional", "decorative"],
+                "similar": ["soft material", "carried around", "companion item"]
+            }
+        }
+    },
+
+    "hair drier": {
+        "colors": ["black", "white", "red", "pink", "purple"],
+        "body": ["plastic", "ergonomic", "compact"],
+        "shape": ["gun-shaped", "cylindrical barrel"],
+        "nozzle": ["concentrator", "diffuser", "wide"],
+        "handle": ["pistol grip", "folding", "ergonomic"],
+        "size": ["compact", "standard", "professional"],
+        "cord": ["long cord", "retractable", "cordless"],
+        "buttons": ["power switch", "heat settings", "speed settings"],
+        "features": ["cool shot button", "ionic technology", "multiple attachments"],
+        "condition": ["new", "used"],
+        "expression": ["functional", "powerful", "practical"],
+        "Fine-grained classes": ["Professional Hair Dryer", "Travel Hair Dryer", "Ionic Hair Dryer", "Ceramic Hair Dryer"],
+        "similar classes": {
+            "toothbrush": {
+                "distinguished": ["larger size", "electrical appliance", "heat function"],
+                "similar": ["handheld device", "personal care", "bathroom item"]
+            },
+            "remote": {
+                "distinguished": ["heating element", "air blower", "larger size"],
+                "similar": ["handheld", "has buttons", "pistol-grip shape"]
+            },
+            "hair brush": {
+                "distinguished": ["electrical", "produces heat", "air flow"],
+                "similar": ["hair care tool", "handheld", "personal grooming"]
+            }
+        }
+    },
+
+    "toothbrush": {
+        "colors": ["blue", "green", "pink", "white", "multicolored"],
+        "handle": ["plastic", "rubber grip", "ergonomic", "straight"],
+        "bristles": ["soft", "medium", "firm", "angled"],
+        "head": ["small", "medium", "large", "diamond-shaped"],
+        "size": ["child", "adult"],
+        "type": ["manual", "electric", "battery-powered"],
+        "features": ["tongue cleaner", "flexible neck", "indicator bristles"],
+        "condition": ["new", "used", "worn bristles"],
+        "neck": ["straight", "angled", "flexible"],
+        "expression": ["hygienic", "essential", "dental care"],
+        "Fine-grained classes": ["Manual Toothbrush", "Electric Toothbrush", "Battery Toothbrush", "Kids Toothbrush", "Travel Toothbrush"],
+        "similar classes": {
+            "hair drier": {
+                "distinguished": ["smaller", "manual use", "oral care"],
+                "similar": ["handheld", "personal care", "bathroom item"]
+            },
+            "fork": {
+                "distinguished": ["bristles not tines", "hygiene use", "softer material"],
+                "similar": ["elongated handle", "pronged end", "held in hand"]
+            },
+            "pen": {
+                "distinguished": ["bristled head", "cleaning tool", "dental care"],
+                "similar": ["long thin handle", "handheld", "pointed end"]
+            }
+        }
+    },
+
+    "wine glass": {
+        "colors": ["clear", "tinted", "colored"],
+        "material": ["glass", "crystal"],
+        "bowl": ["round", "wide", "tulip-shaped", "balloon"],
+        "stem": ["long", "short", "thin"],
+        "base": ["flat", "round", "stable"],
+        "size": ["small", "standard", "large"],
+        "rim": ["thin", "smooth", "wide opening"],
+        "style": ["red wine", "white wine", "champagne flute"],
+        "condition": ["empty", "filled", "clean"],
+        "features": ["etched design", "colored stem", "elegant"],
+        "expression": ["elegant", "sophisticated", "refined"],
+        "Fine-grained classes": ["Red Wine Glass", "White Wine Glass", "Champagne Flute", "Port Glass", "Dessert Wine Glass"],
+        "similar classes": {
+            "cup": {
+                "distinguished": ["stem present", "wider bowl", "wine-specific"],
+                "similar": ["holds liquids", "glass material", "drinking vessel"]
+            },
+            "bottle": {
+                "distinguished": ["drinking vessel", "open top", "stemmed"],
+                "similar": ["holds liquid", "glass material", "wine-related"]
+            },
+            "vase": {
+                "distinguished": ["smaller", "drinking purpose", "stemmed"],
+                "similar": ["glass material", "holds liquids", "decorative"]
+            }
+        }
+    },
+
+    "cup": {
+        "colors": ["white", "black", "colored", "patterned"],
+        "material": ["ceramic", "porcelain", "glass", "plastic", "metal"],
+        "shape": ["cylindrical", "tapered", "mug-shaped"],
+        "size": ["espresso", "small", "medium", "large"],
+        "handle": ["single handle", "no handle", "double-walled"],
+        "rim": ["smooth", "thick", "thin"],
+        "base": ["flat", "saucer", "stable"],
+        "features": ["lid", "insulated", "decorative pattern", "logo"],
+        "type": ["coffee cup", "tea cup", "travel mug"],
+        "condition": ["empty", "filled", "clean"],
+        "expression": ["warm", "inviting", "practical"],
+        "Fine-grained classes": ["Coffee Mug", "Tea Cup", "Travel Mug", "Espresso Cup", "Disposable Cup"],
+        "similar classes": {
+            "wine glass": {
+                "distinguished": ["no stem", "handle present", "everyday use"],
+                "similar": ["drinking vessel", "holds liquids", "cylindrical"]
+            },
+            "bowl": {
+                "distinguished": ["taller", "handle present", "drinking not eating"],
+                "similar": ["holds contents", "rounded shape", "ceramic"]
+            },
+            "vase": {
+                "distinguished": ["smaller", "drinking purpose", "handle"],
+                "similar": ["cylindrical", "holds liquids", "ceramic material"]
+            }
+        }
+    },
+
+    "fork": {
+        "colors": ["silver", "stainless steel", "gold-colored"],
+        "material": ["stainless steel", "silver", "plastic"],
+        "tines": ["three tines", "four tines", "pointed"],
+        "handle": ["straight", "decorated", "ergonomic"],
+        "length": ["short", "standard", "long"],
+        "size": ["salad fork", "dinner fork", "dessert fork"],
+        "finish": ["polished", "matte", "brushed"],
+        "style": ["modern", "traditional", "ornate"],
+        "weight": ["lightweight", "heavy-duty"],
+        "condition": ["new", "tarnished", "clean"],
+        "expression": ["functional", "elegant", "dining"],
+        "Fine-grained classes": ["Dinner Fork", "Salad Fork", "Dessert Fork", "Serving Fork", "Carving Fork"],
+        "similar classes": {
+            "spoon": {
+                "distinguished": ["tines instead of bowl", "piercing function", "different shape"],
+                "similar": ["utensil", "metal", "used for eating"]
+            },
+            "knife": {
+                "distinguished": ["multiple tines", "no blade", "piercing not cutting"],
+                "similar": ["utensil", "metal", "eating tool"]
+            },
+            "toothbrush": {
+                "distinguished": ["metal", "eating utensil", "tines"],
+                "similar": ["elongated handle", "pronged/bristled end", "handheld"]
+            }
+        }
+    },
+
+    "knife": {
+        "colors": ["silver blade", "black handle", "wooden handle"],
+        "blade": ["stainless steel", "sharp", "serrated", "smooth edge"],
+        "handle": ["wood", "plastic", "metal", "ergonomic grip"],
+        "length": ["short", "medium", "long"],
+        "size": ["paring", "utility", "chef's knife"],
+        "tip": ["pointed", "rounded"],
+        "edge": ["straight", "serrated", "scalloped"],
+        "style": ["kitchen knife", "butter knife", "steak knife"],
+        "weight": ["lightweight", "heavy", "well-balanced"],
+        "condition": ["sharp", "dull", "clean"],
+        "expression": ["sharp", "precise", "functional"],
+        "Fine-grained classes": ["Chef's Knife", "Paring Knife", "Bread Knife", "Steak Knife", "Butter Knife", "Utility Knife"],
+        "similar classes": {
+            "fork": {
+                "distinguished": ["single blade", "cutting edge", "no tines"],
+                "similar": ["utensil", "metal", "eating tool"]
+            },
+            "scissors": {
+                "distinguished": ["single blade", "no finger holes", "simpler design"],
+                "similar": ["cutting tool", "sharp blade", "metal"]
+            },
+            "spoon": {
+                "distinguished": ["flat blade", "cutting function", "sharp edge"],
+                "similar": ["utensil", "metal handle", "eating tool"]
+            }
+        }
+    },
+
+    "spoon": {
+        "colors": ["silver", "stainless steel", "gold-colored"],
+        "material": ["stainless steel", "silver", "plastic", "wood"],
+        "bowl": ["round", "oval", "deep", "shallow"],
+        "handle": ["straight", "decorated", "ergonomic"],
+        "length": ["short", "standard", "long"],
+        "size": ["teaspoon", "tablespoon", "soup spoon", "serving spoon"],
+        "finish": ["polished", "matte", "brushed"],
+        "style": ["modern", "traditional", "ornate"],
+        "weight": ["lightweight", "heavy"],
+        "condition": ["new", "tarnished", "clean"],
+        "expression": ["functional", "smooth", "practical"],
+        "Fine-grained classes": ["Teaspoon", "Tablespoon", "Soup Spoon", "Dessert Spoon", "Serving Spoon", "Ladle"],
+        "similar classes": {
+            "fork": {
+                "distinguished": ["bowl instead of tines", "scooping function", "rounded end"],
+                "similar": ["utensil", "metal", "eating tool"]
+            },
+            "knife": {
+                "distinguished": ["bowl shape", "no cutting edge", "scooping purpose"],
+                "similar": ["utensil", "metal handle", "eating tool"]
+            },
+            "ladle": {
+                "distinguished": ["smaller size", "eating utensil", "shorter handle"],
+                "similar": ["bowl shape", "scooping function", "metal"]
+            }
+        }
+    },
+
+    "bowl": {
+        "colors": ["white", "ceramic colors", "patterned", "wood"],
+        "material": ["ceramic", "porcelain", "glass", "wood", "metal"],
+        "shape": ["round", "oval", "deep", "shallow"],
+        "size": ["small", "medium", "large", "serving size"],
+        "rim": ["smooth", "rolled", "wide"],
+        "base": ["flat", "footed", "stable"],
+        "style": ["soup bowl", "cereal bowl", "mixing bowl", "serving bowl"],
+        "features": ["handles", "decorative pattern", "stackable"],
+        "condition": ["empty", "filled", "clean"],
+        "finish": ["glazed", "matte", "polished"],
+        "expression": ["functional", "versatile", "essential"],
+        "Fine-grained classes": ["Soup Bowl", "Cereal Bowl", "Mixing Bowl", "Serving Bowl", "Salad Bowl", "Rice Bowl"],
+        "similar classes": {
+            "cup": {
+                "distinguished": ["wider opening", "no handle usually", "eating not drinking"],
+                "similar": ["holds food/liquid", "ceramic", "rounded shape"]
+            },
+            "plate": {
+                "distinguished": ["deeper", "holds liquids", "rounded sides"],
+                "similar": ["dining ware", "circular shape", "holds food"]
+            },
+            "vase": {
+                "distinguished": ["wider opening", "food use", "shallower"],
+                "similar": ["holds contents", "rounded shape", "ceramic"]
+            }
+        }
+    }
+}
+
+meta_COCO_info = {**meta_COCO_info_T1, **meta_COCO_info_T2, **meta_COCO_info_T3, **meta_COCO_info_T4}
 # ["bird", "bus", "cow", "motorbike", "sofa", ["aeroplane", "bicycle", "boat", "bottle", "car", "cat", "chair", "diningtable", "dog", "horse", "person", "pottedplant", "sheep", "train", "tvmonitor"]
 
 PASCAL_VOC_NOVEL_CATEGORIES = {
@@ -2232,7 +3985,7 @@ voc_fine_grained_classes = {
 
 # To access, just query the dictionary:
 # Example: print(fine_grained_classes['dog'])
-coco_fine_grained_classes = {
+coco_fine_grained_classes_T1 = {
     "person": ["adult", "child", "teenager", "woman", "man", "baby", "athlete", "doctor", "police officer",
                "firefighter", "student", "worker", "teacher", "musician", "pilot", "chef", "artist",
                "actor", "soldier", "scientist"],
@@ -2334,7 +4087,358 @@ coco_fine_grained_classes = {
            "dual-monitor setup", "wall-mounted TV", "home theater screen"]
 }
 
+coco_fine_grained_classes_T2 = {
+    "truck": ["pickup truck", "dump truck", "box truck", "semi-truck", "tow truck", "flatbed truck",
+              "garbage truck", "fire truck", "delivery truck", "panel truck", "monster truck",
+              "cement mixer truck", "tanker truck", "refrigerated truck", "moving truck",
+              "logging truck", "food truck", "armored truck", "utility truck", "wrecker truck"],
+
+    "traffic light": ["pedestrian signal", "vehicle signal", "arrow signal", "countdown signal",
+                      "bicycle signal", "railway crossing signal", "flashing beacon", "LED signal",
+                      "overhead signal", "post-mounted signal", "pedestrian crossing signal",
+                      "smart traffic light", "solar-powered signal", "three-light signal",
+                      "four-way signal", "emergency vehicle signal", "bus signal priority",
+                      "tram signal", "variable message signal", "school zone signal"],
+
+    "fire hydrant": ["wet barrel hydrant", "dry barrel hydrant", "flush hydrant", "pillar hydrant",
+                     "post hydrant", "wall hydrant", "standpipe hydrant", "underground hydrant",
+                     "above-ground hydrant", "pressure hydrant", "yard hydrant", "street hydrant",
+                     "park hydrant", "industrial hydrant", "marine hydrant", "airport hydrant",
+                     "rural hydrant", "urban hydrant", "painted hydrant", "vintage hydrant"],
+
+    "stop sign": ["standard stop sign", "all-way stop", "multi-way stop", "school zone stop",
+                  "four-way stop", "three-way stop", "rolling stop sign", "octagonal stop sign",
+                  "reflective stop sign", "oversized stop sign", "pedestrian stop sign",
+                  "temporary stop sign", "construction stop sign", "flashing stop sign",
+                  "bilingual stop sign", "digital stop sign", "led-enhanced stop sign",
+                  "high-visibility stop sign", "rural stop sign", "urban stop sign"],
+
+    "parking meter": ["single-space meter", "multi-space meter", "smart meter", "solar meter",
+                      "digital parking meter", "coin-operated meter", "pay-and-display meter",
+                      "app-enabled meter", "touchscreen meter", "credit card meter",
+                      "mechanical meter", "electronic meter", "wireless meter", "networked meter",
+                      "pay station", "parking kiosk", "curbside meter", "garage meter",
+                      "street parking meter", "time-limited meter"],
+
+    "bench": ["park bench", "garden bench", "memorial bench", "transit bench", "picnic bench",
+              "wooden bench", "metal bench", "concrete bench", "stone bench", "plastic bench",
+              "backless bench", "curved bench", "straight bench", "bus stop bench", "plaza bench",
+              "outdoor bench", "indoor bench", "decorative bench", "storage bench", "church pew"],
+
+    "elephant": ["african elephant", "asian elephant", "forest elephant", "savanna elephant",
+                 "bull elephant", "cow elephant", "baby elephant", "african bush elephant",
+                 "african forest elephant", "indian elephant", "sri lankan elephant",
+                 "sumatran elephant", "borneo elephant", "wild elephant", "captive elephant",
+                 "circus elephant", "zoo elephant", "working elephant", "temple elephant",
+                 "tusker elephant"],
+
+    "bear": ["grizzly bear", "black bear", "polar bear", "brown bear", "panda bear",
+             "kodiak bear", "sun bear", "sloth bear", "spectacled bear", "asiatic black bear",
+             "american black bear", "eurasian brown bear", "giant panda", "red panda",
+             "kermode bear", "cinnamon bear", "glacier bear", "golden bear", "himalayan bear",
+             "syrian brown bear"],
+
+    "zebra": ["plains zebra", "mountain zebra", "grevy's zebra", "burchell's zebra",
+              "grant's zebra", "chapman's zebra", "crawshay's zebra", "hartmann's mountain zebra",
+              "cape mountain zebra", "common zebra", "wild zebra", "young zebra", "adult zebra",
+              "male zebra", "female zebra", "zebra foal", "savanna zebra", "quagga (extinct)",
+              "hybrid zebra", "captive zebra"],
+
+    "giraffe": ["masai giraffe", "reticulated giraffe", "northern giraffe", "southern giraffe",
+                "rothschild's giraffe", "kordofan giraffe", "nubian giraffe", "west african giraffe",
+                "angolan giraffe", "south african giraffe", "thornicroft's giraffe", "bull giraffe",
+                "cow giraffe", "baby giraffe", "young giraffe", "adult giraffe", "wild giraffe",
+                "zoo giraffe", "tall giraffe", "savanna giraffe"],
+
+    "backpack": ["school backpack", "hiking backpack", "laptop backpack", "military backpack",
+                 "daypack", "travel backpack", "camera backpack", "hydration backpack",
+                 "tactical backpack", "rucksack", "messenger backpack", "rolling backpack",
+                 "ultralight backpack", "frame backpack", "frameless backpack", "technical backpack",
+                 "urban backpack", "cycling backpack", "ski backpack", "climbing backpack"],
+
+    "umbrella": ["compact umbrella", "golf umbrella", "beach umbrella", "patio umbrella",
+                 "automatic umbrella", "manual umbrella", "inverted umbrella", "transparent umbrella",
+                 "windproof umbrella", "travel umbrella", "folding umbrella", "stick umbrella",
+                 "parasol", "sun umbrella", "rain umbrella", "market umbrella", "cantilever umbrella",
+                 "offset umbrella", "children's umbrella", "designer umbrella"],
+
+    "handbag": ["tote bag", "shoulder bag", "clutch", "crossbody bag", "hobo bag",
+                "satchel", "bucket bag", "saddle bag", "messenger bag", "wristlet",
+                "evening bag", "bowling bag", "doctor bag", "barrel bag", "half-moon bag",
+                "frame bag", "drawstring bag", "baguette bag", "top-handle bag", "mini bag"],
+
+    "tie": ["necktie", "bow tie", "ascot", "bolo tie", "skinny tie", "wide tie",
+            "silk tie", "knit tie", "wool tie", "polyester tie", "patterned tie",
+            "solid tie", "striped tie", "paisley tie", "polka dot tie", "plaid tie",
+            "novelty tie", "clip-on tie", "pre-tied bow tie", "self-tie bow tie"],
+
+    "suitcase": ["carry-on luggage", "checked luggage", "rolling suitcase", "hard shell case",
+                 "soft shell case", "spinner suitcase", "two-wheel suitcase", "duffel bag",
+                 "garment bag", "trunk", "expandable suitcase", "lightweight suitcase",
+                 "aluminum suitcase", "polycarbonate suitcase", "vintage suitcase",
+                 "travel case", "cabin bag", "large suitcase", "medium suitcase", "small suitcase"],
+
+    "microwave": ["countertop microwave", "over-the-range microwave", "built-in microwave",
+                  "convection microwave", "solo microwave", "grill microwave", "combination microwave",
+                  "compact microwave", "standard microwave", "large capacity microwave",
+                  "smart microwave", "inverter microwave", "sensor microwave", "digital microwave",
+                  "dial microwave", "commercial microwave", "residential microwave",
+                  "stainless steel microwave", "white microwave", "black microwave"],
+
+    "oven": ["gas oven", "electric oven", "convection oven", "double oven", "wall oven",
+             "range oven", "steam oven", "combi-steam oven", "toaster oven", "commercial oven",
+             "home oven", "built-in oven", "freestanding oven", "slide-in oven", "pizza oven",
+             "brick oven", "self-cleaning oven", "smart oven", "conventional oven", "microwave oven combo"],
+
+    "toaster": ["pop-up toaster", "toaster oven", "long slot toaster", "four slice toaster",
+                "two slice toaster", "single slice toaster", "bagel toaster", "wide slot toaster",
+                "digital toaster", "manual toaster", "stainless steel toaster", "chrome toaster",
+                "retro toaster", "modern toaster", "compact toaster", "conveyor toaster",
+                "commercial toaster", "home toaster", "smart toaster", "countdown toaster"],
+
+    "sink": ["kitchen sink", "bathroom sink", "utility sink", "farmhouse sink", "vessel sink",
+             "undermount sink", "top-mount sink", "drop-in sink", "pedestal sink", "wall-mount sink",
+             "double bowl sink", "single bowl sink", "triple bowl sink", "bar sink", "prep sink",
+             "laundry sink", "apron-front sink", "integrated sink", "corner sink", "island sink"],
+
+    "refrigerator": ["top-freezer refrigerator", "bottom-freezer refrigerator", "side-by-side refrigerator",
+                     "french door refrigerator", "mini fridge", "compact refrigerator", "counter-depth refrigerator",
+                     "built-in refrigerator", "freestanding refrigerator", "smart refrigerator",
+                     "wine refrigerator", "beverage refrigerator", "commercial refrigerator",
+                     "residential refrigerator", "retro refrigerator", "stainless steel refrigerator",
+                     "black refrigerator", "white refrigerator", "panel-ready refrigerator", "energy-efficient refrigerator"]
+}
+
+coco_fine_grained_classes_T3 = {
+    "frisbee": ["ultimate frisbee", "disc golf disc", "freestyle disc", "dog frisbee", "beach frisbee",
+                "glow disc", "putter disc", "mid-range disc", "driver disc", "mini frisbee",
+                "competition frisbee", "recreational frisbee", "professional disc", "lightweight disc",
+                "heavyweight disc", "floating disc", "aerodynamic disc", "trick disc",
+                "tournament disc", "practice disc"],
+
+    "skis": ["downhill skis", "cross-country skis", "freestyle skis", "touring skis", "powder skis",
+             "racing skis", "backcountry skis", "all-mountain skis", "carving skis", "mogul skis",
+             "twin-tip skis", "telemark skis", "ski jumping skis", "slalom skis", "giant slalom skis",
+             "super-g skis", "alpine skis", "nordic skis", "freeride skis", "park skis"],
+
+    "snowboard": ["freestyle snowboard", "freeride snowboard", "all-mountain snowboard", "powder snowboard",
+                  "split board", "alpine snowboard", "jib board", "park snowboard", "backcountry snowboard",
+                  "carving snowboard", "women's snowboard", "men's snowboard", "youth snowboard",
+                  "wide snowboard", "directional snowboard", "twin-tip snowboard", "hybrid camber board",
+                  "rocker snowboard", "camber snowboard", "beginner snowboard"],
+
+    "sports ball": ["soccer ball", "basketball", "volleyball", "tennis ball", "baseball",
+                    "football", "golf ball", "rugby ball", "cricket ball", "bowling ball",
+                    "softball", "beach ball", "handball", "racquetball", "squash ball",
+                    "medicine ball", "dodge ball", "kickball", "lacrosse ball", "polo ball"],
+
+    "kite": ["diamond kite", "delta kite", "box kite", "stunt kite", "parafoil kite",
+             "dragon kite", "cellular kite", "sled kite", "rokkaku kite", "tetrahedral kite",
+             "single-line kite", "dual-line kite", "quad-line kite", "power kite", "foil kite",
+             "fighter kite", "train kite", "windsock kite", "indoor kite", "outdoor kite"],
+
+    "baseball bat": ["wood bat", "aluminum bat", "composite bat", "youth bat", "adult bat",
+                     "softball bat", "training bat", "fungo bat", "tee ball bat", "little league bat",
+                     "professional bat", "amateur bat", "maple bat", "ash bat", "birch bat",
+                     "bamboo bat", "metal bat", "alloy bat", "slowpitch bat", "fastpitch bat"],
+
+    "baseball glove": ["catcher's mitt", "first base glove", "infield glove", "outfield glove",
+                       "pitcher's glove", "youth glove", "adult glove", "professional glove",
+                       "recreational glove", "training glove", "fastpitch glove", "slowpitch glove",
+                       "left-handed glove", "right-handed glove", "leather glove", "synthetic glove",
+                       "web glove", "closed web glove", "open web glove", "basket web glove"],
+
+    "skateboard": ["street skateboard", "longboard", "cruiser", "penny board", "electric skateboard",
+                   "vert skateboard", "downhill skateboard", "freestyle skateboard", "slalom skateboard",
+                   "trick board", "pool skateboard", "mini cruiser", "complete skateboard",
+                   "custom skateboard", "pro skateboard", "beginner skateboard", "children's skateboard",
+                   "dancing longboard", "carving board", "commuter skateboard"],
+
+    "surfboard": ["shortboard", "longboard", "fish board", "funboard", "gun surfboard",
+                  "stand-up paddleboard", "hybrid surfboard", "mini mal", "malibu board",
+                  "performance shortboard", "step-up board", "retro fish", "twin fin",
+                  "thruster", "quad fin", "single fin", "beginner board", "intermediate board",
+                  "advanced board", "foam board"],
+
+    "tennis racket": ["power racket", "control racket", "tweener racket", "junior racket",
+                      "professional racket", "beginner racket", "intermediate racket", "advanced racket",
+                      "oversized racket", "midsize racket", "standard racket", "extended length racket",
+                      "lightweight racket", "heavyweight racket", "graphite racket", "aluminum racket",
+                      "composite racket", "pre-strung racket", "unstrung racket", "demo racket"],
+
+    "banana": ["cavendish banana", "plantain", "lady finger banana", "red banana", "burro banana",
+               "manzano banana", "baby banana", "blue java banana", "pisang raja", "apple banana",
+               "cooking banana", "dessert banana", "green banana", "ripe banana", "overripe banana",
+               "organic banana", "fair trade banana", "tropical banana", "sweet banana", "starchy banana"],
+
+    "apple": ["red delicious", "granny smith", "fuji apple", "gala apple", "honeycrisp apple",
+              "golden delicious", "pink lady", "braeburn apple", "mcintosh apple", "jazz apple",
+              "ambrosia apple", "cosmic crisp", "envy apple", "jonagold apple", "cortland apple",
+              "empire apple", "idared apple", "mutsu apple", "northern spy", "winesap apple"],
+
+    "sandwich": ["club sandwich", "blt sandwich", "grilled cheese", "submarine sandwich", "panini",
+                 "open-faced sandwich", "wrap", "hoagie", "po' boy", "reuben sandwich",
+                 "monte cristo", "croque monsieur", "bánh mì", "gyro", "pita sandwich",
+                 "bagel sandwich", "breakfast sandwich", "deli sandwich", "pulled pork sandwich",
+                 "chicken sandwich"],
+
+    "orange": ["navel orange", "valencia orange", "blood orange", "mandarin orange", "tangerine",
+               "clementine", "satsuma", "cara cara orange", "jaffa orange", "seville orange",
+               "bergamot orange", "bitter orange", "sweet orange", "seedless orange", "juice orange",
+               "organic orange", "florida orange", "california orange", "tropical orange", "winter orange"],
+
+    "broccoli": ["calabrese broccoli", "sprouting broccoli", "purple broccoli", "broccolini",
+                 "romanesco broccoli", "chinese broccoli", "broccoli rabe", "baby broccoli",
+                 "crown broccoli", "gai lan", "tenderstem broccoli", "organic broccoli",
+                 "frozen broccoli", "fresh broccoli", "steamed broccoli", "raw broccoli",
+                 "roasted broccoli", "broccoli florets", "broccoli stalks", "winter broccoli"],
+
+    "carrot": ["imperator carrot", "danvers carrot", "chantenay carrot", "nantes carrot",
+               "baby carrot", "purple carrot", "white carrot", "yellow carrot", "orange carrot",
+               "red carrot", "organic carrot", "wild carrot", "young carrot", "mature carrot",
+               "mini carrot", "heirloom carrot", "rainbow carrot", "garden carrot",
+               "storage carrot", "fresh carrot"],
+
+    "hot dog": ["classic hot dog", "chicago dog", "chili dog", "corn dog", "bratwurst",
+                "polish sausage", "italian sausage", "foot-long hot dog", "mini hot dog",
+                "veggie dog", "turkey dog", "beef hot dog", "pork hot dog", "chicken hot dog",
+                "loaded hot dog", "new york hot dog", "coney dog", "slaw dog", "danger dog",
+                "bacon-wrapped hot dog"],
+
+    "pizza": ["margherita pizza", "pepperoni pizza", "hawaiian pizza", "meat lovers pizza",
+              "veggie pizza", "deep dish pizza", "thin crust pizza", "stuffed crust pizza",
+              "neapolitan pizza", "new york style pizza", "chicago style pizza", "sicilian pizza",
+              "greek pizza", "detroit style pizza", "california pizza", "flatbread pizza",
+              "white pizza", "bbq chicken pizza", "four cheese pizza", "supreme pizza"],
+
+    "donut": ["glazed donut", "jelly donut", "chocolate donut", "old-fashioned donut",
+              "cruller", "boston cream donut", "powdered donut", "filled donut", "cake donut",
+              "yeast donut", "french cruller", "apple fritter", "bear claw", "maple bar",
+              "twist donut", "long john", "donut hole", "vegan donut", "gourmet donut",
+              "mini donut"],
+
+    "cake": ["birthday cake", "wedding cake", "chocolate cake", "cheesecake", "layer cake",
+             "bundt cake", "sheet cake", "cupcake", "pound cake", "sponge cake",
+             "carrot cake", "red velvet cake", "fruitcake", "upside-down cake", "angel food cake",
+             "devil's food cake", "marble cake", "coffee cake", "ice cream cake", "tiered cake"]
+}
+
+coco_fine_grained_classes_T4 = {
+    "bed": ["platform bed", "sleigh bed", "canopy bed", "murphy bed", "bunk bed",
+            "adjustable bed", "four-poster bed", "daybed", "trundle bed", "waterbed",
+            "panel bed", "storage bed", "captain's bed", "loft bed", "futon bed",
+            "divan bed", "ottoman bed", "sofa bed", "brass bed", "wooden bed"],
+
+    "toilet": ["two-piece toilet", "one-piece toilet", "wall-mounted toilet", "smart toilet",
+               "bidet toilet", "dual-flush toilet", "composting toilet", "portable toilet",
+               "squat toilet", "tankless toilet", "pressure-assisted toilet", "gravity-fed toilet",
+               "comfort height toilet", "standard height toilet", "elongated toilet", "round toilet",
+               "eco-friendly toilet", "low-flow toilet", "water-saving toilet", "modern toilet"],
+
+    "laptop": ["ultrabook", "gaming laptop", "business laptop", "2-in-1 convertible", "chromebook",
+               "macbook", "windows laptop", "linux laptop", "budget laptop", "premium laptop",
+               "student laptop", "workstation laptop", "thin and light laptop", "desktop replacement",
+               "netbook", "touchscreen laptop", "detachable laptop", "rugged laptop",
+               "creator laptop", "enterprise laptop"],
+
+    "mouse": ["wireless mouse", "gaming mouse", "ergonomic mouse", "trackball mouse", "vertical mouse",
+              "wired mouse", "bluetooth mouse", "optical mouse", "laser mouse", "travel mouse",
+              "ambidextrous mouse", "left-handed mouse", "right-handed mouse", "programmable mouse",
+              "silent mouse", "compact mouse", "full-size mouse", "rgb mouse", "office mouse",
+              "presentation mouse"],
+
+    "remote": ["tv remote", "universal remote", "streaming remote", "smart remote", "voice remote",
+               "learning remote", "rf remote", "infrared remote", "bluetooth remote", "cable box remote",
+               "satellite remote", "dvd remote", "blu-ray remote", "projector remote", "soundbar remote",
+               "air conditioner remote", "fan remote", "garage door remote", "toy remote", "drone remote"],
+
+    "keyboard": ["mechanical keyboard", "membrane keyboard", "ergonomic keyboard", "gaming keyboard",
+                 "wireless keyboard", "bluetooth keyboard", "wired keyboard", "compact keyboard",
+                 "full-size keyboard", "tenkeyless keyboard", "60% keyboard", "split keyboard",
+                 "backlit keyboard", "rgb keyboard", "chiclet keyboard", "scissor-switch keyboard",
+                 "laptop keyboard", "desktop keyboard", "portable keyboard", "folding keyboard"],
+
+    "cell phone": ["smartphone", "iphone", "android phone", "flip phone", "folding phone",
+                   "feature phone", "phablet", "budget phone", "flagship phone", "mid-range phone",
+                   "gaming phone", "camera phone", "rugged phone", "business phone", "5g phone",
+                   "unlocked phone", "carrier phone", "dual-sim phone", "waterproof phone",
+                   "compact phone"],
+
+    "book": ["hardcover book", "paperback book", "textbook", "novel", "comic book",
+             "magazine", "encyclopedia", "dictionary", "cookbook", "biography",
+             "autobiography", "non-fiction book", "fiction book", "children's book", "young adult book",
+             "graphic novel", "coffee table book", "reference book", "anthology", "journal"],
+
+    "clock": ["wall clock", "alarm clock", "grandfather clock", "digital clock", "analog clock",
+              "cuckoo clock", "atomic clock", "mantel clock", "desk clock", "travel clock",
+              "pendulum clock", "anniversary clock", "skeleton clock", "world clock", "projection clock",
+              "smart clock", "radio clock", "flip clock", "silent clock", "decorative clock"],
+
+    "vase": ["flower vase", "decorative vase", "bud vase", "floor vase", "ceramic vase",
+             "glass vase", "crystal vase", "porcelain vase", "antique vase", "modern vase",
+             "tall vase", "short vase", "cylindrical vase", "bulbous vase", "narrow vase",
+             "wide vase", "painted vase", "minimalist vase", "ornate vase", "contemporary vase"],
+
+    "scissors": ["office scissors", "kitchen shears", "craft scissors", "pinking shears",
+                 "medical scissors", "hair cutting scissors", "fabric scissors", "paper scissors",
+                 "children's scissors", "left-handed scissors", "right-handed scissors",
+                 "spring-loaded scissors", "ergonomic scissors", "titanium scissors", "stainless steel scissors",
+                 "embroidery scissors", "pruning shears", "tailor scissors", "utility scissors",
+                 "safety scissors"],
+
+    "teddy bear": ["classic teddy bear", "plush bear", "build-a-bear", "vintage bear", "character bear",
+                   "stuffed bear", "antique teddy bear", "collectible bear", "giant teddy bear",
+                   "mini teddy bear", "jointed bear", "mohair bear", "fleece bear", "chenille bear",
+                   "cuddle bear", "baby's first bear", "graduation bear", "holiday bear",
+                   "personalized bear", "handmade bear"],
+
+    "hair drier": ["professional hair dryer", "travel hair dryer", "ionic hair dryer", "ceramic hair dryer",
+                   "tourmaline hair dryer", "infrared hair dryer", "blow dryer", "salon dryer",
+                   "compact dryer", "folding dryer", "cordless dryer", "wall-mounted dryer",
+                   "bonnet dryer", "hooded dryer", "diffuser dryer", "concentrator dryer",
+                   "quiet hair dryer", "fast-drying dryer", "cool shot dryer", "dual voltage dryer"],
+
+    "toothbrush": ["manual toothbrush", "electric toothbrush", "battery toothbrush", "kids toothbrush",
+                   "travel toothbrush", "soft bristle toothbrush", "medium bristle toothbrush",
+                   "hard bristle toothbrush", "sonic toothbrush", "rotating toothbrush",
+                   "oscillating toothbrush", "charcoal toothbrush", "bamboo toothbrush",
+                   "disposable toothbrush", "folding toothbrush", "orthodontic toothbrush",
+                   "gum care toothbrush", "whitening toothbrush", "sensitive toothbrush",
+                   "angled toothbrush"],
+
+    "wine glass": ["red wine glass", "white wine glass", "champagne flute", "champagne coupe",
+                   "port glass", "dessert wine glass", "bordeaux glass", "burgundy glass",
+                   "stemless wine glass", "crystal wine glass", "balloon glass", "tulip glass",
+                   "iso tasting glass", "oversized wine glass", "rosé glass", "sparkling wine glass",
+                   "vintage wine glass", "modern wine glass", "etched wine glass", "colored wine glass"],
+
+    "cup": ["coffee mug", "tea cup", "travel mug", "espresso cup", "disposable cup",
+            "paper cup", "plastic cup", "ceramic cup", "porcelain cup", "glass cup",
+            "insulated cup", "thermal cup", "sippy cup", "measuring cup", "collapsible cup",
+            "cappuccino cup", "latte cup", "demitasse cup", "tumbler cup", "handled cup"],
+
+    "fork": ["dinner fork", "salad fork", "dessert fork", "serving fork", "carving fork",
+             "cocktail fork", "oyster fork", "pastry fork", "fondue fork", "pickle fork",
+             "fish fork", "cake fork", "three-tine fork", "four-tine fork", "stainless steel fork",
+             "silver fork", "plastic fork", "wooden fork", "disposable fork", "reusable fork"],
+
+    "knife": ["chef's knife", "paring knife", "bread knife", "steak knife", "butter knife",
+              "utility knife", "carving knife", "boning knife", "fillet knife", "santoku knife",
+              "cleaver", "serrated knife", "table knife", "dinner knife", "pocket knife",
+              "kitchen knife", "hunting knife", "survival knife", "ceramic knife", "steel knife"],
+
+    "spoon": ["teaspoon", "tablespoon", "soup spoon", "dessert spoon", "serving spoon",
+              "ladle", "slotted spoon", "wooden spoon", "metal spoon", "plastic spoon",
+              "measuring spoon", "baby spoon", "demitasse spoon", "iced tea spoon", "grapefruit spoon",
+              "caviar spoon", "stirring spoon", "long-handled spoon", "disposable spoon", "silver spoon"],
+
+    "bowl": ["soup bowl", "cereal bowl", "mixing bowl", "serving bowl", "salad bowl",
+             "rice bowl", "noodle bowl", "ramen bowl", "pasta bowl", "fruit bowl",
+             "popcorn bowl", "pet bowl", "decorative bowl", "ceramic bowl", "glass bowl",
+             "wooden bowl", "metal bowl", "plastic bowl", "large bowl", "small bowl"]
+}
 # Example: print(fine_grained_classes['dog'])
+coco_fine_grained_classes = {**coco_fine_grained_classes_T1, **coco_fine_grained_classes_T2, **coco_fine_grained_classes_T3, **coco_fine_grained_classes_T4}
 
 COCO_CATEGORIES = [
     {"color": [220, 20, 60], "isthing": 1, "id": 1, "name": "person"},
@@ -2527,28 +4631,28 @@ COCO_NOVEL_CATEGORIES = {
 }
 
 #Novel COCO categories
-COCO_NOVEL_CATEGORIES = [
-    {"color": [220, 20, 60], "isthing": 1, "id": 1, "name": "person"},
-    {"color": [119, 11, 32], "isthing": 1, "id": 2, "name": "bicycle"},
-    {"color": [0, 0, 142], "isthing": 1, "id": 3, "name": "car"},
-    {"color": [0, 0, 230], "isthing": 1, "id": 4, "name": "motorcycle"},
-    {"color": [106, 0, 228], "isthing": 1, "id": 5, "name": "airplane"},
-    {"color": [0, 60, 100], "isthing": 1, "id": 6, "name": "bus"},
-    {"color": [0, 80, 100], "isthing": 1, "id": 7, "name": "train"},
-    {"color": [0, 0, 192], "isthing": 1, "id": 9, "name": "boat"},
-    {"color": [165, 42, 42], "isthing": 1, "id": 16, "name": "bird"},
-    {"color": [255, 77, 255], "isthing": 1, "id": 17, "name": "cat"},
-    {"color": [0, 226, 252], "isthing": 1, "id": 18, "name": "dog"},
-    {"color": [182, 182, 255], "isthing": 1, "id": 19, "name": "horse"},
-    {"color": [0, 82, 0], "isthing": 1, "id": 20, "name": "sheep"},
-    {"color": [120, 166, 157], "isthing": 1, "id": 21, "name": "cow"},
-    {"color": [197, 226, 255], "isthing": 1, "id": 44, "name": "bottle"},
-    {"color": [153, 69, 1], "isthing": 1, "id": 62, "name": "chair"},
-    {"color": [3, 95, 161], "isthing": 1, "id": 63, "name": "couch"},
-    {"color": [163, 255, 0], "isthing": 1, "id": 64, "name": "potted plant"},
-    {"color": [0, 182, 199], "isthing": 1, "id": 67, "name": "dining table"},
-    {"color": [183, 130, 88], "isthing": 1, "id": 72, "name": "tv"},
-]
+# COCO_NOVEL_CATEGORIES = [
+#     {"color": [220, 20, 60], "isthing": 1, "id": 1, "name": "person"},
+#     {"color": [119, 11, 32], "isthing": 1, "id": 2, "name": "bicycle"},
+#     {"color": [0, 0, 142], "isthing": 1, "id": 3, "name": "car"},
+#     {"color": [0, 0, 230], "isthing": 1, "id": 4, "name": "motorcycle"},
+#     {"color": [106, 0, 228], "isthing": 1, "id": 5, "name": "airplane"},
+#     {"color": [0, 60, 100], "isthing": 1, "id": 6, "name": "bus"},
+#     {"color": [0, 80, 100], "isthing": 1, "id": 7, "name": "train"},
+#     {"color": [0, 0, 192], "isthing": 1, "id": 9, "name": "boat"},
+#     {"color": [165, 42, 42], "isthing": 1, "id": 16, "name": "bird"},
+#     {"color": [255, 77, 255], "isthing": 1, "id": 17, "name": "cat"},
+#     {"color": [0, 226, 252], "isthing": 1, "id": 18, "name": "dog"},
+#     {"color": [182, 182, 255], "isthing": 1, "id": 19, "name": "horse"},
+#     {"color": [0, 82, 0], "isthing": 1, "id": 20, "name": "sheep"},
+#     {"color": [120, 166, 157], "isthing": 1, "id": 21, "name": "cow"},
+#     {"color": [197, 226, 255], "isthing": 1, "id": 44, "name": "bottle"},
+#     {"color": [153, 69, 1], "isthing": 1, "id": 62, "name": "chair"},
+#     {"color": [3, 95, 161], "isthing": 1, "id": 63, "name": "couch"},
+#     {"color": [163, 255, 0], "isthing": 1, "id": 64, "name": "potted plant"},
+#     {"color": [0, 182, 199], "isthing": 1, "id": 67, "name": "dining table"},
+#     {"color": [183, 130, 88], "isthing": 1, "id": 72, "name": "tv"},
+# ]
 
 places_dict = {
     "aeroplane": {
