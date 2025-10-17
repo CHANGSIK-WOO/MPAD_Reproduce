@@ -404,7 +404,8 @@ if __name__ == "__main__":
 
     dicts = {}
 
-    general_p_bg = 1 / max(args.bg_sim + args.bg_clutter + args.bg_rand, 1)
+    #general_p_bg = 1 / max(args.bg_sim + args.bg_clutter + args.bg_rand, 1)
+    general_p_bg = 1
     general_p_fg = 1 / max(args.fg_fg + args.fg_rand, 1)
 
     sid = args.sid

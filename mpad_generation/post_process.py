@@ -394,7 +394,7 @@ def create_meta_infor(dataset_path, novel_classes, num_max_ins):
     annotation_dir = os.path.join(dataset_path, 'Annotations_gen')
     os.makedirs(set_dir, exist_ok=True)
 
-    image_files = [f.split('.')[0] for f in os.listdir(os.path.join(dataset_path, 'JPEGImages')) if f.endswith('.jpg')] + [f.split('.')[0] for f in os.listdir(os.path.join(dataset_path, 'JPEGImages_gen')) if f.endswith('.jpg')]
+    image_files = [f.split('.')[0] for f in os.listdir(os.path.join(dataset_path, 'JPEGImages')) if f.endswith('.jpg')]
     all_files = set(image_files)
     num_files = len(all_files)
 
