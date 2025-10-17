@@ -269,12 +269,14 @@ def load_filtered_voc_instances(
         with open(
                 os.path.join(dirname, "ImageSets", "Main", split + ".txt")
         ) as f:
+            print(f'os.path.join(dirname, "ImageSets", "Main", split + ".txt") : {os.path.join(dirname, "ImageSets", "Main", split + ".txt")}')
             fileids = np.loadtxt(f, dtype=str)
+            print(f"fileids : {fileids}, fileids length : {len(fileids)}")
 
     dicts = []
-
     removed_id = []
     choose_id = []
+
     if is_shots:
         dicts = {}
         for cls, fileids_ in fileids.items():
@@ -336,6 +338,7 @@ def load_filtered_voc_instances(
         for i, fileid in enumerate(fileids):
             anno_file = os.path.join(dirname, "Annotations", fileid + ".xml")
             jpeg_file = os.path.join(dirname, "JPEGImages", fileid + ".jpg")
+            print(f"anno_file : {anno_file}, jpeg_file : {jpeg_file}")
 
             tree = ET.parse(anno_file)
 
@@ -346,10 +349,13 @@ def load_filtered_voc_instances(
                 "height": int(tree.findall("./size/height")[0].text),
                 "width": int(tree.findall("./size/width")[0].text),
             }
+            #print(f"r : {r}")
             instances = []
 
             for obj in tree.findall("object"):
                 cls = obj.find("name").text
+                print(f"cls : {cls}")
+                print(f"base_classnames : {classnames}, base_classnames length : {len(classnames)}")
                 if not (cls in classnames):
                     instances = []
                     break
