@@ -1,7 +1,7 @@
 export CUDA_VISIBLE_DEVICES=0
 GENERATIVE_DATA_PATH=datasets/coco/
 sid=1
-NUM_INS=10
+NUM_INS=1
 python mpad_generation/main_generate_data.py --gendata-folder ${GENERATIVE_DATA_PATH} \
     --bg-rand \
     --bg-clutter \
