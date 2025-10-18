@@ -74,8 +74,8 @@ def filter_bbox_voc(anno_file, novel_classes, alpha=0.5):
     return rm_cnt
 
 def remove_file(dataset_path, name):
-    annotation_path = os.path.join(dataset_path, 'Annotations', f'{name}.xml')
-    image_path = os.path.join(dataset_path, 'JPEGImages', f'{name}.jpg')
+    annotation_path = os.path.join(dataset_path, 'Annotations_gen', f'{name}.xml')
+    image_path = os.path.join(dataset_path, 'JPEGImages_gen', f'{name}.jpg')
 
     if not os.path.isfile(annotation_path):
         print('Missing XML:', annotation_path)
@@ -360,7 +360,7 @@ def remove_black_images_in_coco(image_root, dataset, datasetname, num_max_ins):
     
     # with open(file_path, 'w+') as f:
     #     f.write('\n'.join(saved_files))
-    # print('Saved to set_dir: ' + file_path)
+    # print('Saved to ImageSets_dir: ' + file_path)
 
     clean_dataset = copy(dataset)
     clean_dataset['annotations'] = temp_annotations
@@ -369,13 +369,13 @@ def remove_black_images_in_coco(image_root, dataset, datasetname, num_max_ins):
 
 
 def get_k_sample(dataset_path, list_files, novel_classes, num_max_ins):
-    annotation_dir = os.path.join(dataset_path, 'Annotations')
+    annotation_dir = os.path.join(dataset_path, 'Annotations_gen')
     sample_counts = {cls: 0 for cls in novel_classes}
     selected, global_classes = [], []
 
     for name in list_files:
         xml_path = os.path.join(annotation_dir, f'{name}.xml')
-        img_path = os.path.join(dataset_path, 'JPEGImages', f'{name}.jpg')
+        img_path = os.path.join(dataset_path, 'JPEGImages_gen', f'{name}.jpg')
         _, _, _, _, classes = get_simple_input_information(xml_path, img_path)
         global_classes.extend(classes)
 
@@ -389,12 +389,12 @@ def get_k_sample(dataset_path, list_files, novel_classes, num_max_ins):
     print(sample_counts)
     return selected
 
-def create_meta_infor(dataset_path, novel_classes, num_max_ins):
-    set_dir = os.path.join(dataset_path, 'ImageSets/Main')
+def create_meta_infor(dataset_path, novel_classes, num_max_ins, sid):
+    ImageSets_dir = os.path.join(dataset_path, 'ImageSets/FS-OWODB')
     annotation_dir = os.path.join(dataset_path, 'Annotations_gen')
-    os.makedirs(set_dir, exist_ok=True)
+    os.makedirs(ImageSets_dir, exist_ok=True)
 
-    image_files = [f.split('.')[0] for f in os.listdir(os.path.join(dataset_path, 'JPEGImages')) if f.endswith('.jpg')]
+    image_files = [f.split('.')[0] for f in os.listdir(os.path.join(dataset_path, 'JPEGImages_gen')) if f.endswith('.jpg')]
     all_files = set(image_files)
     num_files = len(all_files)
 
@@ -412,10 +412,10 @@ def create_meta_infor(dataset_path, novel_classes, num_max_ins):
     print(
         f'There are {num_files} files, remained {len(saved_files)} files, removed {num_files - len(saved_files)} files')
 
-    file_path = os.path.join(set_dir, 'train.txt')
+    file_path = os.path.join(ImageSets_dir, f'{sid}.txt')
     with open(file_path, 'w') as f:
         f.write('\n'.join(saved_files))
-    print('Saved to set_dir:', file_path)
+    print('Saved to ImageSets_dir:', file_path)
 
 def remove_file_coco(image_root, image, bboxes):
     img_path = os.path.join(image_root, image['file_name'])
@@ -436,7 +436,7 @@ def main(argv):
 
     sid = argv[2]
     novel_classes = COCO_NOVEL_CATEGORIES[sid]
-    create_meta_infor(dataset_path, novel_classes, num_max_ins)
+    create_meta_infor(dataset_path, novel_classes, num_max_ins, sid)
 
     # if 'coco' in dataset_path.lower():
     #     image_root = os.path.join(dataset_path, "JPEGImages")
