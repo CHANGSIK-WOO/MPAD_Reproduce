@@ -434,7 +434,7 @@ def main(argv):
     dataset_path = argv[1]
     num_max_ins = int(argv[3])
 
-    sid = int(argv[2])
+    sid = argv[2]
     novel_classes = COCO_NOVEL_CATEGORIES[sid]
     create_meta_infor(dataset_path, novel_classes, num_max_ins)
 

@@ -192,19 +192,19 @@ def run_inference_background(rank, world_size, dicts):
             Prompt_B.append(base_prompt)
 
         try:
-            eddited_images, _ = torch_edit(painter, images, masks, Prompt_A, Prompt_B,
+            edited_images, _ = torch_edit(painter, images, masks, Prompt_A, Prompt_B,
                                            mix_up_alpha=mix_up_alpha, num_inference_steps=NUM_INFERENCE_STEP,
                                            momemtum=momemtum)
         except Exception as err:
             print(f"Unexpected {err=}, {type(err)=}")
             continue
 
-        if not eddited_images[0]:
+        if not edited_images[0]:
             continue
 
         for i in range(len(dict_input_data)):
             New_Index += 1
-            result_pil = eddited_images[i]
+            result_pil = edited_images[i]
             mask = unresized_masks[i]
             original_shape = shape[i]
             pA = Prompt_A[i]
@@ -362,7 +362,7 @@ def default_argument_parser():
     parser.add_argument("--txt-ppt", action="store_true")
     parser.add_argument("--p-multi-scale", type=float, default=0)
     parser.add_argument("--p-fg-sim", type=float, default=0)
-    parser.add_argument("--sid", type=int, default=1)
+    parser.add_argument("--sid", type=str, default="t1")
     parser.add_argument("--coco", action="store_true")
     parser.add_argument("--num-fine-grained", type=int, default=4,
                         help="The number of fine-grained classes per novel class")
@@ -391,24 +391,15 @@ if __name__ == "__main__":
     args = default_argument_parser().parse_args()
     print('args: ', args)
 
-    FolderForGenVersion = args.gendata_folder
+    FolderForGenVersion = args.gendata_folder # datasets/coco/
     max_num_novel_ins = args.num_ins
-
-    VOC_DATASET = [
-        (0, 'voc_2007_trainval', "VOC2007", "trainval"),
-        (1, 'voc_2012_trainval', "VOC2012", "trainval"),
-    ]
-    #COCO_DATASET = ("coco14_trainval_base", "coco/trainval2014", "cocosplit/datasplit/trainvalno5k.json")
-    # (id_dataset, name, dirname, split)
-
-
-    dicts = {}
 
     #general_p_bg = 1 / max(args.bg_sim + args.bg_clutter + args.bg_rand, 1)
     general_p_bg = 1
     general_p_fg = 1 / max(args.fg_fg + args.fg_rand, 1)
 
-    sid = args.sid
+
+    dicts = {}
     dicts['background_similarity'] = {"use": args.bg_sim, 'p': general_p_bg}
     dicts['background_clutter'] = {"use": args.bg_clutter, 'p': general_p_bg}
     dicts['background_random'] = {"use": args.bg_rand, 'p': general_p_bg}
@@ -423,9 +414,6 @@ if __name__ == "__main__":
     dicts['coco'] = args.coco
 
     print(dicts)
-
-    # novel_classes = None
-    # base_classes = None
     num_remove = 0
     is_coco = args.coco
 
@@ -436,21 +424,34 @@ if __name__ == "__main__":
     removed_id_list = []
     in_features = ['res2', 'res3', 'res4', 'res5']
 
+    VOC_DATASET = [(0, 'voc_2007_trainval', "VOC2007", "trainval"),
+                   (1, 'voc_2012_trainval', "VOC2012", "trainval"),]
+    sid = args.sid
+    COCO_DATASET = [(sid, 'FS-OWODB', "coco", "t1")] # (id_dataset, name, dirname, split)
+
     if is_coco:
 
+        novel_classes = COCO_NOVEL_CATEGORIES[sid]
+        base_classes = COCO_BASE_CATEGORIES[sid]
+        for id_dataset, name, dirname, split in COCO_DATASET:
+            tic = time()
+            data, removed_id, choose_id = load_filtered_voc_instances(name, os.path.join(dataset_path, dirname), split,
+                                                                      base_classes,
+                                                                      max_instance=None)  # choose base Images
+
+            dataset.extend(data)
+            # dataset : [{'file_name': 'datasets/coco/JPEGImages/000089.jpg', 'anno_file': 'datasets/coco/Annotations/000089.xml', 'image_id': '000089', 'height': 374, 'width': 500, 'annotations': [{'category_id': 14, 'classname': 'person', 'bbox': [19, 6, 183, 355], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [97, 214, 429, 374], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [331, 139, 455, 366], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 8, 'classname': 'chair', 'bbox': [21, 50, 317, 291], 'bbox_mode': 'XYXY_ABS'}]},
+            # print(f"dataset : {dataset}")
+            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id), time() - tic))
+            # loaded FS_OWODB with 100 images, removed 0, take 0.00601s:
+
+    else:
+        COCO_DATASET = [(sid, 'FS-OWODB', "coco", "t1")]
         novel_classes = COCO_NOVEL_CATEGORIES[sid]
         base_classes = COCO_BASE_CATEGORIES[sid]
         # dicts['meta_VOC_info'] = {1: meta_VOC_info_1,
         #                 2: meta_VOC_info_2,
         #                 3: meta_VOC_info_3}[sid]
-        if sid == 1:
-            COCO_DATASET = [(1, 'FS_OWODB', "coco", "t1")]
-        elif sid == 2:
-            COCO_DATASET = [(2, 'FS_OWODB', "coco", "t1")]
-        elif sid == 3:
-            COCO_DATASET = [(3, 'FS_OWODB', "coco", "t1")]
-        # elif sid == 4:
-        #     COCO_DATASET = [(4, 'FS_OWODB', "coco", "t4")]
 
         for id_dataset, name, dirname, split in COCO_DATASET:
             tic = time()
@@ -459,62 +460,6 @@ if __name__ == "__main__":
                                                                       max_instance=None)  # choose base Images
 
             ### get base feature and entropy
-
-            # Name_Base = "Base_all_{}_{}_tensor_vit.pt"
-            # # Name_Base = "Base_all_{}_{}_tensor_resnet.pt" # resnet101
-            # # Name_Base = "Base_all_{}_{}_tensor_resnet50.pt"
-            # entropy = torch.load(os.path.join(feature_dir, Name_Base.format('entropy', dirname.lower())))[choose_id]
-            #
-            # Name_Base = "Base_all_{}_{}_tensor.pt"
-            # print(os.path.join(feature_dir, Name_Base.format('feature', dirname.lower())))
-            # feature = torch.load(os.path.join(feature_dir, Name_Base.format('feature', dirname.lower())))
-            #
-            # feature = get_features(feature, in_features=in_features)[choose_id]
-            # base_feature.append(feature)
-            # base_entropy.append(entropy)
-
-            dataset.extend(data)
-            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id),
-                                                                                time() - tic))
-
-        # novel_classes = [
-        #     k["name"] for k in COCO_NOVEL_CATEGORIES if k["isthing"] == 1
-        # ]
-        #
-        # base_classes = [
-        #     k for k in COCO_CATEGORIES if k["isthing"] == 1 and k["name"] not in novel_classes
-        # ]
-        # name, dirname, json = COCO_DATASET
-        # dataset, choose_id = load_coco_json(os.path.join(dataset_path, json), \
-        #                                     os.path.join(dataset_path, dirname), COCO_NOVEL_CATEGORIES,
-        #                                     max_instance=None)
-        #
-        # name = 'coco'
-        # Name_Base = "Base_{}_{}_tensor.pt"  # 5000
-        # Name_Base = "Base_all_{}_{}_tensor.pt"
-        #
-        # feature = torch.load(os.path.join(feature_dir, Name_Base.format('feature', name.lower())))
-        # entropy = torch.load(os.path.join(feature_dir, Name_Base.format('entropy', name.lower())))
-        #
-        # feature = get_features(feature, in_features=in_features)
-        # base_feature.append(feature)
-        # base_entropy.append(entropy)
-
-    else:
-        novel_classes = PASCAL_VOC_NOVEL_CATEGORIES[sid]
-        base_classes = PASCAL_VOC_BASE_CATEGORIES[sid]
-        # dicts['meta_VOC_info'] = {1: meta_VOC_info_1,
-        #                 2: meta_VOC_info_2,
-        #                 3: meta_VOC_info_3}[sid]
-
-        for id_dataset, name, dirname, split in VOC_DATASET:
-            tic = time()
-            data, removed_id, choose_id = load_filtered_voc_instances(name, os.path.join(dataset_path, dirname), split,
-                                                                      base_classes,
-                                                                      max_instance=None)  # choose base Images
-
-            ### get base feature and entropy
-
             Name_Base = "Base_all_{}_{}_tensor_vit.pt"
             # Name_Base = "Base_all_{}_{}_tensor_resnet.pt" # resnet101
             # Name_Base = "Base_all_{}_{}_tensor_resnet50.pt"
@@ -529,10 +474,13 @@ if __name__ == "__main__":
             base_entropy.append(entropy)
 
             dataset.extend(data)
-            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id),
-                                                                                time() - tic))
+            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id),time() - tic))
 
     num_novel_classes = len(novel_classes)
+    print(f"sid = {sid}, num_novel_classes = {num_novel_classes}, novel_classes : {novel_classes}")
+    # sid = t1, num_novel_classes = 20, novel_classes: ['aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
+    #                                                   'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
+    #                                                   'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
     dicts['dataset'] = [[] for _ in range(num_novel_classes)]
 
     if args.bg_rand:
@@ -545,13 +493,13 @@ if __name__ == "__main__":
     print("Total selected dataset for first class: ", len(dicts['dataset'][0]))
 
     # Folder to save new data images
-    Output_Images = os.path.join(FolderForGenVersion, "JPEGImages_gen/")
+    Output_Images = os.path.join(FolderForGenVersion, "JPEGImages_gen/") # datasets/coco/JPEGImages_gen/
 
     # Folder to save new data annotations
-    Output_Annotations = os.path.join(FolderForGenVersion, "Annotations_gen/")
+    Output_Annotations = os.path.join(FolderForGenVersion, "Annotations_gen/") # datasets/coco/Annotations_gen/
 
     # Save information of generation process
-    Log_Image_Path = os.path.join(FolderForGenVersion, "LogImagePath.txt")
+    Log_Image_Path = os.path.join(FolderForGenVersion, "LogImagePath.txt") # datasets/coco/LogImagePath.txt/
 
     os.makedirs(Output_Images, exist_ok=True)
     os.makedirs(Output_Annotations, exist_ok=True)

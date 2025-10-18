@@ -236,6 +236,7 @@ def convert_bbox_xywh_to_xyxy(bbox):
     return [x, y, x+w, y+h]
 
 
+# name: "FS-OWODB", dirname: "datasets/coco", split: "t1", classnames: "base_classes", max_instance: None
 def load_filtered_voc_instances(
         name: str, dirname: str, split: str, classnames: str, max_instance: int
 ):
@@ -245,6 +246,9 @@ def load_filtered_voc_instances(
         dirname: Contain "Annotations", "ImageSets", "JPEGImages"
         split (str): one of "train", "test", "val", "trainval"
     """
+    #             data, removed_id, choose_id = load_filtered_voc_instances(name, os.path.join(dataset_path, dirname), split,
+    #                                                                       base_classes,
+    #                                                                       max_instance=None)  # choose base Images
 
     is_shots = "shot" in name
     if is_shots:
@@ -266,9 +270,7 @@ def load_filtered_voc_instances(
                 ]
                 fileids[cls] = fileids_
     else:
-        with open(
-                os.path.join(dirname, "ImageSets", "Main", split + ".txt")
-        ) as f:
+        with open(os.path.join(dirname, "ImageSets", "Main", split + ".txt")) as f: #datasets/coco/ImageSets/Main/t1.txt
             #print(f'os.path.join(dirname, "ImageSets", "Main", split + ".txt") : {os.path.join(dirname, "ImageSets", "Main", split + ".txt")}')
             fileids = np.loadtxt(f, dtype=str)
             # print(f"fileids : {fileids}, fileids length : {len(fileids)}")
