@@ -27,7 +27,6 @@ def merge_file(scr_path, dir_path):
     return files
 
 def _to_int(s):
-    # '45.7' 같은 문자열도 안전하게 int로
     try:
         return int(s)
     except ValueError:
@@ -58,7 +57,6 @@ def filter_bbox_voc(anno_file, novel_classes, alpha=0.5):
     boxes, class_names = [], []
     novel_ins_id, rm_cnt = None, 0
     print(f"novel_classes : {novel_classes}")
-    print(f"root.findall('object') : {root.findall('object')}")
 
     for i, obj in enumerate(root.findall("object")):
         cls_name = obj.find("name").text
@@ -391,11 +389,77 @@ def get_k_sample(dataset_path, list_files, novel_classes, num_max_ins, sid):
     print(sample_counts)
     return selected
 
+
+def copy_original_files_from_main(dataset_path, sid):
+    """
+    ImageSets/Main/t2.txt에서 원본 파일 리스트를 읽어서
+    Annotations_gen/t2, JPEGImages_gen/t2로 복사
+
+    Args:
+        dataset_path: 데이터셋 루트 경로
+        sid: task id (e.g., 't2')
+
+    Returns:
+        복사된 파일명 리스트
+    """
+    # ImageSets/Main/t2.txt 읽기
+    main_txt_path = os.path.join(dataset_path, f'ImageSets/Main/{sid}.txt')
+
+    if not os.path.exists(main_txt_path):
+        print(f"Warning: {main_txt_path} not found. Skipping original file copy.")
+        return []
+
+    # 파일 리스트 읽기
+    with open(main_txt_path, 'r') as f:
+        original_files = [line.strip() for line in f if line.strip()]
+
+    print(f"Found {len(original_files)} original files in {main_txt_path}")
+
+    # 원본 경로
+    orig_annotation_dir = os.path.join(dataset_path, 'Annotations')
+    orig_image_dir = os.path.join(dataset_path, 'JPEGImages')
+
+    # 대상 경로
+    gen_annotation_dir = os.path.join(dataset_path, f'Annotations_gen/{sid}')
+    gen_image_dir = os.path.join(dataset_path, f'JPEGImages_gen/{sid}')
+
+    # 디렉토리 생성
+    os.makedirs(gen_annotation_dir, exist_ok=True)
+    os.makedirs(gen_image_dir, exist_ok=True)
+
+    copied_files = []
+    for file_stem in original_files:
+        # XML 복사
+        src_xml = os.path.join(orig_annotation_dir, f'{file_stem}.xml')
+        dst_xml = os.path.join(gen_annotation_dir, f'{file_stem}.xml')
+
+        # JPG 복사
+        src_jpg = os.path.join(orig_image_dir, f'{file_stem}.jpg')
+        dst_jpg = os.path.join(gen_image_dir, f'{file_stem}.jpg')
+
+        try:
+            # 파일이 존재하는지 확인
+            if os.path.exists(src_xml) and os.path.exists(src_jpg):
+                # 이미 존재하는 파일은 덮어쓰지 않음
+                if not os.path.exists(dst_xml):
+                    shutil.copy2(src_xml, dst_xml)
+                if not os.path.exists(dst_jpg):
+                    shutil.copy2(src_jpg, dst_jpg)
+                copied_files.append(file_stem)
+            else:
+                print(f"Warning: Source files not found for {file_stem}")
+        except Exception as e:
+            print(f"Error copying {file_stem}: {e}")
+
+    print(f"Successfully copied {len(copied_files)} original files to _gen directories")
+    return copied_files
+
 def create_meta_infor(dataset_path, novel_classes, num_max_ins, sid):
     ImageSets_dir = os.path.join(dataset_path, 'ImageSets/FS-OWODB')
     annotation_dir = os.path.join(dataset_path, f'Annotations_gen/{sid}')
     os.makedirs(ImageSets_dir, exist_ok=True)
 
+    print("\n=== Processing generated samples ===")
     image_files = [f.split('.')[0] for f in os.listdir(os.path.join(dataset_path, f'JPEGImages_gen/{sid}')) if f.endswith('.jpg')]
     all_files = set(image_files)
     num_files = len(all_files)
@@ -411,13 +475,17 @@ def create_meta_infor(dataset_path, novel_classes, num_max_ins, sid):
     saved_files = [file for i, file in enumerate(all_files) if file not in remove_list and rm_cnt[i] == 0]
     saved_files = get_k_sample(dataset_path, saved_files, novel_classes, num_max_ins, sid)
     # saved_files = list(all_files)
-    print(
-        f'There are {num_files} files, remained {len(saved_files)} files, removed {num_files - len(saved_files)} files')
+    print(f'There are {num_files} files, remained {len(saved_files)} files, removed {num_files - len(saved_files)} files')
 
+    # 1. copy original image, anno files ImageSets/Main/{sid}.txt
+    print("\n=== Copying original files from ImageSets/Main ===")
+    original_files = copy_original_files_from_main(dataset_path, sid)
+
+    final_files = list(set(original_files + saved_files))
     file_path = os.path.join(ImageSets_dir, f'{sid}.txt')
     with open(file_path, 'w') as f:
-        f.write('\n'.join(saved_files))
-    print('Saved to ImageSets_dir:', file_path)
+        f.write('\n'.join(final_files))
+    print('Saved synthetic imagesets to ImageSets_dir:', file_path)
 
 def remove_file_coco(image_root, image, bboxes):
     img_path = os.path.join(image_root, image['file_name'])
