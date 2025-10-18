@@ -213,12 +213,12 @@ def run_inference_background(rank, world_size, dicts):
             size = original_image_pil.size
             output_image = result_pil.resize(size)
             f_name = dict_input_data[i]['file_name'].split('/')[-1].split('.')[0]
-            #datasets / coco / JPEGImages / 000089.jpg
+            #datasets / coco / JPEGImages / 000089.jpg --> 000089
             image_name = f"syn{f_name}_{New_Index:08d}.jpg"
             New_Index_Img = int(str(dict_input_data[i]['image_id']) + str(New_Index))
             process_obj = [class_B[i], class_A[i], expanded_bbox[i]]
             iter_process = choiced_index_list[i]
-            output_image.save(Output_Images + image_name)
+            output_image.save(os.path.join(Output_Images, image_name))
 
             if is_coco:
                 init_xml_path = dict_input_data[i]['anno_file']
@@ -240,7 +240,7 @@ def run_inference_background(rank, world_size, dicts):
                         ET.SubElement(obj, 'Text_prompt', pA=pA, pB=pB, pname=obj.find("name").text)
                         ET.SubElement(obj, 'all_name', all_class=process_obj[0] + "_" + process_obj[1])
 
-                ET.ElementTree(root).write(Output_Annotations + image_name.replace(".jpg", ".xml"),
+                ET.ElementTree(root).write(os.path.join(Output_Annotations, image_name.replace(".jpg", ".xml")),
                                            encoding='utf-8', xml_declaration=False)
                 Log_Edited_Image[New_Index] = pA + "_" + pB + image_path_list[i]
                 # # handle coco annotation saving here
@@ -301,7 +301,7 @@ def run_inference_background(rank, world_size, dicts):
                         ET.SubElement(obj, 'Text_prompt', pA=pA, pB=pB, pname=obj.find("name").text)
                         ET.SubElement(obj, 'all_name', all_class=process_obj[0] + "_" + process_obj[1])
 
-                ET.ElementTree(root).write(Output_Annotations + image_name.replace(".jpg", ".xml"),
+                ET.ElementTree(root).write(os.path.join(Output_Annotations, image_name.replace(".jpg", ".xml")),
                                            encoding='utf-8', xml_declaration=False)
                 Log_Edited_Image[New_Index] = pA + "_" + pB + image_path_list[i]
 
