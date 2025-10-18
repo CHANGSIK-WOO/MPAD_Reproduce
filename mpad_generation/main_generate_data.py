@@ -192,19 +192,19 @@ def run_inference_background(rank, world_size, dicts):
             Prompt_B.append(base_prompt)
 
         try:
-            edited_images, _ = torch_edit(painter, images, masks, Prompt_A, Prompt_B,
+            eddited_images, _ = torch_edit(painter, images, masks, Prompt_A, Prompt_B,
                                            mix_up_alpha=mix_up_alpha, num_inference_steps=NUM_INFERENCE_STEP,
                                            momemtum=momemtum)
         except Exception as err:
             print(f"Unexpected {err=}, {type(err)=}")
             continue
 
-        if not edited_images[0]:
+        if not eddited_images[0]:
             continue
 
         for i in range(len(dict_input_data)):
             New_Index += 1
-            result_pil = edited_images[i]
+            result_pil = eddited_images[i]
             mask = unresized_masks[i]
             original_shape = shape[i]
             pA = Prompt_A[i]
@@ -213,7 +213,7 @@ def run_inference_background(rank, world_size, dicts):
             size = original_image_pil.size
             output_image = result_pil.resize(size)
             f_name = dict_input_data[i]['file_name'].split('/')[-1].split('.')[0]
-
+            #datasets / coco / JPEGImages / 000089.jpg
             image_name = f"syn{f_name}_{New_Index:08d}.jpg"
             New_Index_Img = int(str(dict_input_data[i]['image_id']) + str(New_Index))
             process_obj = [class_B[i], class_A[i], expanded_bbox[i]]
@@ -430,7 +430,6 @@ if __name__ == "__main__":
     COCO_DATASET = [(sid, 'FS-OWODB', "coco", "t1")] # (id_dataset, name, dirname, split)
 
     if is_coco:
-
         novel_classes = COCO_NOVEL_CATEGORIES[sid]
         base_classes = COCO_BASE_CATEGORIES[sid]
         for id_dataset, name, dirname, split in COCO_DATASET:
@@ -446,7 +445,6 @@ if __name__ == "__main__":
             # loaded FS_OWODB with 100 images, removed 0, take 0.00601s:
 
     else:
-        COCO_DATASET = [(sid, 'FS-OWODB', "coco", "t1")]
         novel_classes = COCO_NOVEL_CATEGORIES[sid]
         base_classes = COCO_BASE_CATEGORIES[sid]
         # dicts['meta_VOC_info'] = {1: meta_VOC_info_1,
@@ -493,13 +491,13 @@ if __name__ == "__main__":
     print("Total selected dataset for first class: ", len(dicts['dataset'][0]))
 
     # Folder to save new data images
-    Output_Images = os.path.join(FolderForGenVersion, "JPEGImages_gen/") # datasets/coco/JPEGImages_gen/
+    Output_Images = os.path.join(FolderForGenVersion, f"JPEGImages_gen/{sid}") # datasets/coco/JPEGImages_gen/
 
     # Folder to save new data annotations
-    Output_Annotations = os.path.join(FolderForGenVersion, "Annotations_gen/") # datasets/coco/Annotations_gen/
+    Output_Annotations = os.path.join(FolderForGenVersion, f"Annotations_gen/{sid}") # datasets/coco/Annotations_gen/
 
     # Save information of generation process
-    Log_Image_Path = os.path.join(FolderForGenVersion, "LogImagePath.txt") # datasets/coco/LogImagePath.txt/
+    Log_Image_Path = os.path.join(FolderForGenVersion, "LogImagePath.txt") # datasets/coco/LogImagePath/
 
     os.makedirs(Output_Images, exist_ok=True)
     os.makedirs(Output_Annotations, exist_ok=True)
