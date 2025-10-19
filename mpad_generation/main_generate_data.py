@@ -376,6 +376,7 @@ def get_features(features, in_features=['res2', 'res3']):
 
 def main(dicts):
     world_size = torch.cuda.device_count()
+    print(f"world_size : {world_size}")
 
     with torch.no_grad():
         mp.spawn(run_inference_background, args=(world_size, dicts,), nprocs=world_size, join=True)

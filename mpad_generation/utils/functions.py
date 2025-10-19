@@ -270,7 +270,8 @@ def load_filtered_voc_instances(
                 ]
                 fileids[cls] = fileids_
     else:
-        with open(os.path.join(dirname, "ImageSets", "Main", split + ".txt")) as f: #datasets/coco/ImageSets/Main/t1.txt
+        with open(os.path.join(dirname, "ImageSets","M-OWODB_t1" + ".txt")) as f: #datasets/coco/ImageSets/Main/t1.txt
+
             #print(f'os.path.join(dirname, "ImageSets", "Main", split + ".txt") : {os.path.join(dirname, "ImageSets", "Main", split + ".txt")}')
             fileids = np.loadtxt(f, dtype=str)
             # print(f"fileids : {fileids}, fileids length : {len(fileids)}")
