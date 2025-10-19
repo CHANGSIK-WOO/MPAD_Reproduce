@@ -192,19 +192,19 @@ def run_inference_background(rank, world_size, dicts):
             Prompt_B.append(base_prompt)
 
         try:
-            eddited_images, _ = torch_edit(painter, images, masks, Prompt_A, Prompt_B,
+            edited_images, _ = torch_edit(painter, images, masks, Prompt_A, Prompt_B,
                                            mix_up_alpha=mix_up_alpha, num_inference_steps=NUM_INFERENCE_STEP,
                                            momemtum=momemtum)
         except Exception as err:
             print(f"Unexpected {err=}, {type(err)=}")
             continue
 
-        if not eddited_images[0]:
+        if not edited_images[0]:
             continue
 
         for i in range(len(dict_input_data)):
             New_Index += 1
-            result_pil = eddited_images[i]
+            result_pil = edited_images[i]
             mask = unresized_masks[i]
             original_shape = shape[i]
             pA = Prompt_A[i]
@@ -392,6 +392,15 @@ if __name__ == "__main__":
     args = default_argument_parser().parse_args()
     print('args: ', args)
 
+    RANDOM_SEED = 42
+    random.seed(RANDOM_SEED)
+    np.random.seed(RANDOM_SEED)
+    torch.manual_seed(RANDOM_SEED)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(RANDOM_SEED)
+        torch.cuda.manual_seed_all(RANDOM_SEED)
+    print(f"Random seed set to: {RANDOM_SEED}")
+
     FolderForGenVersion = args.gendata_folder # datasets/coco/
     max_num_novel_ins = args.num_ins
 
@@ -442,8 +451,34 @@ if __name__ == "__main__":
             dataset.extend(data)
             # dataset : [{'file_name': 'datasets/coco/JPEGImages/000089.jpg', 'anno_file': 'datasets/coco/Annotations/000089.xml', 'image_id': '000089', 'height': 374, 'width': 500, 'annotations': [{'category_id': 14, 'classname': 'person', 'bbox': [19, 6, 183, 355], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [97, 214, 429, 374], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [331, 139, 455, 366], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 8, 'classname': 'chair', 'bbox': [21, 50, 317, 291], 'bbox_mode': 'XYXY_ABS'}]},
             # print(f"dataset : {dataset}")
-            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id), time() - tic))
-            # loaded FS_OWODB with 100 images, removed 0, take 0.00601s:
+            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id), time() - tic)) # loaded FS_OWODB with 100 images, removed 0, take 0.00601s:
+
+            with open(os.path.join("datasets", dirname, "ImageSets", f"Main/{sid}" + ".txt")) as f:  # datasets/coco/ImageSets/Main/t1.txt
+                novel_classes_fileids = np.loadtxt(f, dtype=str)
+
+            # 예: {'person': [], 'car': [], 'dog': [], ...}
+            fileids_per_novel_classes = [[] for _ in novel_classes]
+            annotation_dir = os.path.join("datasets", dirname, "Annotations")
+            for fileid in novel_classes_fileids:
+                xml_path = os.path.join(annotation_dir, f"{fileid}.xml")
+
+                try:
+                    # XML 파일 파싱
+                    tree = ET.parse(xml_path)
+                    root = tree.getroot()
+
+                    # 모든 object 태그에서 클래스 이름 추출
+                    for obj in root.findall("object"):
+                        class_name = obj.find("name").text
+
+                        # 해당 클래스가 novel_class 리스트에 있으면 추가
+                        if class_name in novel_classes:
+                            fileids_per_novel_classes[novel_classes.index(class_name)].append(fileid)
+                except Exception as e:
+                    print(f"Error parsing {xml_path}: {e}")
+                    continue
+            for idx, l in enumerate(fileids_per_novel_classes):
+                print(f"{novel_classes[idx]}: {len(l)} images")
 
     else:
         novel_classes = COCO_NOVEL_CATEGORIES[sid]
@@ -473,7 +508,34 @@ if __name__ == "__main__":
             base_entropy.append(entropy)
 
             dataset.extend(data)
-            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id),time() - tic))
+            print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id), time() - tic)) # loaded FS_OWODB with 100 images, removed 0, take 0.00601s:
+
+            with open(os.path.join("datasets", dirname, "ImageSets", f"Main/{sid}" + ".txt")) as f:  # datasets/coco/ImageSets/Main/t1.txt
+                novel_classes_fileids = np.loadtxt(f, dtype=str)
+
+            # 예: {'person': [], 'car': [], 'dog': [], ...}
+            fileids_per_novel_classes = [[] for _ in novel_classes]
+            annotation_dir = os.path.join("datasets", dirname, "Annotations")
+            for fileid in novel_classes_fileids:
+                xml_path = os.path.join(annotation_dir, f"{fileid}.xml")
+
+                try:
+                    # XML 파일 파싱
+                    tree = ET.parse(xml_path)
+                    root = tree.getroot()
+
+                    # 모든 object 태그에서 클래스 이름 추출
+                    for obj in root.findall("object"):
+                        class_name = obj.find("name").text
+
+                        # 해당 클래스가 novel_class 리스트에 있으면 추가
+                        if class_name in novel_classes:
+                            fileids_per_novel_classes[novel_classes.index(class_name)].append(fileid)
+                except Exception as e:
+                    print(f"Error parsing {xml_path}: {e}")
+                    continue
+            for idx, l in enumerate(fileids_per_novel_classes):
+                print(f"{novel_classes[idx]}: {len(l)} images")
 
     num_novel_classes = len(novel_classes)
     print(f"sid = {sid}, num_novel_classes = {num_novel_classes}, novel_classes : {novel_classes}")
@@ -481,15 +543,28 @@ if __name__ == "__main__":
     #                                                   'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
     #                                                   'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
     dicts['dataset'] = [[] for _ in range(num_novel_classes)]
+    # dicts['dataset'] = {fileids : [] for fileids in novel_classes_fileids}
 
+    # if args.bg_rand:
+    #     n_bg_rand = int(max_num_novel_ins * general_p_bg)
+    #     for id_cls in range(num_novel_classes):
+    #         dicts['dataset'][id_cls].extend(dataset[id_cls * n_bg_rand:(id_cls + 1) * n_bg_rand])
     if args.bg_rand:
-        n_bg_rand = int(max_num_novel_ins * general_p_bg)
+        n_bg_rand = int(max_num_novel_ins * 5 * general_p_bg)
         for id_cls in range(num_novel_classes):
-            dicts['dataset'][id_cls].extend(dataset[id_cls * n_bg_rand:(id_cls + 1) * n_bg_rand])
+            existing_fg_files = fileids_per_novel_classes[id_cls]
+            available_bg = [img for img in dataset if img['file_name'] not in existing_fg_files]
+            if len(available_bg) >= n_bg_rand:
+                dicts['dataset'][id_cls].extend(random.sample(available_bg, n_bg_rand))
+            else:
+                print("not available")
+                break
+                #dicts['dataset'][id_cls].extend(available_bg)
+
 
     print("Total dataset: ", len(dataset))
     print("Total selected dataset: ", len(dicts['dataset']))
-    print("Total selected dataset for first class: ", len(dicts['dataset'][0]))
+    #print("Total selected dataset for first class: ", len(dicts['dataset']))
 
     # Folder to save new data images
     Output_Images = os.path.join(FolderForGenVersion, f"JPEGImages_gen/{sid}") # datasets/coco/JPEGImages_gen/
