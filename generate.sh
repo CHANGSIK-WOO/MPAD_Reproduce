@@ -1,17 +1,24 @@
-export CUDA_VISIBLE_DEVICES=0
+#export CUDA_VISIBLE_DEVICES=0,1  # ⭐ GPU 2개 보이도록 변경
 GENERATIVE_DATA_PATH=datasets/coco/
-sid="t4"
-NUM_INS=10
-python mpad_generation/main_generate_data.py --gendata-folder ${GENERATIVE_DATA_PATH} \
-    --bg-rand \
-    --bg-clutter \
-    --bg-sim \
-    --fg-rand \
-    --fg-fg --num-fine-grained 4 \
-    --fg-sim --p-fg-sim 0.8 --mix-up 0.7 --momemtum 0.7 \
-    --p-multi-scale 0.25 \
-    --num-ins ${NUM_INS} \
-    --sid ${sid} \
-    --coco
+sid="t1"
+NUM_INS=1
+
+GPUS=$(python -c "import torch; print(torch.cuda.device_count())")
+
+torchrun \
+  --nproc_per_node=${GPUS} \
+  --standalone \
+  mpad_generation/main_generate_data.py \
+  --gendata-folder ${GENERATIVE_DATA_PATH} \
+  --bg-rand \
+  --bg-clutter \
+  --bg-sim \
+  --fg-rand \
+  --fg-fg --num-fine-grained 4 \
+  --fg-sim --p-fg-sim 0.8 --mix-up 0.7 --momemtum 0.7 \
+  --p-multi-scale 0.25 \
+  --num-ins ${NUM_INS} \
+  --sid ${sid} \
+  --coco
 
 python mpad_generation/post_process.py ${GENERATIVE_DATA_PATH} ${sid} ${NUM_INS}

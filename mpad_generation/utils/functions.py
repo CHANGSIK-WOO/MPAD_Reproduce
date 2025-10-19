@@ -39,8 +39,8 @@ def ddp_setup(rank: int, world_size: int):
         rank: Unique identifier of each process
         world_size: Total number of processes
     """
-    os.environ["MASTER_ADDR"] = "localhost"
-    os.environ["MASTER_PORT"] = "12355"
+    os.environ["MASTER_ADDR"] = os.getenv("MASTER_ADDR", "localhost")
+    os.environ["MASTER_PORT"] = os.getenv("MASTER_PORT", "12355")  # 환경변수 우선
     torch.cuda.set_device(rank)
     init_process_group(backend="nccl", rank=rank, world_size=world_size)
 
