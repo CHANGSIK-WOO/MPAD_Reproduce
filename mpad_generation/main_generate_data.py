@@ -553,7 +553,7 @@ if __name__ == "__main__":
         n_bg_rand = int(max_num_novel_ins * 5 * general_p_bg)
         for id_cls in range(num_novel_classes):
             existing_fg_files = fileids_per_novel_classes[id_cls]
-            available_bg = [img for img in dataset if img['file_name'] not in existing_fg_files]
+            available_bg = [img for img in dataset if img['image_id'] not in existing_fg_files]
             if len(available_bg) >= n_bg_rand:
                 dicts['dataset'][id_cls].extend(random.sample(available_bg, n_bg_rand))
             else:

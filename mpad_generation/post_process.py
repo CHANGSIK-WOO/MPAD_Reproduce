@@ -381,7 +381,7 @@ def get_k_sample(dataset_path, list_files, novel_classes, num_max_ins, sid):
 
         for cls in classes:
             cls_base = cls.split('_')[-1] if '_' in cls else cls
-            if cls_base in novel_classes and sample_counts[cls_base] < num_max_ins:
+            if cls_base in novel_classes and sample_counts[cls_base] < num_max_ins * 5:
                 sample_counts[cls_base] += 1
                 selected.append(name)
                 break
