@@ -337,17 +337,21 @@ def load_filtered_voc_instances(
         removed_id, choose_id = None, None
         print()
     else:
+        with open('/data/changsik/MPAD/datasets/coco/ImageSets/Main/few_shot_map.json', 'r') as f:
+            few_shot_map = json.load(f)
         for i, fileid in enumerate(fileids):
             anno_file = os.path.join(dirname, "Annotations", fileid + ".xml")
             jpeg_file = os.path.join(dirname, "JPEGImages", fileid + ".jpg")
             # print(f"anno_file : {anno_file}, jpeg_file : {jpeg_file}")
-
+            info = few_shot_map[fileid]
             tree = ET.parse(anno_file)
 
             r = {
                 "file_name": jpeg_file,
                 "anno_file": anno_file,
                 "image_id": fileid,
+                "shot_idx" : info["shot_idx"],
+                "class_idx" : info["class_idx"],
                 "height": int(tree.findall("./size/height")[0].text),
                 "width": int(tree.findall("./size/width")[0].text),
             }

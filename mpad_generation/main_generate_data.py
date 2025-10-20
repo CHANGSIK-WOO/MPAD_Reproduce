@@ -508,6 +508,7 @@ if __name__ == "__main__":
             base_entropy.append(entropy)
 
             dataset.extend(data)
+            print(f"datasets : {dataset}")
             print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id), time() - tic)) # loaded FS_OWODB with 100 images, removed 0, take 0.00601s:
 
             with open(os.path.join("datasets", dirname, "ImageSets", f"Main/{sid}" + ".txt")) as f:  # datasets/coco/ImageSets/Main/t1.txt
@@ -543,14 +544,15 @@ if __name__ == "__main__":
     #                                                   'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
     #                                                   'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
     dicts['dataset'] = [[] for _ in range(num_novel_classes)]
-    # dicts['dataset'] = {fileids : [] for fileids in novel_classes_fileids}
+    for i in range(5):
+        dicts[f'dataset_shot_idx_{i+1}'] = [[] for _ in range(num_novel_classes)]
 
     # if args.bg_rand:
     #     n_bg_rand = int(max_num_novel_ins * general_p_bg)
     #     for id_cls in range(num_novel_classes):
     #         dicts['dataset'][id_cls].extend(dataset[id_cls * n_bg_rand:(id_cls + 1) * n_bg_rand])
     if args.bg_rand:
-        n_bg_rand = int(max_num_novel_ins * 5 * general_p_bg)
+        n_bg_rand = int(max_num_novel_ins * general_p_bg)
         for id_cls in range(num_novel_classes):
             existing_fg_files = fileids_per_novel_classes[id_cls]
             available_bg = [img for img in dataset if img['image_id'] not in existing_fg_files]
