@@ -1,6 +1,6 @@
 #export CUDA_VISIBLE_DEVICES=0,1
 GENERATIVE_DATA_PATH=datasets/coco/
-sid="t1"
+sid="t2"
 NUM_INS=1 # SHOT COUNT PER NOVEL_CLASS, NOT PER IMAGE
 
 GPUS=$(python -c "import torch; print(torch.cuda.device_count())")

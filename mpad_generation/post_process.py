@@ -52,12 +52,34 @@ def get_simple_input_information(xml_path, image_path):
 
     return input_image, bboxes, width, height, classes
 
+# def filter_bbox_voc(anno_file, novel_classes, alpha=0.5):
+#     root = ET.parse(anno_file).getroot()
+#     boxes, class_names = [], []
+#     novel_ins_id, rm_cnt = None, 0
+#     print(f"novel_classes : {novel_classes}")
+#
+#     for i, obj in enumerate(root.findall("object")):
+#         cls_name = obj.find("name").text
+#         bndbox = obj.find("bndbox")
+#         box = [int(bndbox.find(coord).text) for coord in ['xmin', 'ymin', 'xmax', 'ymax']]
+#         class_names.append(cls_name)
+#         boxes.append(box)
+#         if cls_name in novel_classes or cls_name.split("_")[-1] in novel_classes:
+#             novel_ins_id = i
+#
+#     for j, obj in enumerate(root.findall("object")):
+#         if novel_ins_id != j and check_iou(boxes[novel_ins_id], boxes[j], alpha=alpha):
+#             root.remove(obj)
+#             rm_cnt += 1
+#     return rm_cnt
+
 def filter_bbox_voc(anno_file, novel_classes, alpha=0.5):
     root = ET.parse(anno_file).getroot()
     boxes, class_names = [], []
     novel_ins_id, rm_cnt = None, 0
     print(f"novel_classes : {novel_classes}")
 
+    # 1단계: 모든 객체 정보 수집
     for i, obj in enumerate(root.findall("object")):
         cls_name = obj.find("name").text
         bndbox = obj.find("bndbox")
@@ -67,10 +89,24 @@ def filter_bbox_voc(anno_file, novel_classes, alpha=0.5):
         if cls_name in novel_classes or cls_name.split("_")[-1] in novel_classes:
             novel_ins_id = i
 
-    for j, obj in enumerate(root.findall("object")):
+    # novel class가 없으면 종료
+    if novel_ins_id is None:
+        print(f"Warning: No novel class found in {anno_file}")
+        return 0
+
+    # 2단계: 삭제할 객체 리스트 먼저 수집
+    objects = root.findall("object")
+    objects_to_remove = []
+
+    for j, obj in enumerate(objects):
         if novel_ins_id != j and check_iou(boxes[novel_ins_id], boxes[j], alpha=alpha):
-            root.remove(obj)
-            rm_cnt += 1
+            objects_to_remove.append(obj)
+
+    # 3단계: 한 번에 삭제
+    for obj in objects_to_remove:
+        root.remove(obj)
+        rm_cnt += 1
+
     return rm_cnt
 
 def remove_file(dataset_path, name, sid):
@@ -381,7 +417,7 @@ def get_k_sample(dataset_path, list_files, novel_classes, num_max_ins, sid):
 
         for cls in classes:
             cls_base = cls.split('_')[-1] if '_' in cls else cls
-            if cls_base in novel_classes and sample_counts[cls_base] < num_max_ins:
+            if cls_base in novel_classes and sample_counts[cls_base] < num_max_ins * 5 :
                 sample_counts[cls_base] += 1
                 selected.append(name)
                 break
@@ -465,14 +501,15 @@ def create_meta_infor(dataset_path, novel_classes, num_max_ins, sid):
     num_files = len(all_files)
 
     remove_list = [f for f in all_files if remove_file(dataset_path, f, sid)]
-    # print(remove_list)
+    print(f"remove_list : {remove_list}")
     rm_cnt = [
         filter_bbox_voc(os.path.join(annotation_dir, f"{file}.xml"), novel_classes, alpha=0.7)
         for file in all_files
     ]
     print(sum(rm_cnt))
     # print(rm_cnt)
-    saved_files = [file for i, file in enumerate(all_files) if file not in remove_list and rm_cnt[i] == 0]
+    #saved_files = [file for i, file in enumerate(all_files) if file not in remove_list and rm_cnt[i] == 0]
+    saved_files = [file for i, file in enumerate(all_files) if file not in remove_list]
     saved_files = get_k_sample(dataset_path, saved_files, novel_classes, num_max_ins, sid)
     # saved_files = list(all_files)
     print(f'There are {num_files} files, remained {len(saved_files)} files, removed {num_files - len(saved_files)} files')

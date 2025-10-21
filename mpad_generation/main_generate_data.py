@@ -12,6 +12,7 @@ import base64
 from math import ceil, floor
 from collections import Counter
 from typing import Any, List, Dict, Optional
+from pathlib import Path
 
 # Image processing
 import numpy as np
@@ -117,193 +118,173 @@ def run_inference_background(rank, world_size, dicts):
     mix_up_alpha = dicts['mix-up-alpha']
     momemtum = dicts['momemtum']
 
-    # id2name, name2id = {}, {}
-    # if is_coco:
-    #     id2name = {i['id']: i['name'] for i in COCO_CATEGORIES}
-    #     name2id = {i['name']: i['id'] for i in COCO_CATEGORIES}
+    id2name, name2id = {}, {}
+    if is_coco:
+        id2name = {idx : class_name for idx, class_name in enumerate(COCO_CATEGORIES)}
+        name2id = {class_name : idx for idx, class_name in enumerate(COCO_CATEGORIES)}
+    else:
+        name2id = {name: idx for idx, name in enumerate(novel_classes)}
 
     list_novel_classes = []
     global_dataset = []
+    for i in range(5):
+        shot_idx = i+1
+        for sub_data, novel_cls in zip(dicts[f'dataset_shot_idx_{shot_idx}'], novel_classes):
+            global_dataset.extend(sub_data)
+            list_novel_classes.extend([novel_cls] * len(sub_data))
 
-    for sub_data, novel_cls in zip(dicts['dataset'], novel_classes):
-        global_dataset.extend(sub_data)
-        list_novel_classes.extend([novel_cls] * len(sub_data))
+        dataloader = DataLoader(CustomImageDataset(global_dataset),
+                                batch_size=batch_size, shuffle=False,
+                                sampler=DistributedSampler(global_dataset))
 
-    dataloader = DataLoader(CustomImageDataset(global_dataset),
-                            batch_size=batch_size, shuffle=False,
-                            sampler=DistributedSampler(global_dataset))
+        # DUMP
+        # dump_file = {
+        #     "global_dataset" : global_dataset,
+        #     "list_novel_classes" : list_novel_classes,
+        # }
+        # out = Path("data.json")
+        # with out.open("w", encoding="utf-8") as f:
+        #     json.dump(dump_file, f, ensure_ascii=False, indent=2)
+        # exit()
 
-    saved_annotations, saved_images = [], []
+        saved_annotations, saved_images = [], []
 
-    for indx in tqdm(dataloader):
-        dict_input_data = [global_dataset[i] for i in indx]
-        sub_list_novel_classes = [list_novel_classes[i] for i in indx]
+        for indx in tqdm(dataloader):
+            dict_input_data = [global_dataset[i] for i in indx]
+            sub_list_novel_classes = [list_novel_classes[i] for i in indx]
 
-        image_path_list = [i['file_name'] for i in dict_input_data]
-        annotations = [i['annotations'] for i in dict_input_data]
+            image_path_list = [i['file_name'] for i in dict_input_data]
+            annotations = [i['annotations'] for i in dict_input_data]
 
-        dict_data = preprocess2(image_path_list, annotations, augment_multi_scale,
-                                dicts['multi-scale-object']['p'])
+            dict_data = preprocess2(image_path_list, annotations, augment_multi_scale,
+                                    dicts['multi-scale-object']['p'])
 
-        masks = dict_data["masks"]
-        images = dict_data["images"]
-        labels = dict_data["labels"]
-        shape = dict_data["shape"].cpu().numpy()
-        pad_shape = dict_data["pad_shape"]
-        pil_images = dict_data["pil_images"]
-        unresized_masks = dict_data["unresized_masks"]
-        choiced_index_list = dict_data["choiced_index_list"]
-        expanded_bbox = dict_data["expanded_bbox"]
+            masks = dict_data["masks"]
+            images = dict_data["images"]
+            labels = dict_data["labels"]
+            shape = dict_data["shape"].cpu().numpy()
+            pad_shape = dict_data["pad_shape"]
+            pil_images = dict_data["pil_images"]
+            unresized_masks = dict_data["unresized_masks"]
+            choiced_index_list = dict_data["choiced_index_list"]
+            expanded_bbox = dict_data["expanded_bbox"]
 
-        class_A, class_B, Prompt_A, Prompt_B = [], [], [], []
+            class_A, class_B, Prompt_A, Prompt_B = [], [], [], []
 
-        prompt_func = prompting3_coco if is_coco else prompting4
-        list_fine_grained_class = coco_fine_grained_classes if is_coco else voc_fine_grained_classes
+            prompt_func = prompting3_coco if is_coco else prompting4
+            list_fine_grained_class = coco_fine_grained_classes if is_coco else voc_fine_grained_classes
 
-        for base_cls, novel_cls in zip([i['classname'] for i in labels], sub_list_novel_classes):
+            for base_cls, novel_cls in zip([i['classname'] for i in labels], sub_list_novel_classes):
+                novel_prompt, attr = prompt_func(novel_cls, dicts['foreground_fine_grained']['p'],
+                                                 num_fine_grained_cls=topk)
+                base_prompt = novel_prompt
+                temp_base_class = novel_cls
 
-            novel_prompt, attr = prompt_func(novel_cls, dicts['foreground_fine_grained']['p'],
-                                             num_fine_grained_cls=topk)
-            base_prompt = novel_prompt
-            temp_base_class = novel_cls
+                if fg_fg and random.uniform(0, 1) < dicts['foreground_fine_grained']['p']:
+                    fg_clss = random.choice(list_fine_grained_class[novel_cls][:topk]).lower()
+                    novel_prompt = prompting(fg_clss)
+                    base_prompt = prompting(fg_clss)
 
-            if fg_fg and random.uniform(0, 1) < dicts['foreground_fine_grained']['p']:
-                fg_clss = random.choice(list_fine_grained_class[novel_cls][:topk]).lower()
-                novel_prompt = prompting(fg_clss)
-                base_prompt = prompting(fg_clss)
+                if fg_sim and random.uniform(0, 1) < dicts['foreground_similarity']['p']:
+                    temp_base_class = base_cls
+                    # if is_coco:
+                    #     temp_base_class = id2name[base_cls]
 
-            if fg_sim and random.uniform(0, 1) < dicts['foreground_similarity']['p']:
-                temp_base_class = base_cls
-                # if is_coco:
-                #     temp_base_class = id2name[base_cls]
+                    novel_prompt, _ = prompt_func(novel_cls,
+                                                  dicts['foreground_fine_grained']['p'],
+                                                  num_fine_grained_cls=topk, apply_mixup=True)
 
-                novel_prompt, _ = prompt_func(novel_cls,
-                                              dicts['foreground_fine_grained']['p'],
-                                              num_fine_grained_cls=topk, apply_mixup=True)
+                if txt_ppt and random.uniform(0, 1) < dicts['text_prompt']['p']:
+                    prompt_list = dicts['text_prompt']['prompt'][novel_cls]
+                    novel_prompt = random.choice(prompt_list)
+                    base_prompt = random.choice(prompt_list)
 
-            if txt_ppt and random.uniform(0, 1) < dicts['text_prompt']['p']:
-                prompt_list = dicts['text_prompt']['prompt'][novel_cls]
-                novel_prompt = random.choice(prompt_list)
-                base_prompt = random.choice(prompt_list)
+                class_A.append(novel_cls)
+                class_B.append(temp_base_class)
+                Prompt_A.append(novel_prompt)
+                Prompt_B.append(base_prompt)
 
-            class_A.append(novel_cls)
-            class_B.append(temp_base_class)
-            Prompt_A.append(novel_prompt)
-            Prompt_B.append(base_prompt)
+            try:
+                edited_images, _ = torch_edit(painter, images, masks, Prompt_A, Prompt_B,
+                                               mix_up_alpha=mix_up_alpha, num_inference_steps=NUM_INFERENCE_STEP,
+                                               momemtum=momemtum)
+            except Exception as err:
+                print(f"Unexpected {err=}, {type(err)=}")
+                continue
 
-        try:
-            edited_images, _ = torch_edit(painter, images, masks, Prompt_A, Prompt_B,
-                                           mix_up_alpha=mix_up_alpha, num_inference_steps=NUM_INFERENCE_STEP,
-                                           momemtum=momemtum)
-        except Exception as err:
-            print(f"Unexpected {err=}, {type(err)=}")
-            continue
+            if not edited_images[0]:
+                continue
 
-        if not edited_images[0]:
-            continue
+            for i in range(len(dict_input_data)):
+                New_Index += 1
+                result_pil = edited_images[i]
+                mask = unresized_masks[i]
+                original_shape = shape[i]
+                pA = Prompt_A[i]
+                pB = Prompt_B[i]
+                original_image_pil = pil_images[i]
+                size = original_image_pil.size
+                output_image = result_pil.resize(size)
+                f_name = dict_input_data[i]['file_name'].split('/')[-1].split('.')[0]
+                shot_idx = dict_input_data[i]["shot_idx"]
+                class_idx = dict_input_data[i]["class_idx"]
+                novel_cls = sub_list_novel_classes[i]
+                novel_class_id = name2id[novel_cls]
+                image_name = f"syn_{shot_idx}_{novel_class_id}_{f_name}.jpg"
+                #datasets / coco / JPEGImages / 000089.jpg --> 000089
+                #image_name = f"syn{f_name}_{New_Index:08d}.jpg"
+                #image_name = f"syn_{shot_idx}_{class_idx}_{f_name}.jpg"
+                process_obj = [class_B[i], class_A[i], expanded_bbox[i]]
+                iter_process = choiced_index_list[i]
+                output_image.save(os.path.join(Output_Images, image_name))
 
-        for i in range(len(dict_input_data)):
-            New_Index += 1
-            result_pil = edited_images[i]
-            mask = unresized_masks[i]
-            original_shape = shape[i]
-            pA = Prompt_A[i]
-            pB = Prompt_B[i]
-            original_image_pil = pil_images[i]
-            size = original_image_pil.size
-            output_image = result_pil.resize(size)
-            f_name = dict_input_data[i]['file_name'].split('/')[-1].split('.')[0]
-            #datasets / coco / JPEGImages / 000089.jpg --> 000089
-            image_name = f"syn{f_name}_{New_Index:08d}.jpg"
-            New_Index_Img = int(str(dict_input_data[i]['image_id']) + str(New_Index))
-            process_obj = [class_B[i], class_A[i], expanded_bbox[i]]
-            iter_process = choiced_index_list[i]
-            output_image.save(os.path.join(Output_Images, image_name))
+                if is_coco:
+                    init_xml_path = dict_input_data[i]['anno_file']
 
-            if is_coco:
-                init_xml_path = dict_input_data[i]['anno_file']
+                    tree = ET.parse(init_xml_path)
+                    root = tree.getroot()
+                    for child in root:
+                        if child.tag == 'filename':
+                            child.text = image_name
+                    for iter_annotation, obj in enumerate(root.findall("object")):
+                        o_bbox = process_obj[2]
+                        if iter_process == iter_annotation:
+                            obj.find("name").text = process_obj[1]
+                            bndbox = obj.find("bndbox")
+                            bndbox.find('xmin').text = str(o_bbox[0])
+                            bndbox.find('ymin').text = str(o_bbox[1])
+                            bndbox.find('xmax').text = str(o_bbox[2])
+                            bndbox.find('ymax').text = str(o_bbox[3])
+                            ET.SubElement(obj, 'Text_prompt', pA=pA, pB=pB, pname=obj.find("name").text)
+                            ET.SubElement(obj, 'all_name', all_class=process_obj[0] + "_" + process_obj[1])
 
-                tree = ET.parse(init_xml_path)
-                root = tree.getroot()
-                for child in root:
-                    if child.tag == 'filename':
-                        child.text = image_name
-                for iter_annotation, obj in enumerate(root.findall("object")):
-                    o_bbox = process_obj[2]
-                    if iter_process == iter_annotation:
-                        obj.find("name").text = process_obj[1]
-                        bndbox = obj.find("bndbox")
-                        bndbox.find('xmin').text = str(o_bbox[0])
-                        bndbox.find('ymin').text = str(o_bbox[1])
-                        bndbox.find('xmax').text = str(o_bbox[2])
-                        bndbox.find('ymax').text = str(o_bbox[3])
-                        ET.SubElement(obj, 'Text_prompt', pA=pA, pB=pB, pname=obj.find("name").text)
-                        ET.SubElement(obj, 'all_name', all_class=process_obj[0] + "_" + process_obj[1])
+                    ET.ElementTree(root).write(os.path.join(Output_Annotations, image_name.replace(".jpg", ".xml")),
+                                               encoding='utf-8', xml_declaration=False)
+                    Log_Edited_Image[New_Index] = pA + "_" + pB + image_path_list[i]
 
-                ET.ElementTree(root).write(os.path.join(Output_Annotations, image_name.replace(".jpg", ".xml")),
-                                           encoding='utf-8', xml_declaration=False)
-                Log_Edited_Image[New_Index] = pA + "_" + pB + image_path_list[i]
-                # # handle coco annotation saving here
-                # for iter_annotation, old_obj in enumerate(dict_input_data[i]['annotations']):
-                #     obj = deepcopy(old_obj)
-                #     o_bbox = process_obj[2]  # Get bounding box
-                #
-                #     if iter_process == iter_annotation:
-                #         final_bbox = convert_bbox_xyxy_to_xywh(o_bbox)
-                #
-                #         category_ids = [name2id[voc2coco.get(process_obj[0], process_obj[0])], \
-                #                         name2id[
-                #                             voc2coco.get(process_obj[1], process_obj[1])]]  # Set name of new classes
-                #         if check_negative_bbox(final_bbox):
-                #             continue
-                #
-                #         saved_annotations.append({
-                #             "id": int('98' + str(obj['id']) + str(New_Index)),
-                #             "image_id": New_Index_Img,
-                #             "iscrowd": False,
-                #             "bbox": final_bbox,
-                #             "category_id": category_ids[-1],
-                #             "all_category_id": ' '.join(map(str, category_ids)),
-                #             "pA": pA,
-                #             "pB": pB,
-                #             "pname": id2name[obj['category_id']],
-                #         })
-                #     elif not check_iou(o_bbox, obj['bbox']):
-                #         obj.update({
-                #             "image_id": New_Index_Img,
-                #             "id": int(str(obj['id']) + str(New_Index)),
-                #             "bbox": convert_bbox_xyxy_to_xywh(obj['bbox'])
-                #         })
-                #         saved_annotations.append(obj)
-                # saved_images.append({
-                #     'id': New_Index_Img,
-                #     'file_name': image_name,
-                #     'width': output_image.size[0],
-                #     'height': output_image.size[1],
-                # })
-            else:
-                init_xml_path = dict_input_data[i]['anno_file']
+                else:
+                    init_xml_path = dict_input_data[i]['anno_file']
 
-                tree = ET.parse(init_xml_path)
-                root = tree.getroot()
-                for child in root:
-                    if child.tag == 'filename':
-                        child.text = image_name
-                for iter_annotation, obj in enumerate(root.findall("object")):
-                    o_bbox = process_obj[2]
-                    if iter_process == iter_annotation:
-                        obj.find("name").text = process_obj[1]
-                        bndbox = obj.find("bndbox")
-                        bndbox.find('xmin').text = str(o_bbox[0])
-                        bndbox.find('ymin').text = str(o_bbox[1])
-                        bndbox.find('xmax').text = str(o_bbox[2])
-                        bndbox.find('ymax').text = str(o_bbox[3])
-                        ET.SubElement(obj, 'Text_prompt', pA=pA, pB=pB, pname=obj.find("name").text)
-                        ET.SubElement(obj, 'all_name', all_class=process_obj[0] + "_" + process_obj[1])
+                    tree = ET.parse(init_xml_path)
+                    root = tree.getroot()
+                    for child in root:
+                        if child.tag == 'filename':
+                            child.text = image_name
+                    for iter_annotation, obj in enumerate(root.findall("object")):
+                        o_bbox = process_obj[2]
+                        if iter_process == iter_annotation:
+                            obj.find("name").text = process_obj[1]
+                            bndbox = obj.find("bndbox")
+                            bndbox.find('xmin').text = str(o_bbox[0])
+                            bndbox.find('ymin').text = str(o_bbox[1])
+                            bndbox.find('xmax').text = str(o_bbox[2])
+                            bndbox.find('ymax').text = str(o_bbox[3])
+                            ET.SubElement(obj, 'Text_prompt', pA=pA, pB=pB, pname=obj.find("name").text)
+                            ET.SubElement(obj, 'all_name', all_class=process_obj[0] + "_" + process_obj[1])
 
-                ET.ElementTree(root).write(os.path.join(Output_Annotations, image_name.replace(".jpg", ".xml")),
-                                           encoding='utf-8', xml_declaration=False)
-                Log_Edited_Image[New_Index] = pA + "_" + pB + image_path_list[i]
+                    ET.ElementTree(root).write(os.path.join(Output_Annotations, image_name.replace(".jpg", ".xml")),
+                                               encoding='utf-8', xml_declaration=False)
+                    Log_Edited_Image[New_Index] = pA + "_" + pB + image_path_list[i]
 
 
     # if is_coco:
@@ -449,10 +430,9 @@ if __name__ == "__main__":
                                                                       max_instance=None)  # choose base Images
 
             dataset.extend(data)
-            # dataset : [{'file_name': 'datasets/coco/JPEGImages/000089.jpg', 'anno_file': 'datasets/coco/Annotations/000089.xml', 'image_id': '000089', 'height': 374, 'width': 500, 'annotations': [{'category_id': 14, 'classname': 'person', 'bbox': [19, 6, 183, 355], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [97, 214, 429, 374], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [331, 139, 455, 366], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 8, 'classname': 'chair', 'bbox': [21, 50, 317, 291], 'bbox_mode': 'XYXY_ABS'}]},
-            # print(f"dataset : {dataset}")
+            # datasets : [{'file_name': 'datasets/coco/JPEGImages/000089.jpg', 'anno_file': 'datasets/coco/Annotations/000089.xml', 'image_id': '000089', 'shot_idx': 3, 'class_idx': 8, 'height': 374, 'width': 500, 'annotations': [{'category_id': 14, 'classname': 'person', 'bbox': [19, 6, 183, 355], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [97, 214, 429, 374], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [331, 139, 455, 366], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 8, 'classname': 'chair', 'bbox': [21, 50, 317, 291], 'bbox_mode': 'XYXY_ABS'}]
             print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id), time() - tic)) # loaded FS_OWODB with 100 images, removed 0, take 0.00601s:
-
+            #print(f"datasets : {dataset}, data : {data}")
             with open(os.path.join("datasets", dirname, "ImageSets", f"Main/{sid}" + ".txt")) as f:  # datasets/coco/ImageSets/Main/t1.txt
                 novel_classes_fileids = np.loadtxt(f, dtype=str)
 
@@ -477,8 +457,8 @@ if __name__ == "__main__":
                 except Exception as e:
                     print(f"Error parsing {xml_path}: {e}")
                     continue
-            for idx, l in enumerate(fileids_per_novel_classes):
-                print(f"{novel_classes[idx]}: {len(l)} images")
+            # for idx, l in enumerate(fileids_per_novel_classes):
+            #     print(f"{novel_classes[idx]}: {len(l)} images")
 
     else:
         novel_classes = COCO_NOVEL_CATEGORIES[sid]
@@ -508,9 +488,8 @@ if __name__ == "__main__":
             base_entropy.append(entropy)
 
             dataset.extend(data)
-            print(f"datasets : {dataset}")
             print('loaded {} with {} images, removed {}, take {:0.5f}s:'.format(name, len(data), len(removed_id), time() - tic)) # loaded FS_OWODB with 100 images, removed 0, take 0.00601s:
-
+            print(f"datasets : {dataset}, data : {data}")
             with open(os.path.join("datasets", dirname, "ImageSets", f"Main/{sid}" + ".txt")) as f:  # datasets/coco/ImageSets/Main/t1.txt
                 novel_classes_fileids = np.loadtxt(f, dtype=str)
 
@@ -544,24 +523,36 @@ if __name__ == "__main__":
     #                                                   'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
     #                                                   'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
     dicts['dataset'] = [[] for _ in range(num_novel_classes)]
+    base_datasets_per_shot_idx = [[] for _ in range(5)]
+    for data in dataset:
+        shot_idx = data["shot_idx"]
+        base_datasets_per_shot_idx[shot_idx-1].append(data)
+
     for i in range(5):
-        dicts[f'dataset_shot_idx_{i+1}'] = [[] for _ in range(num_novel_classes)]
+        shot_idx = i+1
+        dicts[f'dataset_shot_idx_{shot_idx}'] = [[] for _ in range(num_novel_classes)]
+        if args.bg_rand:
+            n_bg_rand = int(max_num_novel_ins * general_p_bg)
+            for id_cls in range(num_novel_classes):
+                dicts[f'dataset_shot_idx_{shot_idx}'][id_cls].extend(random.sample(base_datasets_per_shot_idx[i], n_bg_rand))
 
     # if args.bg_rand:
     #     n_bg_rand = int(max_num_novel_ins * general_p_bg)
     #     for id_cls in range(num_novel_classes):
     #         dicts['dataset'][id_cls].extend(dataset[id_cls * n_bg_rand:(id_cls + 1) * n_bg_rand])
-    if args.bg_rand:
-        n_bg_rand = int(max_num_novel_ins * general_p_bg)
-        for id_cls in range(num_novel_classes):
-            existing_fg_files = fileids_per_novel_classes[id_cls]
-            available_bg = [img for img in dataset if img['image_id'] not in existing_fg_files]
-            if len(available_bg) >= n_bg_rand:
-                dicts['dataset'][id_cls].extend(random.sample(available_bg, n_bg_rand))
-            else:
-                print("not available")
-                break
-                #dicts['dataset'][id_cls].extend(available_bg)
+    # datasets : [{'file_name': 'datasets/coco/JPEGImages/000089.jpg', 'anno_file': 'datasets/coco/Annotations/000089.xml', 'image_id': '000089', 'shot_idx': 3, 'class_idx': 8, 'height': 374, 'width': 500, 'annotations': [{'category_id': 14, 'classname': 'person', 'bbox': [19, 6, 183, 355], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [97, 214, 429, 374], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 14, 'classname': 'person', 'bbox': [331, 139, 455, 366], 'bbox_mode': 'XYXY_ABS'}, {'category_id': 8, 'classname': 'chair', 'bbox': [21, 50, 317, 291], 'bbox_mode': 'XYXY_ABS'}]
+
+    # if args.bg_rand:
+    #     n_bg_rand = int(max_num_novel_ins * general_p_bg)
+    #     for id_cls in range(num_novel_classes):
+    #         existing_fg_files = fileids_per_novel_classes[id_cls]
+    #         available_bg = [img for img in dataset if img['image_id'] not in existing_fg_files]
+    #         if len(available_bg) >= n_bg_rand:
+    #             dicts['dataset'][id_cls].extend(random.sample(available_bg, n_bg_rand))
+    #         else:
+    #             print("not available")
+    #             break
+    #             #dicts['dataset'][id_cls].extend(available_bg)
 
 
     print("Total dataset: ", len(dataset))
@@ -613,4 +604,9 @@ if __name__ == "__main__":
     #         dataset_similar = [dataset[i] for i in indx][:int(max_num_novel_ins * general_p_bg)]
     #
     #         dicts['dataset'][id_cls].extend(dataset_similar)
+    # DUMP
+    # out = Path("dict.json")
+    # with out.open("w", encoding="utf-8") as f:
+    #     json.dump(dicts, f, ensure_ascii=False, indent=2)
+    # exit()
     main(dicts)
